@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{133a9cc0-1156-4d18-b9b4-242a11b8d636}</TemplateID>
+		<Name Package="{9034a183-e637-44b2-b39d-06082cb16378}" ID="103"/>
+		<Description Package="{9034a183-e637-44b2-b39d-06082cb16378}" ID="102"/>
+		<Icon Package="{9034a183-e637-44b2-b39d-06082cb16378}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>RobotsLanguage.rob</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.rob">rob.rob</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.rob.diagram">rob.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

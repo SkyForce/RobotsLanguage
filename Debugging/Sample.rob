@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1617b3c5-431c-4132-acf4-3d4ce390a7dd" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <elements>
+    <abstractNode Id="84eb6e42-5dd2-4f1e-8432-63dfc7c7dff3" elemName="AbstractNode1" />
+  </elements>
+</robotModel>

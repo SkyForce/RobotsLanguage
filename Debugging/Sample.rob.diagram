@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotsLanguageDiagram dslVersion="1.0.0.0" Id="14cbf38e-c264-48c2-be36-c7157ed16c0a" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <robotModelMoniker Id="1617b3c5-431c-4132-acf4-3d4ce390a7dd" />
+  <nestedChildShapes>
+    <exampleConnector Id="378c4d41-9c63-46bc-b5a9-8b8116320356" edgePoints="[(1.5 : 1.75); (1.5 : 0.875); (3 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" />
+  </nestedChildShapes>
+</robotsLanguageDiagram>
