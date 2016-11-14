@@ -2,37 +2,13 @@
 <xsd:schema id="RobotsLanguageSchema" targetNamespace="http://schemas.microsoft.com/dsltools/RobotsLanguage" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
   <!-- RobotModel -->
-  <xsd:element name="robotModel" type="RobotModel" substitutionGroup="core:modelElement" />
+  <xsd:element name="robotModel" type="RobotModel" substitutionGroup="compound" />
   <xsd:complexType name="RobotModel">
     <xsd:annotation>
       <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: RobotModelHasElements -->
-          <xsd:element name="elements" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of RobotModelHasElements</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="robotModelHasElements">
-                    <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from RobotModelHasElements needs to be serialized in full-form]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                  <xsd:element ref="abstractNode" >
-                    <xsd:annotation>
-                      <xsd:documentation>[Target role-player]</xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:element>
-                </xsd:choice>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
+      <xsd:extension base="Compound">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -50,18 +26,13 @@
   </xsd:complexType>
   
   <!-- RobotModel Moniker -->
-  <xsd:element name="robotModelMoniker" type="RobotModelMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:element name="robotModelMoniker" type="RobotModelMoniker" substitutionGroup="compoundMoniker" />
   <xsd:complexType name="RobotModelMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for RobotModel instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+      <xsd:extension base="CompoundMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -174,20 +145,41 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- RobotModelHasElements -->
-  <xsd:element name="robotModelHasElements" abstract="true" type="RobotModelHasElements" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="RobotModelHasElements" abstract="true" >
-    <xsd:annotation>
-      <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
-    </xsd:annotation>
+  <!-- Compound -->
+  <xsd:element name="compound" abstract="true" type="Compound" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Compound" abstract="true" >
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end AbstractNode -->
-          <xsd:element ref="abstractNode" minOccurs="1" maxOccurs="1">
+          <!-- Relationship: CompoundHasAbstractNode -->
+          <xsd:element name="abstractNode" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
+              <xsd:documentation>Instances of CompoundHasAbstractNode</xsd:documentation>
             </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="compoundHasAbstractNode" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of CompoundHasAbstractNode needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: CompoundHasSubprogramNode -->
+          <xsd:element name="subprogramNode" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of CompoundHasSubprogramNode</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="compoundHasSubprogramNode" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of CompoundHasSubprogramNode needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
           </xsd:element>
         </xsd:sequence>
         <!-- Id -->
@@ -200,11 +192,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- RobotModelHasElements Moniker -->
-  <xsd:element name="robotModelHasElementsMoniker" type="RobotModelHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="RobotModelHasElementsMoniker">
+  <!-- Compound Moniker -->
+  <xsd:element name="compoundMoniker" abstract="true" type="CompoundMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="CompoundMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for RobotModelHasElements instance.</xsd:documentation>
+      <xsd:documentation>Moniker for Compound instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -213,6 +205,33 @@
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SubprogramNode -->
+  <xsd:element name="subprogramNode" type="SubprogramNode" substitutionGroup="compound" />
+  <xsd:complexType name="SubprogramNode">
+    <xsd:complexContent>
+      <xsd:extension base="Compound">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SubprogramNode Moniker -->
+  <xsd:element name="subprogramNodeMoniker" type="SubprogramNodeMoniker" substitutionGroup="compoundMoniker" />
+  <xsd:complexType name="SubprogramNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SubprogramNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="CompoundMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -245,6 +264,86 @@
   <xsd:complexType name="AbstractNodeReferencesTargetAbstractNodeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for AbstractNodeReferencesTargetAbstractNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CompoundHasAbstractNode -->
+  <xsd:element name="compoundHasAbstractNode" type="CompoundHasAbstractNode" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="CompoundHasAbstractNode">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end AbstractNode -->
+          <xsd:element ref="abstractNode" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CompoundHasAbstractNode Moniker -->
+  <xsd:element name="compoundHasAbstractNodeMoniker" type="CompoundHasAbstractNodeMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="CompoundHasAbstractNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for CompoundHasAbstractNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CompoundHasSubprogramNode -->
+  <xsd:element name="compoundHasSubprogramNode" type="CompoundHasSubprogramNode" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="CompoundHasSubprogramNode">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end SubprogramNode -->
+          <xsd:element ref="subprogramNode" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CompoundHasSubprogramNode Moniker -->
+  <xsd:element name="compoundHasSubprogramNodeMoniker" type="CompoundHasSubprogramNodeMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="CompoundHasSubprogramNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for CompoundHasSubprogramNode instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

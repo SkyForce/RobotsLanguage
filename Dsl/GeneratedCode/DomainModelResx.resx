@@ -165,37 +165,21 @@
     <value>Finish Node</value>
     <comment>DisplayName for DomainClass &apos;FinishNode&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements.Description" xml:space="preserve">
-    <value>Embedding relationship between the Model and Elements</value>
-    <comment>Description for DomainClass &apos;RobotModelHasElements&apos;</comment>
+  <data name="SPbSU.RobotsLanguage.Compound.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Compound</value>
+    <comment>Description for DomainClass &apos;Compound&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements.DisplayName" xml:space="preserve">
-    <value>Robot Model Has Elements</value>
-    <comment>DisplayName for DomainClass &apos;RobotModelHasElements&apos;</comment>
+  <data name="SPbSU.RobotsLanguage.Compound.DisplayName" xml:space="preserve">
+    <value>Compound</value>
+    <comment>DisplayName for DomainClass &apos;Compound&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;RobotModel&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
+  <data name="SPbSU.RobotsLanguage.SubprogramNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramNode</value>
+    <comment>Description for DomainClass &apos;SubprogramNode&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.DisplayName" xml:space="preserve">
-    <value>Robot Model</value>
-    <comment>DisplayName for DomainRole &apos;RobotModel&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.PropertyDisplayName" xml:space="preserve">
-    <value>Elements</value>
-    <comment>PropertyDisplayName for DomainRole &apos;RobotModel&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/Element.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/Element.DisplayName" xml:space="preserve">
-    <value>Element</value>
-    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.RobotModelHasElements/Element.PropertyDisplayName" xml:space="preserve">
-    <value>Robot Model</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;RobotModelHasElements&apos;</comment>
+  <data name="SPbSU.RobotsLanguage.SubprogramNode.DisplayName" xml:space="preserve">
+    <value>Subprogram Node</value>
+    <comment>DisplayName for DomainClass &apos;SubprogramNode&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
@@ -229,6 +213,70 @@
     <value>Source Abstract Node</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetAbstractNode&apos; on DomainRelationship &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode</value>
+    <comment>Description for DomainClass &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode.DisplayName" xml:space="preserve">
+    <value>Compound Has Abstract Node</value>
+    <comment>DisplayName for DomainClass &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.Compound</value>
+    <comment>Description for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.DisplayName" xml:space="preserve">
+    <value>Compound</value>
+    <comment>DisplayName for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.PropertyDisplayName" xml:space="preserve">
+    <value>Abstract Node</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNode</value>
+    <comment>Description for DomainRole &apos;AbstractNode&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.DisplayName" xml:space="preserve">
+    <value>Abstract Node</value>
+    <comment>DisplayName for DomainRole &apos;AbstractNode&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.PropertyDisplayName" xml:space="preserve">
+    <value>Compound</value>
+    <comment>PropertyDisplayName for DomainRole &apos;AbstractNode&apos; on DomainRelationship &apos;CompoundHasAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode</value>
+    <comment>Description for DomainClass &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode.DisplayName" xml:space="preserve">
+    <value>Compound Has Subprogram Node</value>
+    <comment>DisplayName for DomainClass &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.Compound</value>
+    <comment>Description for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.DisplayName" xml:space="preserve">
+    <value>Compound</value>
+    <comment>DisplayName for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.PropertyDisplayName" xml:space="preserve">
+    <value>Subprogram Node</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Compound&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNode</value>
+    <comment>Description for DomainRole &apos;SubprogramNode&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.DisplayName" xml:space="preserve">
+    <value>Subprogram Node</value>
+    <comment>DisplayName for DomainRole &apos;SubprogramNode&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.PropertyDisplayName" xml:space="preserve">
+    <value>Compound</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SubprogramNode&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.Start.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;Start&apos;</comment>
@@ -256,6 +304,14 @@
   <data name="FinishNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Subprogram.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Subprogram</value>
+    <comment>Description for DomainClass &apos;Subprogram&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Subprogram.DisplayName" xml:space="preserve">
+    <value>Subprogram</value>
+    <comment>DisplayName for DomainClass &apos;Subprogram&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -307,6 +363,14 @@
   </data>
   <data name="ConnectionTool1ToolboxTooltip" xml:space="preserve">
     <value>Connection Tool1</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SubprogramToolboxItem" xml:space="preserve">
+    <value>Subprogram</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SubprogramToolboxTooltip" xml:space="preserve">
+    <value>Subprogram</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -444,6 +508,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="ConnectionTool1ToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SubprogramToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

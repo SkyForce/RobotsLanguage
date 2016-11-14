@@ -12,243 +12,6 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace SPbSU.RobotsLanguage
 {
 	/// <summary>
-	/// DomainRelationship RobotModelHasElements
-	/// Embedding relationship between the Model and Elements
-	/// </summary>
-	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.RobotModelHasElements.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.RobotModelHasElements.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("1f1db859-6770-4fc3-8862-c3a1bb1d035e")]
-	public partial class RobotModelHasElements : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// RobotModelHasElements domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1f1db859, 0x6770, 0x4fc3, 0x88, 0x62, 0xc3, 0xa1, 0xbb, 0x1d, 0x03, 0x5e);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a RobotModelHasElements link in the same Partition as the given RobotModel
-		/// </summary>
-		/// <param name="source">RobotModel to use as the source of the relationship.</param>
-		/// <param name="target">AbstractNode to use as the target of the relationship.</param>
-		public RobotModelHasElements(RobotModel source, AbstractNode target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(RobotModelHasElements.RobotModelDomainRoleId, source), new DslModeling::RoleAssignment(RobotModelHasElements.ElementDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public RobotModelHasElements(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public RobotModelHasElements(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public RobotModelHasElements(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public RobotModelHasElements(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region RobotModel domain role code
-		
-		/// <summary>
-		/// RobotModel domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid RobotModelDomainRoleId = new global::System.Guid(0xa2d74ab9, 0x0039, 0x439c, 0xa6, 0xff, 0xe2, 0xbd, 0x9f, 0xdf, 0x29, 0x4f);
-		
-		/// <summary>
-		/// DomainRole RobotModel
-		/// </summary>
-		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Elements", PropertyDisplayNameKey="SPbSU.RobotsLanguage.RobotModelHasElements/RobotModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("a2d74ab9-0039-439c-a6ff-e2bd9fdf294f")]
-		public virtual RobotModel RobotModel
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (RobotModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, RobotModelDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, RobotModelDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access RobotModel of a AbstractNode
-		/// <summary>
-		/// Gets RobotModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static RobotModel GetRobotModel(AbstractNode element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ElementDomainRoleId) as RobotModel;
-		}
-		
-		/// <summary>
-		/// Sets RobotModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetRobotModel(AbstractNode element, RobotModel newRobotModel)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ElementDomainRoleId, newRobotModel);
-		}
-		#endregion
-		#region Element domain role code
-		
-		/// <summary>
-		/// Element domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ElementDomainRoleId = new global::System.Guid(0x276cd009, 0xdcf9, 0x4166, 0xb4, 0x12, 0xf2, 0x2a, 0x7c, 0xfc, 0x96, 0xbd);
-		
-		/// <summary>
-		/// DomainRole Element
-		/// </summary>
-		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.RobotModelHasElements/Element.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.RobotModelHasElements/Element.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "RobotModel", PropertyDisplayNameKey="SPbSU.RobotsLanguage.RobotModelHasElements/Element.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
-		[DslModeling::DomainObjectId("276cd009-dcf9-4166-b412-f22a7cfc96bd")]
-		public virtual AbstractNode Element
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (AbstractNode)DslModeling::DomainRoleInfo.GetRolePlayer(this, ElementDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ElementDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Elements of a RobotModel
-		/// <summary>
-		/// Gets a list of Elements.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<AbstractNode> GetElements(RobotModel element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(element, RobotModelDomainRoleId);
-		}
-		#endregion
-		#region RobotModel link accessor
-		/// <summary>
-		/// Get the list of RobotModelHasElements links to a RobotModel.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.RobotModelHasElements> GetLinksToElements ( global::SPbSU.RobotsLanguage.RobotModel robotModelInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.RobotModelHasElements>(robotModelInstance, global::SPbSU.RobotsLanguage.RobotModelHasElements.RobotModelDomainRoleId);
-		}
-		#endregion
-		#region Element link accessor
-		/// <summary>
-		/// Get the RobotModelHasElements link to a AbstractNode.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::SPbSU.RobotsLanguage.RobotModelHasElements GetLinkToRobotModel (global::SPbSU.RobotsLanguage.AbstractNode elementInstance)
-		{
-			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.RobotModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.RobotModelHasElements>(elementInstance, global::SPbSU.RobotsLanguage.RobotModelHasElements.ElementDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Element not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region RobotModelHasElements instance accessors
-		
-		/// <summary>
-		/// Get any RobotModelHasElements links between a given RobotModel and a AbstractNode.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.RobotModelHasElements> GetLinks( global::SPbSU.RobotsLanguage.RobotModel source, global::SPbSU.RobotsLanguage.AbstractNode target )
-		{
-			global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.RobotModelHasElements> outLinks = new global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.RobotModelHasElements>();
-			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.RobotModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.RobotModelHasElements>(source, global::SPbSU.RobotsLanguage.RobotModelHasElements.RobotModelDomainRoleId);
-			foreach ( global::SPbSU.RobotsLanguage.RobotModelHasElements link in links )
-			{
-				if ( target.Equals(link.Element) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one RobotModelHasElements link between a given RobotModeland a AbstractNode.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::SPbSU.RobotsLanguage.RobotModelHasElements GetLink( global::SPbSU.RobotsLanguage.RobotModel source, global::SPbSU.RobotsLanguage.AbstractNode target )
-		{
-			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.RobotModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.RobotModelHasElements>(source, global::SPbSU.RobotsLanguage.RobotModelHasElements.RobotModelDomainRoleId);
-			foreach ( global::SPbSU.RobotsLanguage.RobotModelHasElements link in links )
-			{
-				if ( target.Equals(link.Element) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace SPbSU.RobotsLanguage
-{
-	/// <summary>
 	/// DomainRelationship AbstractNodeReferencesTargetAbstractNode
 	/// Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode
 	/// </summary>
@@ -458,6 +221,484 @@ namespace SPbSU.RobotsLanguage
 			foreach ( global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode link in links )
 			{
 				if ( target.Equals(link.TargetAbstractNode) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainRelationship CompoundHasAbstractNode
+	/// Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("7f7180b7-a5ef-4827-bca5-ee56c27fc928")]
+	public partial class CompoundHasAbstractNode : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// CompoundHasAbstractNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7f7180b7, 0xa5ef, 0x4827, 0xbc, 0xa5, 0xee, 0x56, 0xc2, 0x7f, 0xc9, 0x28);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a CompoundHasAbstractNode link in the same Partition as the given Compound
+		/// </summary>
+		/// <param name="source">Compound to use as the source of the relationship.</param>
+		/// <param name="target">AbstractNode to use as the target of the relationship.</param>
+		public CompoundHasAbstractNode(Compound source, AbstractNode target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(CompoundHasAbstractNode.CompoundDomainRoleId, source), new DslModeling::RoleAssignment(CompoundHasAbstractNode.AbstractNodeDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CompoundHasAbstractNode(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CompoundHasAbstractNode(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CompoundHasAbstractNode(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CompoundHasAbstractNode(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Compound domain role code
+		
+		/// <summary>
+		/// Compound domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CompoundDomainRoleId = new global::System.Guid(0x4fdb783e, 0x3c01, 0x4abc, 0x94, 0x85, 0x4e, 0x34, 0x7c, 0x4b, 0x9e, 0xc2);
+		
+		/// <summary>
+		/// DomainRole Compound
+		/// Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.Compound
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AbstractNode", PropertyDisplayNameKey="SPbSU.RobotsLanguage.CompoundHasAbstractNode/Compound.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("4fdb783e-3c01-4abc-9485-4e347c4b9ec2")]
+		public virtual Compound Compound
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Compound)DslModeling::DomainRoleInfo.GetRolePlayer(this, CompoundDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CompoundDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Compound of a AbstractNode
+		/// <summary>
+		/// Gets Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Compound GetCompound(AbstractNode element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, AbstractNodeDomainRoleId) as Compound;
+		}
+		
+		/// <summary>
+		/// Sets Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetCompound(AbstractNode element, Compound newCompound)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, AbstractNodeDomainRoleId, newCompound);
+		}
+		#endregion
+		#region AbstractNode domain role code
+		
+		/// <summary>
+		/// AbstractNode domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AbstractNodeDomainRoleId = new global::System.Guid(0x587d308c, 0x9a63, 0x4476, 0x88, 0x24, 0xc5, 0x4a, 0xce, 0x59, 0xfd, 0x3e);
+		
+		/// <summary>
+		/// DomainRole AbstractNode
+		/// Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNode
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Compound", PropertyDisplayNameKey="SPbSU.RobotsLanguage.CompoundHasAbstractNode/AbstractNode.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("587d308c-9a63-4476-8824-c54ace59fd3e")]
+		public virtual AbstractNode AbstractNode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (AbstractNode)DslModeling::DomainRoleInfo.GetRolePlayer(this, AbstractNodeDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AbstractNodeDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access AbstractNode of a Compound
+		/// <summary>
+		/// Gets a list of AbstractNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<AbstractNode> GetAbstractNode(Compound element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(element, CompoundDomainRoleId);
+		}
+		#endregion
+		#region Compound link accessor
+		/// <summary>
+		/// Get the list of CompoundHasAbstractNode links to a Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> GetLinksToAbstractNode ( global::SPbSU.RobotsLanguage.Compound compoundInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode>(compoundInstance, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.CompoundDomainRoleId);
+		}
+		#endregion
+		#region AbstractNode link accessor
+		/// <summary>
+		/// Get the CompoundHasAbstractNode link to a AbstractNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SPbSU.RobotsLanguage.CompoundHasAbstractNode GetLinkToCompound (global::SPbSU.RobotsLanguage.AbstractNode abstractNodeInstance)
+		{
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode>(abstractNodeInstance, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNodeDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of AbstractNode not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region CompoundHasAbstractNode instance accessors
+		
+		/// <summary>
+		/// Get any CompoundHasAbstractNode links between a given Compound and a AbstractNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> GetLinks( global::SPbSU.RobotsLanguage.Compound source, global::SPbSU.RobotsLanguage.AbstractNode target )
+		{
+			global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> outLinks = new global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode>();
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode>(source, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.CompoundDomainRoleId);
+			foreach ( global::SPbSU.RobotsLanguage.CompoundHasAbstractNode link in links )
+			{
+				if ( target.Equals(link.AbstractNode) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one CompoundHasAbstractNode link between a given Compoundand a AbstractNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SPbSU.RobotsLanguage.CompoundHasAbstractNode GetLink( global::SPbSU.RobotsLanguage.Compound source, global::SPbSU.RobotsLanguage.AbstractNode target )
+		{
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasAbstractNode>(source, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.CompoundDomainRoleId);
+			foreach ( global::SPbSU.RobotsLanguage.CompoundHasAbstractNode link in links )
+			{
+				if ( target.Equals(link.AbstractNode) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainRelationship CompoundHasSubprogramNode
+	/// Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("5807bbd7-2455-45df-accc-3841e93f902f")]
+	public partial class CompoundHasSubprogramNode : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// CompoundHasSubprogramNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5807bbd7, 0x2455, 0x45df, 0xac, 0xcc, 0x38, 0x41, 0xe9, 0x3f, 0x90, 0x2f);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a CompoundHasSubprogramNode link in the same Partition as the given Compound
+		/// </summary>
+		/// <param name="source">Compound to use as the source of the relationship.</param>
+		/// <param name="target">SubprogramNode to use as the target of the relationship.</param>
+		public CompoundHasSubprogramNode(Compound source, SubprogramNode target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(CompoundHasSubprogramNode.CompoundDomainRoleId, source), new DslModeling::RoleAssignment(CompoundHasSubprogramNode.SubprogramNodeDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CompoundHasSubprogramNode(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CompoundHasSubprogramNode(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CompoundHasSubprogramNode(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CompoundHasSubprogramNode(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Compound domain role code
+		
+		/// <summary>
+		/// Compound domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CompoundDomainRoleId = new global::System.Guid(0x6968a40d, 0x7270, 0x4252, 0x8c, 0x6c, 0x55, 0x44, 0xb6, 0xf0, 0xa2, 0x5b);
+		
+		/// <summary>
+		/// DomainRole Compound
+		/// Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.Compound
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SubprogramNode", PropertyDisplayNameKey="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/Compound.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("6968a40d-7270-4252-8c6c-5544b6f0a25b")]
+		public virtual Compound Compound
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Compound)DslModeling::DomainRoleInfo.GetRolePlayer(this, CompoundDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CompoundDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Compound of a SubprogramNode
+		/// <summary>
+		/// Gets Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Compound GetCompound(SubprogramNode element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, SubprogramNodeDomainRoleId) as Compound;
+		}
+		
+		/// <summary>
+		/// Sets Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetCompound(SubprogramNode element, Compound newCompound)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, SubprogramNodeDomainRoleId, newCompound);
+		}
+		#endregion
+		#region SubprogramNode domain role code
+		
+		/// <summary>
+		/// SubprogramNode domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SubprogramNodeDomainRoleId = new global::System.Guid(0x59e11ac3, 0x5bc2, 0x4f9b, 0xb4, 0x71, 0xaa, 0x18, 0xdb, 0x68, 0xc5, 0x71);
+		
+		/// <summary>
+		/// DomainRole SubprogramNode
+		/// Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNode
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Compound", PropertyDisplayNameKey="SPbSU.RobotsLanguage.CompoundHasSubprogramNode/SubprogramNode.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("59e11ac3-5bc2-4f9b-b471-aa18db68c571")]
+		public virtual SubprogramNode SubprogramNode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (SubprogramNode)DslModeling::DomainRoleInfo.GetRolePlayer(this, SubprogramNodeDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SubprogramNodeDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access SubprogramNode of a Compound
+		/// <summary>
+		/// Gets a list of SubprogramNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<SubprogramNode> GetSubprogramNode(Compound element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<SubprogramNode>, SubprogramNode>(element, CompoundDomainRoleId);
+		}
+		#endregion
+		#region Compound link accessor
+		/// <summary>
+		/// Get the list of CompoundHasSubprogramNode links to a Compound.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> GetLinksToSubprogramNode ( global::SPbSU.RobotsLanguage.Compound compoundInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode>(compoundInstance, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.CompoundDomainRoleId);
+		}
+		#endregion
+		#region SubprogramNode link accessor
+		/// <summary>
+		/// Get the CompoundHasSubprogramNode link to a SubprogramNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode GetLinkToCompound (global::SPbSU.RobotsLanguage.SubprogramNode subprogramNodeInstance)
+		{
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode>(subprogramNodeInstance, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNodeDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of SubprogramNode not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region CompoundHasSubprogramNode instance accessors
+		
+		/// <summary>
+		/// Get any CompoundHasSubprogramNode links between a given Compound and a SubprogramNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> GetLinks( global::SPbSU.RobotsLanguage.Compound source, global::SPbSU.RobotsLanguage.SubprogramNode target )
+		{
+			global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> outLinks = new global::System.Collections.Generic.List<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode>();
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode>(source, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.CompoundDomainRoleId);
+			foreach ( global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode link in links )
+			{
+				if ( target.Equals(link.SubprogramNode) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one CompoundHasSubprogramNode link between a given Compoundand a SubprogramNode.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode GetLink( global::SPbSU.RobotsLanguage.Compound source, global::SPbSU.RobotsLanguage.SubprogramNode target )
+		{
+			global::System.Collections.Generic.IList<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode>(source, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.CompoundDomainRoleId);
+			foreach ( global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode link in links )
+			{
+				if ( target.Equals(link.SubprogramNode) )
 				{
 					return link;
 				}

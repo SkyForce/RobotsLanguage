@@ -71,12 +71,16 @@ namespace SPbSU.RobotsLanguage
 				typeof(AbstractNode),
 				typeof(StartNode),
 				typeof(FinishNode),
-				typeof(RobotModelHasElements),
+				typeof(Compound),
+				typeof(SubprogramNode),
 				typeof(AbstractNodeReferencesTargetAbstractNode),
+				typeof(CompoundHasAbstractNode),
+				typeof(CompoundHasSubprogramNode),
 				typeof(RobotsLanguageDiagram),
 				typeof(ExampleConnector),
 				typeof(Start),
 				typeof(Finish),
+				typeof(Subprogram),
 				typeof(global::SPbSU.RobotsLanguage.FixUpDiagram),
 				typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged),
 			};
@@ -101,10 +105,12 @@ namespace SPbSU.RobotsLanguage
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(RobotModelHasElements), "RobotModel", RobotModelHasElements.RobotModelDomainRoleId),
-				new DomainRolePlayerInfo(typeof(RobotModelHasElements), "Element", RobotModelHasElements.ElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AbstractNodeReferencesTargetAbstractNode), "SourceAbstractNode", AbstractNodeReferencesTargetAbstractNode.SourceAbstractNodeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AbstractNodeReferencesTargetAbstractNode), "TargetAbstractNode", AbstractNodeReferencesTargetAbstractNode.TargetAbstractNodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CompoundHasAbstractNode), "Compound", CompoundHasAbstractNode.CompoundDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CompoundHasAbstractNode), "AbstractNode", CompoundHasAbstractNode.AbstractNodeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CompoundHasSubprogramNode), "Compound", CompoundHasSubprogramNode.CompoundDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CompoundHasSubprogramNode), "SubprogramNode", CompoundHasSubprogramNode.SubprogramNodeDomainRoleId),
 			};
 		}
 		#endregion
@@ -126,14 +132,16 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
 				createElementMap.Add(typeof(RobotModel), 0);
 				createElementMap.Add(typeof(StartNode), 1);
 				createElementMap.Add(typeof(FinishNode), 2);
-				createElementMap.Add(typeof(RobotsLanguageDiagram), 3);
-				createElementMap.Add(typeof(ExampleConnector), 4);
-				createElementMap.Add(typeof(Start), 5);
-				createElementMap.Add(typeof(Finish), 6);
+				createElementMap.Add(typeof(SubprogramNode), 3);
+				createElementMap.Add(typeof(RobotsLanguageDiagram), 4);
+				createElementMap.Add(typeof(ExampleConnector), 5);
+				createElementMap.Add(typeof(Start), 6);
+				createElementMap.Add(typeof(Finish), 7);
+				createElementMap.Add(typeof(Subprogram), 8);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -150,10 +158,12 @@ namespace SPbSU.RobotsLanguage
 				case 0: return new RobotModel(partition, propertyAssignments);
 				case 1: return new StartNode(partition, propertyAssignments);
 				case 2: return new FinishNode(partition, propertyAssignments);
-				case 3: return new RobotsLanguageDiagram(partition, propertyAssignments);
-				case 4: return new ExampleConnector(partition, propertyAssignments);
-				case 5: return new Start(partition, propertyAssignments);
-				case 6: return new Finish(partition, propertyAssignments);
+				case 3: return new SubprogramNode(partition, propertyAssignments);
+				case 4: return new RobotsLanguageDiagram(partition, propertyAssignments);
+				case 5: return new ExampleConnector(partition, propertyAssignments);
+				case 6: return new Start(partition, propertyAssignments);
+				case 7: return new Finish(partition, propertyAssignments);
+				case 8: return new Subprogram(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -176,9 +186,10 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
-				createElementLinkMap.Add(typeof(RobotModelHasElements), 0);
-				createElementLinkMap.Add(typeof(AbstractNodeReferencesTargetAbstractNode), 1);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
+				createElementLinkMap.Add(typeof(AbstractNodeReferencesTargetAbstractNode), 0);
+				createElementLinkMap.Add(typeof(CompoundHasAbstractNode), 1);
+				createElementLinkMap.Add(typeof(CompoundHasSubprogramNode), 2);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -193,8 +204,9 @@ namespace SPbSU.RobotsLanguage
 			}
 			switch (index)
 			{
-				case 0: return new RobotModelHasElements(partition, roleAssignments, propertyAssignments);
-				case 1: return new AbstractNodeReferencesTargetAbstractNode(partition, roleAssignments, propertyAssignments);
+				case 0: return new AbstractNodeReferencesTargetAbstractNode(partition, roleAssignments, propertyAssignments);
+				case 1: return new CompoundHasAbstractNode(partition, roleAssignments, propertyAssignments);
+				case 2: return new CompoundHasSubprogramNode(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -363,7 +375,8 @@ namespace SPbSU.RobotsLanguage
 		public RobotsLanguageDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::SPbSU.RobotsLanguage.RobotModelHasElements.ElementDomainRoleId, true);
+			DomainRoles.Add(global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNodeDomainRoleId, true);
+			DomainRoles.Add(global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNodeDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

@@ -20,7 +20,7 @@ namespace SPbSU.RobotsLanguage
 	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("55fa0139-cb00-4fa4-863f-f478a6c79aff")]
-	public partial class RobotModel : DslModeling::ModelElement
+	public partial class RobotModel : Compound
 	{
 		#region Constructors, domain class Id
 	
@@ -46,117 +46,6 @@ namespace SPbSU.RobotsLanguage
 		public RobotModel(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
-		}
-		#endregion
-		#region Elements opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of Elements.
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<AbstractNode> Elements
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(global::SPbSU.RobotsLanguage.RobotModelHasElements.RobotModelDomainRoleId);
-			}
-		}
-		#endregion
-		#region ElementGroupPrototype Merge methods
-		/// <summary>
-		/// Returns a value indicating whether the source element represented by the
-		/// specified root ProtoElement can be added to this element.
-		/// </summary>
-		/// <param name="rootElement">
-		/// The root ProtoElement representing a source element.  This can be null, 
-		/// in which case the ElementGroupPrototype does not contain an ProtoElements
-		/// and the code should inspect the ElementGroupPrototype context information.
-		/// </param>
-		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
-		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
-		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
-		{
-			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
-			
-			if (rootElement != null)
-			{
-				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::SPbSU.RobotsLanguage.AbstractNode.DomainClassId)) 
-				{
-					return true;
-				}
-			}
-			return base.CanMerge(rootElement, elementGroupPrototype);
-		}
-		
-		/// <summary>
-		/// Called by the Merge process to create a relationship between 
-		/// this target element and the specified source element. 
-		/// Typically, a parent-child relationship is established
-		/// between the target element (the parent) and the source element 
-		/// (the child), but any relationship can be established.
-		/// </summary>
-		/// <param name="sourceElement">The element that is to be related to this model element.</param>
-		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
-		/// <remarks>
-		/// This method is overriden to create the relationship between the target element and the specified source element.
-		/// The base method does nothing.
-		/// </remarks>
-		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
-		{
-			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
-			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
-			// need to support this case.
-			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
-		
-				
-			global::SPbSU.RobotsLanguage.AbstractNode sourceAbstractNode1 = sourceElement as global::SPbSU.RobotsLanguage.AbstractNode;
-			if (sourceAbstractNode1 != null)
-			{
-				// Create link for path RobotModelHasElements.Elements
-				this.Elements.Add(sourceAbstractNode1);
-
-				return;
-			}
-		
-			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
-			// during a "Paste".
-			if (sourceElement is DslModeling::ExtensionElement
-				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
-			{
-				return;
-			}
-		
-			// Fall through to base class if this class hasn't handled the merge.
-			base.MergeRelate(sourceElement, elementGroup);
-		}
-		
-		/// <summary>
-		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
-		/// element from the current one (removes links created by MergeRelate).
-		/// </summary>
-		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
-		{
-			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
-				
-			global::SPbSU.RobotsLanguage.AbstractNode sourceAbstractNode1 = sourceElement as global::SPbSU.RobotsLanguage.AbstractNode;
-			if (sourceAbstractNode1 != null)
-			{
-				// Delete link for path RobotModelHasElements.Elements
-				
-				foreach (DslModeling::ElementLink link in global::SPbSU.RobotsLanguage.RobotModelHasElements.GetLinks((global::SPbSU.RobotsLanguage.RobotModel)this, sourceAbstractNode1))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::SPbSU.RobotsLanguage.RobotModelHasElements.RobotModelDomainRoleId, global::SPbSU.RobotsLanguage.RobotModelHasElements.ElementDomainRoleId);
-				}
-
-				return;
-			}
-			// Fall through to base class if this class hasn't handled the unmerge.
-			base.MergeDisconnect(sourceElement);
 		}
 		#endregion
 	}
@@ -280,24 +169,6 @@ namespace SPbSU.RobotsLanguage
 		}
 		
 		#endregion
-		#region RobotModel opposite domain role accessor
-		/// <summary>
-		/// Gets or sets RobotModel.
-		/// </summary>
-		public virtual RobotModel RobotModel
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SPbSU.RobotsLanguage.RobotModelHasElements.ElementDomainRoleId) as RobotModel;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SPbSU.RobotsLanguage.RobotModelHasElements.ElementDomainRoleId, value);
-			}
-		}
-		#endregion
 		#region TargetAbstractNode opposite domain role accessor
 		
 		/// <summary>
@@ -327,6 +198,25 @@ namespace SPbSU.RobotsLanguage
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.TargetAbstractNodeDomainRoleId);
+			}
+		}
+		#endregion
+		#region Compound opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Compound.
+		/// Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNode
+		/// </summary>
+		public virtual Compound Compound
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNodeDomainRoleId) as Compound;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNodeDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -410,6 +300,252 @@ namespace SPbSU.RobotsLanguage
 		public FinishNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass Compound
+	/// Description for SPbSU.RobotsLanguage.Compound
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.Compound.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.Compound.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("46b80a85-0307-40a7-9260-5fb54debfe60")]
+	public abstract partial class Compound : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Compound domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x46b80a85, 0x0307, 0x40a7, 0x92, 0x60, 0x5f, 0xb5, 0x4d, 0xeb, 0xfe, 0x60);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected Compound(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region AbstractNode opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of AbstractNode.
+		/// Description for SPbSU.RobotsLanguage.CompoundHasAbstractNode.Compound
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<AbstractNode> AbstractNode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.CompoundDomainRoleId);
+			}
+		}
+		#endregion
+		#region SubprogramNode opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SubprogramNode.
+		/// Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.Compound
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<SubprogramNode> SubprogramNode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<SubprogramNode>, SubprogramNode>(global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.CompoundDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SPbSU.RobotsLanguage.SubprogramNode.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SPbSU.RobotsLanguage.AbstractNode.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::SPbSU.RobotsLanguage.SubprogramNode sourceSubprogramNode1 = sourceElement as global::SPbSU.RobotsLanguage.SubprogramNode;
+			if (sourceSubprogramNode1 != null)
+			{
+				// Create link for path CompoundHasSubprogramNode.SubprogramNode
+				this.SubprogramNode.Add(sourceSubprogramNode1);
+
+				return;
+			}
+				
+			global::SPbSU.RobotsLanguage.AbstractNode sourceAbstractNode2 = sourceElement as global::SPbSU.RobotsLanguage.AbstractNode;
+			if (sourceAbstractNode2 != null)
+			{
+				// Create link for path CompoundHasAbstractNode.AbstractNode
+				this.AbstractNode.Add(sourceAbstractNode2);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::SPbSU.RobotsLanguage.SubprogramNode sourceSubprogramNode1 = sourceElement as global::SPbSU.RobotsLanguage.SubprogramNode;
+			if (sourceSubprogramNode1 != null)
+			{
+				// Delete link for path CompoundHasSubprogramNode.SubprogramNode
+				
+				foreach (DslModeling::ElementLink link in global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.GetLinks((global::SPbSU.RobotsLanguage.Compound)this, sourceSubprogramNode1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.CompoundDomainRoleId, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNodeDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::SPbSU.RobotsLanguage.AbstractNode sourceAbstractNode2 = sourceElement as global::SPbSU.RobotsLanguage.AbstractNode;
+			if (sourceAbstractNode2 != null)
+			{
+				// Delete link for path CompoundHasAbstractNode.AbstractNode
+				
+				foreach (DslModeling::ElementLink link in global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.GetLinks((global::SPbSU.RobotsLanguage.Compound)this, sourceAbstractNode2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.CompoundDomainRoleId, global::SPbSU.RobotsLanguage.CompoundHasAbstractNode.AbstractNodeDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass SubprogramNode
+	/// Description for SPbSU.RobotsLanguage.SubprogramNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SubprogramNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SubprogramNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("1d4b884e-32b1-4612-92c1-b160b2c70f7a")]
+	public partial class SubprogramNode : Compound
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SubprogramNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1d4b884e, 0x32b1, 0x4612, 0x92, 0xc1, 0xb1, 0x60, 0xb2, 0xc7, 0x0f, 0x7a);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SubprogramNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SubprogramNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Compound opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Compound.
+		/// Description for SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNode
+		/// </summary>
+		public virtual Compound Compound
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNodeDomainRoleId) as Compound;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SPbSU.RobotsLanguage.CompoundHasSubprogramNode.SubprogramNodeDomainRoleId, value);
+			}
 		}
 		#endregion
 	}

@@ -203,6 +203,12 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::SPbSU.RobotsLanguage.SubprogramNode)
+			{
+				global::SPbSU.RobotsLanguage.Subprogram newShape = new global::SPbSU.RobotsLanguage.Subprogram(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode)
 			{
 				global::SPbSU.RobotsLanguage.ExampleConnector newShape = new global::SPbSU.RobotsLanguage.ExampleConnector(this.Partition);
@@ -418,6 +424,7 @@ namespace SPbSU.RobotsLanguage
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.StartNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.FinishNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
@@ -442,6 +449,17 @@ namespace SPbSU.RobotsLanguage
 				{
 					parentElement = GetParentForFinishNode((global::SPbSU.RobotsLanguage.FinishNode)childElement);
 				} else
+				if(childElement is global::SPbSU.RobotsLanguage.SubprogramNode)
+				{
+					// Method:
+					// private Microsoft.VisualStudio.Modeling.ModelElement GetParentForSubprogramNode(SubprogramNode childElement)
+					// {
+					// }
+					// must be implemented in a partial class of SPbSU.RobotsLanguage.FixUpDiagram.  Given a child element,
+					// this method should return the parent model element that is associated with the shape or diagram that will be the parent 
+					// of the shape created for this child.  If no shape should be created, the method should return null.
+					parentElement = GetParentForSubprogramNode((global::SPbSU.RobotsLanguage.SubprogramNode)childElement);
+				} else
 				{
 					parentElement = null;
 				}
@@ -451,17 +469,17 @@ namespace SPbSU.RobotsLanguage
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::SPbSU.RobotsLanguage.RobotModel GetParentForStartNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForStartNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
-				global::SPbSU.RobotsLanguage.RobotModel result = root.RobotModel;
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SPbSU.RobotsLanguage.RobotModel GetParentForFinishNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForFinishNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
-				global::SPbSU.RobotsLanguage.RobotModel result = root.RobotModel;
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
 				if ( result == null ) return null;
 				return result;
 			}
