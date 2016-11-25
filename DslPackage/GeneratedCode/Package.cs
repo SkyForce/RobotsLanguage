@@ -60,6 +60,22 @@ namespace SPbSU.RobotsLanguage
 					"@SubprogramToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 3)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@IfToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.IfToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"If", 
+					"@IfToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 4)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@EndIfToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.EndIfToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"EndIf", 
+					"@EndIfToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 5)]
 	[VSShell::ProvideEditorFactory(typeof(RobotsLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RobotsLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RobotsLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

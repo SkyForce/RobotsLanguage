@@ -236,6 +236,60 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- IfNode -->
+  <xsd:element name="ifNode" type="IfNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="IfNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IfNode Moniker -->
+  <xsd:element name="ifNodeMoniker" type="IfNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="IfNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for IfNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndIfNode -->
+  <xsd:element name="endIfNode" type="EndIfNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="EndIfNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndIfNode Moniker -->
+  <xsd:element name="endIfNodeMoniker" type="EndIfNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="EndIfNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EndIfNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- AbstractNodeReferencesTargetAbstractNode -->
   <xsd:element name="abstractNodeReferencesTargetAbstractNode" type="AbstractNodeReferencesTargetAbstractNode" substitutionGroup="core:modelElement" />
   <xsd:complexType name="AbstractNodeReferencesTargetAbstractNode">

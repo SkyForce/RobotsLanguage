@@ -73,6 +73,8 @@ namespace SPbSU.RobotsLanguage
 				typeof(FinishNode),
 				typeof(Compound),
 				typeof(SubprogramNode),
+				typeof(IfNode),
+				typeof(EndIfNode),
 				typeof(AbstractNodeReferencesTargetAbstractNode),
 				typeof(CompoundHasAbstractNode),
 				typeof(CompoundHasSubprogramNode),
@@ -81,6 +83,8 @@ namespace SPbSU.RobotsLanguage
 				typeof(Start),
 				typeof(Finish),
 				typeof(Subprogram),
+				typeof(If),
+				typeof(EndIf),
 				typeof(global::SPbSU.RobotsLanguage.FixUpDiagram),
 				typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged),
 			};
@@ -132,16 +136,20 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(15);
 				createElementMap.Add(typeof(RobotModel), 0);
 				createElementMap.Add(typeof(StartNode), 1);
 				createElementMap.Add(typeof(FinishNode), 2);
 				createElementMap.Add(typeof(SubprogramNode), 3);
-				createElementMap.Add(typeof(RobotsLanguageDiagram), 4);
-				createElementMap.Add(typeof(ExampleConnector), 5);
-				createElementMap.Add(typeof(Start), 6);
-				createElementMap.Add(typeof(Finish), 7);
-				createElementMap.Add(typeof(Subprogram), 8);
+				createElementMap.Add(typeof(IfNode), 4);
+				createElementMap.Add(typeof(EndIfNode), 5);
+				createElementMap.Add(typeof(RobotsLanguageDiagram), 6);
+				createElementMap.Add(typeof(ExampleConnector), 7);
+				createElementMap.Add(typeof(Start), 8);
+				createElementMap.Add(typeof(Finish), 9);
+				createElementMap.Add(typeof(Subprogram), 10);
+				createElementMap.Add(typeof(If), 11);
+				createElementMap.Add(typeof(EndIf), 12);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -159,11 +167,15 @@ namespace SPbSU.RobotsLanguage
 				case 1: return new StartNode(partition, propertyAssignments);
 				case 2: return new FinishNode(partition, propertyAssignments);
 				case 3: return new SubprogramNode(partition, propertyAssignments);
-				case 4: return new RobotsLanguageDiagram(partition, propertyAssignments);
-				case 5: return new ExampleConnector(partition, propertyAssignments);
-				case 6: return new Start(partition, propertyAssignments);
-				case 7: return new Finish(partition, propertyAssignments);
-				case 8: return new Subprogram(partition, propertyAssignments);
+				case 4: return new IfNode(partition, propertyAssignments);
+				case 5: return new EndIfNode(partition, propertyAssignments);
+				case 6: return new RobotsLanguageDiagram(partition, propertyAssignments);
+				case 7: return new ExampleConnector(partition, propertyAssignments);
+				case 8: return new Start(partition, propertyAssignments);
+				case 9: return new Finish(partition, propertyAssignments);
+				case 10: return new Subprogram(partition, propertyAssignments);
+				case 11: return new If(partition, propertyAssignments);
+				case 12: return new EndIf(partition, propertyAssignments);
 				default: return null;
 			}
 		}

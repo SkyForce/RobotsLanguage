@@ -181,6 +181,22 @@
     <value>Subprogram Node</value>
     <comment>DisplayName for DomainClass &apos;SubprogramNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.IfNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.IfNode</value>
+    <comment>Description for DomainClass &apos;IfNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IfNode.DisplayName" xml:space="preserve">
+    <value>If Node</value>
+    <comment>DisplayName for DomainClass &apos;IfNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIfNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndIfNode</value>
+    <comment>Description for DomainClass &apos;EndIfNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIfNode.DisplayName" xml:space="preserve">
+    <value>End If Node</value>
+    <comment>DisplayName for DomainClass &apos;EndIfNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
     <comment>Description for DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
@@ -313,6 +329,22 @@
     <value>Subprogram</value>
     <comment>DisplayName for DomainClass &apos;Subprogram&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.If.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.If</value>
+    <comment>Description for DomainClass &apos;If&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.If.DisplayName" xml:space="preserve">
+    <value>If</value>
+    <comment>DisplayName for DomainClass &apos;If&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIf.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndIf</value>
+    <comment>Description for DomainClass &apos;EndIf&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIf.DisplayName" xml:space="preserve">
+    <value>End If</value>
+    <comment>DisplayName for DomainClass &apos;EndIf&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
@@ -371,6 +403,22 @@
   </data>
   <data name="SubprogramToolboxTooltip" xml:space="preserve">
     <value>Subprogram</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="IfToolboxItem" xml:space="preserve">
+    <value>If</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="IfToolboxTooltip" xml:space="preserve">
+    <value>If</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EndIfToolboxItem" xml:space="preserve">
+    <value>EndIf</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EndIfToolboxTooltip" xml:space="preserve">
+    <value>End If</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -511,6 +559,14 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="SubprogramToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="IfToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EndIfToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

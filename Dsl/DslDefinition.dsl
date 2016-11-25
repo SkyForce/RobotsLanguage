@@ -50,6 +50,16 @@
         <DomainClassMoniker Name="Compound" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="616b1380-5ce9-4492-90f2-67434d4a6910" Description="Description for SPbSU.RobotsLanguage.IfNode" Name="IfNode" DisplayName="If Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="5e430085-4c92-4e41-a4b9-1e9790d84b7a" Description="Description for SPbSU.RobotsLanguage.EndIfNode" Name="EndIfNode" DisplayName="End If Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="1d688510-5d91-4320-afb3-7875c62fd843" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode" Name="AbstractNodeReferencesTargetAbstractNode" DisplayName="Abstract Node References Target Abstract Node" Namespace="SPbSU.RobotsLanguage">
@@ -130,7 +140,13 @@
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="cec34f27-e84d-40fa-8494-e3c714daef30" Description="Description for SPbSU.RobotsLanguage.Subprogram" Name="Subprogram" DisplayName="Subprogram" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram" InitialHeight="1" Geometry="Rectangle" />
+    <GeometryShape Id="cec34f27-e84d-40fa-8494-e3c714daef30" Description="Description for SPbSU.RobotsLanguage.Subprogram" Name="Subprogram" DisplayName="Subprogram" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <ExpandCollapseDecorator Name="ExpandCollapseDecorator1" DisplayName="Expand Collapse Decorator1" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="1af72e6b-f47f-4c4d-b988-eee19e723cb4" Description="Description for SPbSU.RobotsLanguage.If" Name="If" DisplayName="If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="If" InitialHeight="1" Geometry="Rectangle" />
+    <GeometryShape Id="b23f591d-93bc-436b-b049-dd53ddceac96" Description="Description for SPbSU.RobotsLanguage.EndIf" Name="EndIf" DisplayName="End If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End If" InitialHeight="1" Geometry="Rectangle" />
   </Shapes>
   <Connectors>
     <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
@@ -194,6 +210,18 @@
       </XmlClassData>
       <XmlClassData TypeName="CompoundHasSubprogramNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="compoundHasSubprogramNodeMoniker" ElementName="compoundHasSubprogramNode" MonikerTypeName="CompoundHasSubprogramNodeMoniker">
         <DomainRelationshipMoniker Name="CompoundHasSubprogramNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="IfNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="ifNodeMoniker" ElementName="ifNode" MonikerTypeName="IfNodeMoniker">
+        <DomainClassMoniker Name="IfNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="If" MonikerAttributeName="" SerializeId="true" MonikerElementName="ifMoniker" ElementName="if" MonikerTypeName="IfMoniker">
+        <GeometryShapeMoniker Name="If" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndIfNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIfNodeMoniker" ElementName="endIfNode" MonikerTypeName="EndIfNodeMoniker">
+        <DomainClassMoniker Name="EndIfNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndIf" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIfMoniker" ElementName="endIf" MonikerTypeName="EndIfMoniker">
+        <GeometryShapeMoniker Name="EndIf" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -277,6 +305,20 @@
         </ParentElementPath>
         <GeometryShapeMoniker Name="Subprogram" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="IfNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="If" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="EndIfNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="EndIf" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -304,6 +346,12 @@
       </ConnectionTool>
       <ElementTool Name="Subprogram" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Subprogram" Tooltip="Subprogram" HelpKeyword="Subprogram">
         <DomainClassMoniker Name="SubprogramNode" />
+      </ElementTool>
+      <ElementTool Name="If" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="If" Tooltip="If" HelpKeyword="If">
+        <DomainClassMoniker Name="IfNode" />
+      </ElementTool>
+      <ElementTool Name="EndIf" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndIf" Tooltip="End If" HelpKeyword="EndIf">
+        <DomainClassMoniker Name="EndIfNode" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
