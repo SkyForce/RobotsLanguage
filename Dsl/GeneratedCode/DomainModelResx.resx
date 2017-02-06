@@ -181,6 +181,14 @@
     <value>Subprogram Node</value>
     <comment>DisplayName for DomainClass &apos;SubprogramNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramNode/ElemName.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramNode.Elem Name</value>
+    <comment>Description for DomainProperty &apos;ElemName&apos; on DomainClass &apos;SubprogramNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramNode/ElemName.DisplayName" xml:space="preserve">
+    <value>Elem Name</value>
+    <comment>DisplayName for DomainProperty &apos;ElemName&apos; on DomainClass &apos;SubprogramNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.IfNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.IfNode</value>
     <comment>Description for DomainClass &apos;IfNode&apos;</comment>
@@ -189,6 +197,14 @@
     <value>If Node</value>
     <comment>DisplayName for DomainClass &apos;IfNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.IfNode/condition.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.IfNode.Condition</value>
+    <comment>Description for DomainProperty &apos;condition&apos; on DomainClass &apos;IfNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IfNode/condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainProperty &apos;condition&apos; on DomainClass &apos;IfNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.EndIfNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.EndIfNode</value>
     <comment>Description for DomainClass &apos;EndIfNode&apos;</comment>
@@ -196,6 +212,46 @@
   <data name="SPbSU.RobotsLanguage.EndIfNode.DisplayName" xml:space="preserve">
     <value>End If Node</value>
     <comment>DisplayName for DomainClass &apos;EndIfNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IterationsNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.IterationsNode</value>
+    <comment>Description for DomainClass &apos;IterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IterationsNode.DisplayName" xml:space="preserve">
+    <value>Iterations Node</value>
+    <comment>DisplayName for DomainClass &apos;IterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IterationsNode/number.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.IterationsNode.Number</value>
+    <comment>Description for DomainProperty &apos;number&apos; on DomainClass &apos;IterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.IterationsNode/number.DisplayName" xml:space="preserve">
+    <value>Number</value>
+    <comment>DisplayName for DomainProperty &apos;number&apos; on DomainClass &apos;IterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIterationsNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndIterationsNode</value>
+    <comment>Description for DomainClass &apos;EndIterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIterationsNode.DisplayName" xml:space="preserve">
+    <value>End Iterations Node</value>
+    <comment>DisplayName for DomainClass &apos;EndIterationsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCallNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramCallNode</value>
+    <comment>Description for DomainClass &apos;SubprogramCallNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCallNode.DisplayName" xml:space="preserve">
+    <value>Subprogram Call Node</value>
+    <comment>DisplayName for DomainClass &apos;SubprogramCallNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCallNode/Subprogram.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramCallNode.Subprogram</value>
+    <comment>Description for DomainProperty &apos;Subprogram&apos; on DomainClass &apos;SubprogramCallNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCallNode/Subprogram.DisplayName" xml:space="preserve">
+    <value>Subprogram</value>
+    <comment>DisplayName for DomainProperty &apos;Subprogram&apos; on DomainClass &apos;SubprogramCallNode&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
@@ -329,6 +385,10 @@
     <value>Subprogram</value>
     <comment>DisplayName for DomainClass &apos;Subprogram&apos;</comment>
   </data>
+  <data name="SubprogramTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.If.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.If</value>
     <comment>Description for DomainClass &apos;If&apos;</comment>
@@ -337,6 +397,14 @@
     <value>If</value>
     <comment>DisplayName for DomainClass &apos;If&apos;</comment>
   </data>
+  <data name="IfTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="IfCondDecoratorDefaultText" xml:space="preserve">
+    <value>Condition</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.EndIf.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.EndIf</value>
     <comment>Description for DomainClass &apos;EndIf&apos;</comment>
@@ -344,6 +412,54 @@
   <data name="SPbSU.RobotsLanguage.EndIf.DisplayName" xml:space="preserve">
     <value>End If</value>
     <comment>DisplayName for DomainClass &apos;EndIf&apos;</comment>
+  </data>
+  <data name="EndIfTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Iterations.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Iterations</value>
+    <comment>Description for DomainClass &apos;Iterations&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Iterations.DisplayName" xml:space="preserve">
+    <value>Iterations</value>
+    <comment>DisplayName for DomainClass &apos;Iterations&apos;</comment>
+  </data>
+  <data name="IterationsIterationsDecoratorDefaultText" xml:space="preserve">
+    <value>IterationsDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="IterationsTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIterations.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndIterations</value>
+    <comment>Description for DomainClass &apos;EndIterations&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndIterations.DisplayName" xml:space="preserve">
+    <value>End Iterations</value>
+    <comment>DisplayName for DomainClass &apos;EndIterations&apos;</comment>
+  </data>
+  <data name="EndIterationsTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCall.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramCall</value>
+    <comment>Description for DomainClass &apos;SubprogramCall&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCall.DisplayName" xml:space="preserve">
+    <value>Subprogram Call</value>
+    <comment>DisplayName for DomainClass &apos;SubprogramCall&apos;</comment>
+  </data>
+  <data name="SubprogramCallTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SubprogramCallSubprogramDefaultText" xml:space="preserve">
+    <value>Subprogram</value>
+    <comment>Text decorator default text</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -419,6 +535,30 @@
   </data>
   <data name="EndIfToolboxTooltip" xml:space="preserve">
     <value>End If</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="IterationsToolboxItem" xml:space="preserve">
+    <value>Iterations</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="IterationsToolboxTooltip" xml:space="preserve">
+    <value>Iterations</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EndIterationsToolboxItem" xml:space="preserve">
+    <value>EndIterations</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EndIterationsToolboxTooltip" xml:space="preserve">
+    <value>End Iterations</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SubprogramCallToolboxItem" xml:space="preserve">
+    <value>SubprogramCall</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SubprogramCallToolboxTooltip" xml:space="preserve">
+    <value>Subprogram Call</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -567,6 +707,18 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="EndIfToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="IterationsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EndIterationsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SubprogramCallToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

@@ -220,6 +220,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: ElemName -->
+        <xsd:attribute name="elemName" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -247,6 +249,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: condition -->
+        <xsd:attribute name="condition" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -283,6 +287,91 @@
   <xsd:complexType name="EndIfNodeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for EndIfNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IterationsNode -->
+  <xsd:element name="iterationsNode" type="IterationsNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="IterationsNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: number -->
+        <xsd:attribute name="number" type="xsd:integer" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- IterationsNode Moniker -->
+  <xsd:element name="iterationsNodeMoniker" type="IterationsNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="IterationsNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for IterationsNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndIterationsNode -->
+  <xsd:element name="endIterationsNode" type="EndIterationsNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="EndIterationsNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndIterationsNode Moniker -->
+  <xsd:element name="endIterationsNodeMoniker" type="EndIterationsNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="EndIterationsNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EndIterationsNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SubprogramCallNode -->
+  <xsd:element name="subprogramCallNode" type="SubprogramCallNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="SubprogramCallNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Subprogram -->
+        <xsd:attribute name="subprogram" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SubprogramCallNode Moniker -->
+  <xsd:element name="subprogramCallNodeMoniker" type="SubprogramCallNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="SubprogramCallNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SubprogramCallNode instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="AbstractNodeMoniker">

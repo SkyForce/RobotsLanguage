@@ -1,11 +1,12 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1667bfd3-4013-4d22-9db1-208d98d3e0dd}</ProjectGuid>
+    <ProjectGuid>{1667BFD3-4013-4D22-9DB1-208D98D3E0DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Debugging</RootNamespace>
@@ -44,9 +45,17 @@
       <SubType>
       </SubType>
     </None>
+    <None Include="RobotsLanguage2.rob" />
+    <None Include="RobotsLanguage2.rob.diagram">
+      <DependentUpon>RobotsLanguage2.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage3.rob" />
+    <None Include="RobotsLanguage3.rob.diagram">
+      <DependentUpon>RobotsLanguage3.rob</DependentUpon>
+    </None>
     <None Include="RobotsLanguageReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>RobotsLanguageReport.txt</LastGenOutput>
+      <LastGenOutput>RobotsLanguageReport.js</LastGenOutput>
     </None>
     <None Include="RobotsLanguageReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -65,7 +74,7 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RobotsLanguageReport.txt">
+    <Content Include="RobotsLanguageReport.js">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RobotsLanguageReport.tt</DependentUpon>

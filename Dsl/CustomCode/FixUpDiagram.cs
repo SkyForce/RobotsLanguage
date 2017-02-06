@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace SPbSU.RobotsLanguage
 {
-    partial class FixUpDiagram
+        partial class FixUpDiagram
     {
         private ModelElement GetParentForSubprogramNode(SubprogramNode elem)
         {
             return elem.Compound;
         }
     }
-
-    partial class Subprogram
+    
+        partial class Subprogram
     {
         /// <summary>
         /// Cannot move the children outside their children shape

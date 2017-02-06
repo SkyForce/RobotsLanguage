@@ -76,6 +76,30 @@ namespace SPbSU.RobotsLanguage
 					"@EndIfToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@IterationsToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.IterationsToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Iterations", 
+					"@IterationsToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@EndIterationsToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.EndIterationsToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"EndIterations", 
+					"@EndIterationsToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 7)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@SubprogramCallToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.SubprogramCallToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"SubprogramCall", 
+					"@SubprogramCallToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 8)]
 	[VSShell::ProvideEditorFactory(typeof(RobotsLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RobotsLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RobotsLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

@@ -1,16 +1,107 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
-<#@ output extension=".txt" #>
-<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='Sample.rob'" #>
-
-Generated material. Generating code in C#.
+<#@ template debug="true" #>
+<#@ output extension=".js" #>
+<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage3.rob'" #>
 
 <#
-  // When you change the DSL Definition, some of the code below may not work.
-
-  foreach (ExampleElement element in this.ExampleModel.Elements)
+  foreach (SubprogramNode element in RobotModel.SubprogramNode)
   {
-#>
-	<#= element.Name #>
-<#    
+
+	
+	go (element, "");
+
+	
   }
+  	AbstractNode f = null;
+	foreach (AbstractNode ab in RobotModel.AbstractNode) 
+	{
+		if (ab is StartNode) {
+			f = ab;
+			break;
+		}
+	}
+	generate(f.TargetAbstractNode[0], "FinishNode", true, false, "");
 #>
+
+<#+
+  void go(SubprogramNode elem, String par)
+  {
+	foreach (SubprogramNode n in elem.SubprogramNode)
+	{
+		go(n, par + elem.ElemName);
+	}
+	
+	WriteLine("function " + par + elem.ElemName + "() {");
+	PushIndent("    ");
+	AbstractNode f = null;
+	foreach (AbstractNode ab in elem.AbstractNode) 
+	{
+		if (ab is StartNode) {
+			f = ab;
+			break;
+		}
+	}
+	generate(f.TargetAbstractNode[0], "FinishNode", true, false, par + elem.ElemName);
+	PopIndent();
+	WriteLine("}");
+	
+
+  }
+
+  AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName)
+  {
+	while(isCycle || (f != null && flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end)))
+	{
+		
+		if(!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && f.SourceAbstractNode.Count == 2))
+		{
+			WriteLine("while(true) {");
+			PushIndent("    ");	
+			f = generate(f, f.ElemName, false, true, subName);
+			PopIndent();
+			WriteLine("}");
+			//f = null;
+		}
+		//Warning(f.GetType().ToString());
+		else if(f is IfNode)
+		{
+			WriteLine("if (" + (f as IfNode).condition + ") {");
+			PushIndent("    ");	
+			generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName);
+			PopIndent();
+			WriteLine("}");
+
+			WriteLine("else {");
+			PushIndent("    ");	
+			f = generate(f.TargetAbstractNode[1], "EndIfNode", true, false, subName);
+			PopIndent();
+			WriteLine("}");
+			
+		
+		}
+		else if (f is SubprogramCallNode)
+		{
+			isCycle = false;
+			WriteLine(subName+((SubprogramCallNode) f).Subprogram+"();");
+			//Compound c = f.Compound;
+			//while(f.Compound != c || !(f is FinishNode))
+			//	f = f.TargetAbstractNode[0];
+			f = f.TargetAbstractNode[0];
+			//f = generate(f.TargetAbstractNode[0], "FinishNode", subName+((SubprogramNode) f.Compound).ElemName);
+		}
+		else if (f is IterationsNode)
+		{
+			WriteLine(String.Format("for ({0} = 0; {0} < {1}; {0}++) {{", f.ElemName, (f as IterationsNode).number));
+			PushIndent("    ");	
+			f = generate(f.TargetAbstractNode[0], f.ElemName, false, false, subName);
+			PopIndent();
+			WriteLine("}");
+		}
+	}
+	if(f == null) return null;
+	return f.TargetAbstractNode.Count > 0 ? f.TargetAbstractNode[f.TargetAbstractNode.Count - 1] : null;
+
+  }
+
+#>
+

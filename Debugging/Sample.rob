@@ -1,6 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1617b3c5-431c-4132-acf4-3d4ce390a7dd" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
-  <elements>
-    <abstractNode Id="84eb6e42-5dd2-4f1e-8432-63dfc7c7dff3" elemName="AbstractNode1" />
-  </elements>
+  <abstractNode>
+    <compoundHasAbstractNode Id="a03f4939-1b23-47d0-9536-0ba00d5ce0ff">
+      <startNode Id="2065c208-3dec-447a-84c7-e1ac7b0e73b2" elemName="StartNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="0c392913-5985-4df9-894e-356d0a7553b8">
+            <ifNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/IfNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </startNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="499698a2-4afa-4cfb-8578-e577cbfa601f">
+      <ifNode Id="d15ee59c-fe84-4fed-a514-9d2ab242ebf8" elemName="IfNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="f9814ed3-2ace-4f24-a580-e07b1c4d8951">
+            <endIfNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/EndIfNode2" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </ifNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="3a5d3aba-d9eb-4440-8c2c-09860bd0b9ad">
+      <endIfNode Id="40985e50-c119-4954-8626-a866e83a5789" elemName="EndIfNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="eca60407-bcbc-4eb1-b4c1-02e08efef2d2">
+            <finishNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </endIfNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="163192f2-3294-414a-a196-438f68035788">
+      <endIfNode Id="0eae9f2c-77f8-4355-ba13-27596c8b6579" elemName="EndIfNode2">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="0a355e06-80c4-438c-8ba6-a86199c1f57a">
+            <finishNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </endIfNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="b2cc7ac4-fa42-49bf-822b-883a1be26981">
+      <ifNode Id="23fc92bc-0e75-4c6b-9c80-eaeaf6855bdf" elemName="IfNode2">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="a7f46f76-5d7d-4b3c-872b-93d34987cfea">
+            <endIfNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/EndIfNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="10548c06-ffc8-4dff-958f-e6f265f41637">
+            <endIfNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/EndIfNode2" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </ifNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="cdc39242-3145-4612-a8c1-251a384d20f3">
+      <finishNode Id="a3e9baf5-ae91-49ec-afc1-f76b27d14bf2" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+  </abstractNode>
 </robotModel>

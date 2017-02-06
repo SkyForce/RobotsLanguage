@@ -500,6 +500,7 @@ namespace SPbSU.RobotsLanguage
 	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SubprogramNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (ElemName = {elemNamePropertyStorage})")]
 	[DslModeling::DomainObjectId("1d4b884e-32b1-4612-92c1-b160b2c70f7a")]
 	public partial class SubprogramNode : Compound
 	{
@@ -528,6 +529,94 @@ namespace SPbSU.RobotsLanguage
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region ElemName domain property code
+		
+		/// <summary>
+		/// ElemName domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ElemNameDomainPropertyId = new global::System.Guid(0x02655334, 0x74c7, 0x4a29, 0xb6, 0x38, 0xf2, 0xbf, 0xef, 0xf2, 0x7c, 0x34);
+		
+		/// <summary>
+		/// Storage for ElemName
+		/// </summary>
+		private global::System.String elemNamePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ElemName domain property.
+		/// Description for SPbSU.RobotsLanguage.SubprogramNode.Elem Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SubprogramNode/ElemName.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SubprogramNode/ElemName.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("02655334-74c7-4a29-b638-f2bfeff27c34")]
+		public global::System.String ElemName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return elemNamePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ElemNamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SubprogramNode.ElemName domain property.
+		/// </summary>
+		internal sealed partial class ElemNamePropertyHandler : DslModeling::DomainPropertyValueHandler<SubprogramNode, global::System.String>
+		{
+			private ElemNamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SubprogramNode.ElemName domain property value handler.
+			/// </summary>
+			public static readonly ElemNamePropertyHandler Instance = new ElemNamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SubprogramNode.ElemName domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ElemNameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(SubprogramNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.elemNamePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SubprogramNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.elemNamePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region Compound opposite domain role accessor
 		/// <summary>
@@ -589,6 +678,94 @@ namespace SPbSU.RobotsLanguage
 		{
 		}
 		#endregion
+		#region condition domain property code
+		
+		/// <summary>
+		/// condition domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid conditionDomainPropertyId = new global::System.Guid(0x18da06d3, 0x9e00, 0x4b3e, 0x95, 0x95, 0x11, 0x96, 0xa2, 0x10, 0x17, 0x37);
+		
+		/// <summary>
+		/// Storage for condition
+		/// </summary>
+		private global::System.String conditionPropertyStorage = "condition";
+		
+		/// <summary>
+		/// Gets or sets the value of condition domain property.
+		/// Description for SPbSU.RobotsLanguage.IfNode.Condition
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.IfNode/condition.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.IfNode/condition.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("condition")]
+		[DslModeling::DomainObjectId("18da06d3-9e00-4b3e-9595-1196a2101737")]
+		public global::System.String condition
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				conditionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the IfNode.condition domain property.
+		/// </summary>
+		internal sealed partial class conditionPropertyHandler : DslModeling::DomainPropertyValueHandler<IfNode, global::System.String>
+		{
+			private conditionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the IfNode.condition domain property value handler.
+			/// </summary>
+			public static readonly conditionPropertyHandler Instance = new conditionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the IfNode.condition domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return conditionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(IfNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(IfNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace SPbSU.RobotsLanguage
@@ -629,6 +806,305 @@ namespace SPbSU.RobotsLanguage
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass IterationsNode
+	/// Description for SPbSU.RobotsLanguage.IterationsNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.IterationsNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.IterationsNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("995b91df-a86f-42ba-9348-bd97a4a50306")]
+	public partial class IterationsNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// IterationsNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x995b91df, 0xa86f, 0x42ba, 0x93, 0x48, 0xbd, 0x97, 0xa4, 0xa5, 0x03, 0x06);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public IterationsNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public IterationsNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region number domain property code
+		
+		/// <summary>
+		/// number domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid numberDomainPropertyId = new global::System.Guid(0xd0f2e232, 0xee5e, 0x4bb5, 0x8b, 0x18, 0xa8, 0x00, 0xc4, 0xdb, 0xdf, 0xc7);
+		
+		/// <summary>
+		/// Storage for number
+		/// </summary>
+		private global::System.Int32 numberPropertyStorage = 10;
+		
+		/// <summary>
+		/// Gets or sets the value of number domain property.
+		/// Description for SPbSU.RobotsLanguage.IterationsNode.Number
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.IterationsNode/number.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.IterationsNode/number.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue(10)]
+		[DslModeling::DomainObjectId("d0f2e232-ee5e-4bb5-8b18-a800c4dbdfc7")]
+		public global::System.Int32 number
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return numberPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				numberPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the IterationsNode.number domain property.
+		/// </summary>
+		internal sealed partial class numberPropertyHandler : DslModeling::DomainPropertyValueHandler<IterationsNode, global::System.Int32>
+		{
+			private numberPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the IterationsNode.number domain property value handler.
+			/// </summary>
+			public static readonly numberPropertyHandler Instance = new numberPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the IterationsNode.number domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return numberDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(IterationsNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.numberPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(IterationsNode element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.numberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass EndIterationsNode
+	/// Description for SPbSU.RobotsLanguage.EndIterationsNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.EndIterationsNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.EndIterationsNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("2edb7ad0-aaeb-47e7-a08f-c0db17f6a5fd")]
+	public partial class EndIterationsNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// EndIterationsNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2edb7ad0, 0xaaeb, 0x47e7, 0xa0, 0x8f, 0xc0, 0xdb, 0x17, 0xf6, 0xa5, 0xfd);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndIterationsNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndIterationsNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass SubprogramCallNode
+	/// Description for SPbSU.RobotsLanguage.SubprogramCallNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SubprogramCallNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SubprogramCallNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("15eb50e9-dd1f-4e16-b11b-a0d01aef3718")]
+	public partial class SubprogramCallNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SubprogramCallNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x15eb50e9, 0xdd1f, 0x4e16, 0xb1, 0x1b, 0xa0, 0xd0, 0x1a, 0xef, 0x37, 0x18);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SubprogramCallNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SubprogramCallNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Subprogram domain property code
+		
+		/// <summary>
+		/// Subprogram domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SubprogramDomainPropertyId = new global::System.Guid(0x931d49bd, 0x0dfd, 0x43c9, 0xa3, 0x6f, 0x76, 0x8f, 0x7a, 0xa2, 0x46, 0x43);
+		
+		/// <summary>
+		/// Storage for Subprogram
+		/// </summary>
+		private global::System.String subprogramPropertyStorage = "Subprogram";
+		
+		/// <summary>
+		/// Gets or sets the value of Subprogram domain property.
+		/// Description for SPbSU.RobotsLanguage.SubprogramCallNode.Subprogram
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SubprogramCallNode/Subprogram.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SubprogramCallNode/Subprogram.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("Subprogram")]
+		[DslModeling::DomainObjectId("931d49bd-0dfd-43c9-a36f-768f7aa24643")]
+		public global::System.String Subprogram
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return subprogramPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SubprogramPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SubprogramCallNode.Subprogram domain property.
+		/// </summary>
+		internal sealed partial class SubprogramPropertyHandler : DslModeling::DomainPropertyValueHandler<SubprogramCallNode, global::System.String>
+		{
+			private SubprogramPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SubprogramCallNode.Subprogram domain property value handler.
+			/// </summary>
+			public static readonly SubprogramPropertyHandler Instance = new SubprogramPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SubprogramCallNode.Subprogram domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SubprogramDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(SubprogramCallNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.subprogramPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SubprogramCallNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.subprogramPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 	}
 }
