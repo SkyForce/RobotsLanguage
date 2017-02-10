@@ -100,6 +100,22 @@ namespace SPbSU.RobotsLanguage
 					"@SubprogramCallToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@ParallelToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.ParallelToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Parallel", 
+					"@ParallelToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@EndParallelToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.EndParallelToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"EndParallel", 
+					"@EndParallelToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
 	[VSShell::ProvideEditorFactory(typeof(RobotsLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RobotsLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RobotsLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

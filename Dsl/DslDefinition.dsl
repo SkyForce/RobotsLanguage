@@ -103,9 +103,26 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
+    <DomainClass Id="1f952800-6025-4a3b-a498-407eccae749e" Description="Description for SPbSU.RobotsLanguage.ParallelNode" Name="ParallelNode" DisplayName="Parallel Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
+    <DomainClass Id="baf348e3-6cdf-4703-88e5-ce14a8111cc0" Description="Description for SPbSU.RobotsLanguage.EndParallelNode" Name="EndParallelNode" DisplayName="End Parallel Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="1d688510-5d91-4320-afb3-7875c62fd843" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode" Name="AbstractNodeReferencesTargetAbstractNode" DisplayName="Abstract Node References Target Abstract Node" Namespace="SPbSU.RobotsLanguage">
+      <Properties>
+        <DomainProperty Id="ffb31d05-6390-4122-829b-0953ca1a990a" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Condition" Name="Condition" DisplayName="Condition" DefaultValue="">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <Source>
         <DomainRole Id="caa5b174-6574-469c-aa81-13f57fa8224b" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.SourceAbstractNode" Name="SourceAbstractNode" DisplayName="Source Abstract Node" PropertyName="TargetAbstractNode" PropertyDisplayName="Target Abstract Node">
           <RolePlayer>
@@ -221,13 +238,27 @@
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Subprogram" DisplayName="Subprogram" DefaultText="Subprogram" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="a3ce68d5-b0d5-45be-b57f-a3a3a7672bee" Description="Description for SPbSU.RobotsLanguage.Parallel" Name="Parallel" DisplayName="Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Parallel" FillColor="DarkGray" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="6700cb94-4b14-43d2-8caf-daecc6cca3e7" Description="Description for SPbSU.RobotsLanguage.EndParallel" Name="EndParallel" DisplayName="End Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Parallel" FillColor="DarkGray" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
     </GeometryShape>
   </Shapes>
   <Connectors>
-    <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
+    <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
+      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
+      </ConnectorHasDecorators>
+    </Connector>
   </Connectors>
   <XmlSerializationBehavior Name="RobotsLanguageSerializationBehavior" Namespace="SPbSU.RobotsLanguage">
     <ClassData>
@@ -265,6 +296,11 @@
       </XmlClassData>
       <XmlClassData TypeName="AbstractNodeReferencesTargetAbstractNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="abstractNodeReferencesTargetAbstractNodeMoniker" ElementName="abstractNodeReferencesTargetAbstractNode" MonikerTypeName="AbstractNodeReferencesTargetAbstractNodeMoniker">
         <DomainRelationshipMoniker Name="AbstractNodeReferencesTargetAbstractNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="condition">
+            <DomainPropertyMoniker Name="AbstractNodeReferencesTargetAbstractNode/Condition" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="Compound" MonikerAttributeName="" SerializeId="true" MonikerElementName="compoundMoniker" ElementName="compound" MonikerTypeName="CompoundMoniker">
         <DomainClassMoniker Name="Compound" />
@@ -338,6 +374,18 @@
       </XmlClassData>
       <XmlClassData TypeName="SubprogramCall" MonikerAttributeName="" SerializeId="true" MonikerElementName="subprogramCallMoniker" ElementName="subprogramCall" MonikerTypeName="SubprogramCallMoniker">
         <GeometryShapeMoniker Name="SubprogramCall" />
+      </XmlClassData>
+      <XmlClassData TypeName="ParallelNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="parallelNodeMoniker" ElementName="parallelNode" MonikerTypeName="ParallelNodeMoniker">
+        <DomainClassMoniker Name="ParallelNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndParallelNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelNodeMoniker" ElementName="endParallelNode" MonikerTypeName="EndParallelNodeMoniker">
+        <DomainClassMoniker Name="EndParallelNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="Parallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="parallelMoniker" ElementName="parallel" MonikerTypeName="ParallelMoniker">
+        <GeometryShapeMoniker Name="Parallel" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndParallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelMoniker" ElementName="endParallel" MonikerTypeName="EndParallelMoniker">
+        <GeometryShapeMoniker Name="EndParallel" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -552,11 +600,57 @@
         </DecoratorMap>
         <GeometryShapeMoniker Name="Subprogram" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ParallelNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Parallel/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="Parallel" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="EndParallelNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Parallel/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="EndParallel/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="EndParallel" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
         <ConnectorMoniker Name="ExampleConnector" />
         <DomainRelationshipMoniker Name="AbstractNodeReferencesTargetAbstractNode" />
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ExampleConnector/Condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNodeReferencesTargetAbstractNode/Condition" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -594,6 +688,12 @@
       </ElementTool>
       <ElementTool Name="SubprogramCall" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="SubprogramCall" Tooltip="Subprogram Call" HelpKeyword="SubprogramCall">
         <DomainClassMoniker Name="SubprogramCallNode" />
+      </ElementTool>
+      <ElementTool Name="Parallel" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Parallel" Tooltip="Parallel" HelpKeyword="Parallel">
+        <DomainClassMoniker Name="ParallelNode" />
+      </ElementTool>
+      <ElementTool Name="EndParallel" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndParallel" Tooltip="End Parallel" HelpKeyword="EndParallel">
+        <DomainClassMoniker Name="EndParallelNode" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

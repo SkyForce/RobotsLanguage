@@ -78,6 +78,8 @@ namespace SPbSU.RobotsLanguage
 				typeof(IterationsNode),
 				typeof(EndIterationsNode),
 				typeof(SubprogramCallNode),
+				typeof(ParallelNode),
+				typeof(EndParallelNode),
 				typeof(AbstractNodeReferencesTargetAbstractNode),
 				typeof(CompoundHasAbstractNode),
 				typeof(CompoundHasSubprogramNode),
@@ -91,7 +93,10 @@ namespace SPbSU.RobotsLanguage
 				typeof(Iterations),
 				typeof(EndIterations),
 				typeof(SubprogramCall),
+				typeof(Parallel),
+				typeof(EndParallel),
 				typeof(global::SPbSU.RobotsLanguage.FixUpDiagram),
+				typeof(global::SPbSU.RobotsLanguage.DecoratorPropertyChanged),
 				typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged),
 			};
 		}
@@ -109,6 +114,7 @@ namespace SPbSU.RobotsLanguage
 				new DomainMemberInfo(typeof(IfNode), "condition", IfNode.conditionDomainPropertyId, typeof(IfNode.conditionPropertyHandler)),
 				new DomainMemberInfo(typeof(IterationsNode), "number", IterationsNode.numberDomainPropertyId, typeof(IterationsNode.numberPropertyHandler)),
 				new DomainMemberInfo(typeof(SubprogramCallNode), "Subprogram", SubprogramCallNode.SubprogramDomainPropertyId, typeof(SubprogramCallNode.SubprogramPropertyHandler)),
+				new DomainMemberInfo(typeof(AbstractNodeReferencesTargetAbstractNode), "Condition", AbstractNodeReferencesTargetAbstractNode.ConditionDomainPropertyId, typeof(AbstractNodeReferencesTargetAbstractNode.ConditionPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -146,7 +152,7 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(21);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(25);
 				createElementMap.Add(typeof(RobotModel), 0);
 				createElementMap.Add(typeof(StartNode), 1);
 				createElementMap.Add(typeof(FinishNode), 2);
@@ -156,16 +162,20 @@ namespace SPbSU.RobotsLanguage
 				createElementMap.Add(typeof(IterationsNode), 6);
 				createElementMap.Add(typeof(EndIterationsNode), 7);
 				createElementMap.Add(typeof(SubprogramCallNode), 8);
-				createElementMap.Add(typeof(RobotsLanguageDiagram), 9);
-				createElementMap.Add(typeof(ExampleConnector), 10);
-				createElementMap.Add(typeof(Start), 11);
-				createElementMap.Add(typeof(Finish), 12);
-				createElementMap.Add(typeof(Subprogram), 13);
-				createElementMap.Add(typeof(If), 14);
-				createElementMap.Add(typeof(EndIf), 15);
-				createElementMap.Add(typeof(Iterations), 16);
-				createElementMap.Add(typeof(EndIterations), 17);
-				createElementMap.Add(typeof(SubprogramCall), 18);
+				createElementMap.Add(typeof(ParallelNode), 9);
+				createElementMap.Add(typeof(EndParallelNode), 10);
+				createElementMap.Add(typeof(RobotsLanguageDiagram), 11);
+				createElementMap.Add(typeof(ExampleConnector), 12);
+				createElementMap.Add(typeof(Start), 13);
+				createElementMap.Add(typeof(Finish), 14);
+				createElementMap.Add(typeof(Subprogram), 15);
+				createElementMap.Add(typeof(If), 16);
+				createElementMap.Add(typeof(EndIf), 17);
+				createElementMap.Add(typeof(Iterations), 18);
+				createElementMap.Add(typeof(EndIterations), 19);
+				createElementMap.Add(typeof(SubprogramCall), 20);
+				createElementMap.Add(typeof(Parallel), 21);
+				createElementMap.Add(typeof(EndParallel), 22);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -188,16 +198,20 @@ namespace SPbSU.RobotsLanguage
 				case 6: return new IterationsNode(partition, propertyAssignments);
 				case 7: return new EndIterationsNode(partition, propertyAssignments);
 				case 8: return new SubprogramCallNode(partition, propertyAssignments);
-				case 9: return new RobotsLanguageDiagram(partition, propertyAssignments);
-				case 10: return new ExampleConnector(partition, propertyAssignments);
-				case 11: return new Start(partition, propertyAssignments);
-				case 12: return new Finish(partition, propertyAssignments);
-				case 13: return new Subprogram(partition, propertyAssignments);
-				case 14: return new If(partition, propertyAssignments);
-				case 15: return new EndIf(partition, propertyAssignments);
-				case 16: return new Iterations(partition, propertyAssignments);
-				case 17: return new EndIterations(partition, propertyAssignments);
-				case 18: return new SubprogramCall(partition, propertyAssignments);
+				case 9: return new ParallelNode(partition, propertyAssignments);
+				case 10: return new EndParallelNode(partition, propertyAssignments);
+				case 11: return new RobotsLanguageDiagram(partition, propertyAssignments);
+				case 12: return new ExampleConnector(partition, propertyAssignments);
+				case 13: return new Start(partition, propertyAssignments);
+				case 14: return new Finish(partition, propertyAssignments);
+				case 15: return new Subprogram(partition, propertyAssignments);
+				case 16: return new If(partition, propertyAssignments);
+				case 17: return new EndIf(partition, propertyAssignments);
+				case 18: return new Iterations(partition, propertyAssignments);
+				case 19: return new EndIterations(partition, propertyAssignments);
+				case 20: return new SubprogramCall(partition, propertyAssignments);
+				case 21: return new Parallel(partition, propertyAssignments);
+				case 22: return new EndParallel(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -361,6 +375,7 @@ namespace SPbSU.RobotsLanguage
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::SPbSU.RobotsLanguage.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::SPbSU.RobotsLanguage.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged));
 		}
 		
@@ -373,6 +388,7 @@ namespace SPbSU.RobotsLanguage
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::SPbSU.RobotsLanguage.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::SPbSU.RobotsLanguage.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged));
 		}
 		#endregion

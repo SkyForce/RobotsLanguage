@@ -379,6 +379,60 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- ParallelNode -->
+  <xsd:element name="parallelNode" type="ParallelNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="ParallelNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ParallelNode Moniker -->
+  <xsd:element name="parallelNodeMoniker" type="ParallelNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="ParallelNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ParallelNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndParallelNode -->
+  <xsd:element name="endParallelNode" type="EndParallelNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="EndParallelNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndParallelNode Moniker -->
+  <xsd:element name="endParallelNodeMoniker" type="EndParallelNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="EndParallelNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EndParallelNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- AbstractNodeReferencesTargetAbstractNode -->
   <xsd:element name="abstractNodeReferencesTargetAbstractNode" type="AbstractNodeReferencesTargetAbstractNode" substitutionGroup="core:modelElement" />
   <xsd:complexType name="AbstractNodeReferencesTargetAbstractNode">
@@ -398,6 +452,8 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Condition -->
+        <xsd:attribute name="condition" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

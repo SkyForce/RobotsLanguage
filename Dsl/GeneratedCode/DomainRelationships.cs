@@ -168,6 +168,95 @@ namespace SPbSU.RobotsLanguage
 			return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractNode>, AbstractNode>(element, SourceAbstractNodeDomainRoleId);
 		}
 		#endregion
+		#region Condition domain property code
+		
+		/// <summary>
+		/// Condition domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ConditionDomainPropertyId = new global::System.Guid(0xffb31d05, 0x6390, 0x4122, 0x82, 0x9b, 0x09, 0x53, 0xca, 0x1a, 0x99, 0x0a);
+		
+		/// <summary>
+		/// Storage for Condition
+		/// </summary>
+		private global::System.String conditionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Condition domain property.
+		/// Description for
+		/// SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Condition
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode/Condition.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode/Condition.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("")]
+		[DslModeling::DomainObjectId("ffb31d05-6390-4122-829b-0953ca1a990a")]
+		public global::System.String Condition
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ConditionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the AbstractNodeReferencesTargetAbstractNode.Condition domain property.
+		/// </summary>
+		internal sealed partial class ConditionPropertyHandler : DslModeling::DomainPropertyValueHandler<AbstractNodeReferencesTargetAbstractNode, global::System.String>
+		{
+			private ConditionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the AbstractNodeReferencesTargetAbstractNode.Condition domain property value handler.
+			/// </summary>
+			public static readonly ConditionPropertyHandler Instance = new ConditionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the AbstractNodeReferencesTargetAbstractNode.Condition domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ConditionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(AbstractNodeReferencesTargetAbstractNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(AbstractNodeReferencesTargetAbstractNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region SourceAbstractNode link accessor
 		/// <summary>
 		/// Get the list of AbstractNodeReferencesTargetAbstractNode links to a AbstractNode.

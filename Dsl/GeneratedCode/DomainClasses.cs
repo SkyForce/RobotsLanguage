@@ -1108,3 +1108,85 @@ namespace SPbSU.RobotsLanguage
 		#endregion
 	}
 }
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass ParallelNode
+	/// Description for SPbSU.RobotsLanguage.ParallelNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.ParallelNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.ParallelNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("1f952800-6025-4a3b-a498-407eccae749e")]
+	public partial class ParallelNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ParallelNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1f952800, 0x6025, 0x4a3b, 0xa4, 0x98, 0x40, 0x7e, 0xcc, 0xae, 0x74, 0x9e);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ParallelNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ParallelNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass EndParallelNode
+	/// Description for SPbSU.RobotsLanguage.EndParallelNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.EndParallelNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.EndParallelNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("baf348e3-6cdf-4703-88e5-ce14a8111cc0")]
+	public partial class EndParallelNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// EndParallelNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xbaf348e3, 0x6cdf, 0x4703, 0x88, 0xe5, 0xce, 0x14, 0xa8, 0x11, 0x1c, 0xc0);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndParallelNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndParallelNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}

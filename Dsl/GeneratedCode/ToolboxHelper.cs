@@ -98,7 +98,7 @@ namespace SPbSU.RobotsLanguage
 		{
 			get
 			{
-				return 9;
+				return 11;
 			}
 		}
 		
@@ -289,6 +289,38 @@ namespace SPbSU.RobotsLanguage
 						"SubprogramCall", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("SubprogramCallToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.SubprogramCallNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.ParallelToolboxItem":
+					// Add Parallel shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.ParallelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						10, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ParallelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ParallelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Parallel", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ParallelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.ParallelNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.EndParallelToolboxItem":
+					// Add EndParallel shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.EndParallelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						11, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("EndParallelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndParallelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"EndParallel", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("EndParallelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.EndParallelNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

@@ -253,6 +253,22 @@
     <value>Subprogram</value>
     <comment>DisplayName for DomainProperty &apos;Subprogram&apos; on DomainClass &apos;SubprogramCallNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.ParallelNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.ParallelNode</value>
+    <comment>Description for DomainClass &apos;ParallelNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.ParallelNode.DisplayName" xml:space="preserve">
+    <value>Parallel Node</value>
+    <comment>DisplayName for DomainClass &apos;ParallelNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndParallelNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndParallelNode</value>
+    <comment>Description for DomainClass &apos;EndParallelNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndParallelNode.DisplayName" xml:space="preserve">
+    <value>End Parallel Node</value>
+    <comment>DisplayName for DomainClass &apos;EndParallelNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
     <comment>Description for DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
@@ -260,6 +276,14 @@
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.DisplayName" xml:space="preserve">
     <value>Abstract Node References Target Abstract Node</value>
     <comment>DisplayName for DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode/Condition.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Condition</value>
+    <comment>Description for DomainProperty &apos;Condition&apos; on DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode/Condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainProperty &apos;Condition&apos; on DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode/SourceAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.SourceAbstractNode</value>
@@ -461,6 +485,30 @@
     <value>Subprogram</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.Parallel.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Parallel</value>
+    <comment>Description for DomainClass &apos;Parallel&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Parallel.DisplayName" xml:space="preserve">
+    <value>Parallel</value>
+    <comment>DisplayName for DomainClass &apos;Parallel&apos;</comment>
+  </data>
+  <data name="ParallelTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndParallel.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndParallel</value>
+    <comment>Description for DomainClass &apos;EndParallel&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndParallel.DisplayName" xml:space="preserve">
+    <value>End Parallel</value>
+    <comment>DisplayName for DomainClass &apos;EndParallel&apos;</comment>
+  </data>
+  <data name="EndParallelTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
@@ -468,6 +516,10 @@
   <data name="SPbSU.RobotsLanguage.ExampleConnector.DisplayName" xml:space="preserve">
     <value>Example Connector</value>
     <comment>DisplayName for DomainClass &apos;ExampleConnector&apos;</comment>
+  </data>
+  <data name="ExampleConnectorConditionDefaultText" xml:space="preserve">
+    <value>Condition</value>
+    <comment>Text decorator default text</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>RobotsLanguage (*.rob)|*.rob</value>
@@ -559,6 +611,22 @@
   </data>
   <data name="SubprogramCallToolboxTooltip" xml:space="preserve">
     <value>Subprogram Call</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ParallelToolboxItem" xml:space="preserve">
+    <value>Parallel</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ParallelToolboxTooltip" xml:space="preserve">
+    <value>Parallel</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EndParallelToolboxItem" xml:space="preserve">
+    <value>EndParallel</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EndParallelToolboxTooltip" xml:space="preserve">
+    <value>End Parallel</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -719,6 +787,14 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="SubprogramCallToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ParallelToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EndParallelToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

@@ -12,6 +12,23 @@
 
 	
   }
+  foreach (AbstractNode n in RobotModel.AbstractNode)
+	{
+		if (n is ParallelNode) {
+			int cur = 0;
+			var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(n);
+			for(int i = 0; i < list.Count; i++) {
+				if (!list[i].Condition.Equals(AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(n)[0].Condition)) {
+					WriteLine("function " + n.ElemName + "-" + cur + "() {");
+					PushIndent("    ");
+					generate(n.TargetAbstractNode[i], "FinishNode", true, false, "", list[i].Condition);
+					PopIndent();
+					WriteLine("}");
+					cur++;
+				}
+			}
+		}
+	}
   	AbstractNode f = null;
 	foreach (AbstractNode ab in RobotModel.AbstractNode) 
 	{
@@ -20,7 +37,7 @@
 			break;
 		}
 	}
-	generate(f.TargetAbstractNode[0], "FinishNode", true, false, "");
+	generate(f.TargetAbstractNode[0], "FinishNode", true, false, "", "");
 #>
 
 <#+
@@ -30,10 +47,10 @@
 	{
 		go(n, par + elem.ElemName);
 	}
+	AbstractNode f = null;
 	
 	WriteLine("function " + par + elem.ElemName + "() {");
 	PushIndent("    ");
-	AbstractNode f = null;
 	foreach (AbstractNode ab in elem.AbstractNode) 
 	{
 		if (ab is StartNode) {
@@ -41,23 +58,23 @@
 			break;
 		}
 	}
-	generate(f.TargetAbstractNode[0], "FinishNode", true, false, par + elem.ElemName);
+	generate(f.TargetAbstractNode[0], "FinishNode", true, false, par + elem.ElemName, "");//AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(f)[0].Condition);
 	PopIndent();
 	WriteLine("}");
 	
 
   }
 
-  AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName)
+  AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName, String thread)
   {
 	while(isCycle || (f != null && flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end)))
 	{
-		
-		if(!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && f.SourceAbstractNode.Count == 2))
+
+		if(!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndParallelNode) && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
 		{
 			WriteLine("while(true) {");
 			PushIndent("    ");	
-			f = generate(f, f.ElemName, false, true, subName);
+			f = generate(f, f.ElemName, false, true, subName, thread);
 			PopIndent();
 			WriteLine("}");
 			//f = null;
@@ -67,13 +84,13 @@
 		{
 			WriteLine("if (" + (f as IfNode).condition + ") {");
 			PushIndent("    ");	
-			generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName);
+			generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName, thread);
 			PopIndent();
 			WriteLine("}");
 
 			WriteLine("else {");
 			PushIndent("    ");	
-			f = generate(f.TargetAbstractNode[1], "EndIfNode", true, false, subName);
+			f = generate(f.TargetAbstractNode[1], "EndIfNode", true, false, subName, thread);
 			PopIndent();
 			WriteLine("}");
 			
@@ -82,20 +99,50 @@
 		else if (f is SubprogramCallNode)
 		{
 			isCycle = false;
-			WriteLine(subName+((SubprogramCallNode) f).Subprogram+"();");
-			//Compound c = f.Compound;
-			//while(f.Compound != c || !(f is FinishNode))
-			//	f = f.TargetAbstractNode[0];
+			WriteLine(((SubprogramCallNode) f).Subprogram+"();");
+
 			f = f.TargetAbstractNode[0];
-			//f = generate(f.TargetAbstractNode[0], "FinishNode", subName+((SubprogramNode) f.Compound).ElemName);
 		}
 		else if (f is IterationsNode)
 		{
 			WriteLine(String.Format("for ({0} = 0; {0} < {1}; {0}++) {{", f.ElemName, (f as IterationsNode).number));
 			PushIndent("    ");	
-			f = generate(f.TargetAbstractNode[0], f.ElemName, false, false, subName);
+			f = generate(f.TargetAbstractNode[0], f.ElemName, false, false, subName, thread);
 			PopIndent();
 			WriteLine("}");
+		}
+		else if (f is EndParallelNode)
+		{
+			if (!AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[0].Condition.Equals(thread))
+			{
+				break;
+			}
+			else
+			{
+				var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(f);
+				for(int i = 0; i < list.Count; i++)
+					if (!thread.Equals(list[i].Condition))
+						WriteLine("Threading.joinThread(\"{0}\");", list[i].Condition);
+
+				f = f.TargetAbstractNode[0];
+			}
+
+		}
+		else if (f is ParallelNode)
+		{
+			var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f);
+			AbstractNode g = null;
+			int cur = 0;
+			for(int i = 0; i < list.Count; i++)
+				if (!thread.Equals(list[i].Condition)) {
+					WriteLine("Threading.startThread(\"{0}\", \"{1}\");", list[i].Condition, subName + f.ElemName + "-" + cur);
+					cur++;
+				}
+				else
+					g = f.TargetAbstractNode[i];
+
+			f = g;
+
 		}
 	}
 	if(f == null) return null;
