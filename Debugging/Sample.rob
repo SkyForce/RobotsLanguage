@@ -16,8 +16,8 @@
           <abstractNodeReferencesTargetAbstractNode Id="ee7fdd38-3f6f-4eb3-a3b6-d539e1465c40" condition="on">
             <subprogramCallNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/SubprogramCallNode1" />
           </abstractNodeReferencesTargetAbstractNode>
-          <abstractNodeReferencesTargetAbstractNode Id="509e64a0-c289-4967-a606-76b0a98d5e01">
-            <subprogramCallNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/SubprogramCallNode2" />
+          <abstractNodeReferencesTargetAbstractNode Id="9e275728-5e7d-4601-8e39-f572641738ff">
+            <parallelNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/ParallelNode2" />
           </abstractNodeReferencesTargetAbstractNode>
         </targetAbstractNode>
       </parallelNode>
@@ -34,7 +34,7 @@
     <compoundHasAbstractNode Id="1557586f-d03f-41af-b271-fae95cf88d79">
       <subprogramCallNode Id="78b0fa15-3b0c-4460-864d-0c55e93c7e56" elemName="SubprogramCallNode2" subprogram="SubprogramNode1">
         <targetAbstractNode>
-          <abstractNodeReferencesTargetAbstractNode Id="f2724a63-a8be-4c92-8d79-5f1ed6a7a505">
+          <abstractNodeReferencesTargetAbstractNode Id="f2724a63-a8be-4c92-8d79-5f1ed6a7a505" condition="as">
             <endParallelNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/EndParallelNode1" />
           </abstractNodeReferencesTargetAbstractNode>
         </targetAbstractNode>
@@ -51,6 +51,27 @@
           </abstractNodeReferencesTargetAbstractNode>
         </targetAbstractNode>
       </endParallelNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="3a207ba7-1cba-4e0a-b09e-3c1661506c12">
+      <parallelNode Id="b9714a09-f1bb-4520-9860-ea6bf3c0e9f8" elemName="ParallelNode2">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="1cbfe67e-2890-4a98-929a-393999d2cbf3" condition="as">
+            <subprogramCallNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/SubprogramCallNode2" />
+          </abstractNodeReferencesTargetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="e1867a82-5e1f-43a0-a54a-4c4ccbbff618">
+            <subprogramCallNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/SubprogramCallNode3" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </parallelNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="f9c6b76e-0d6c-42c4-b808-47c5d4d18afd">
+      <subprogramCallNode Id="de0f413f-2cff-47f5-9b2f-d05236b12085" elemName="SubprogramCallNode3" subprogram="SubprogramNode2">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="0cc8cde6-fbd7-4788-9ced-01bfb7221268">
+            <endParallelNodeMoniker elemName="/1617b3c5-431c-4132-acf4-3d4ce390a7dd/EndParallelNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </subprogramCallNode>
     </compoundHasAbstractNode>
   </abstractNode>
   <subprogramNode>

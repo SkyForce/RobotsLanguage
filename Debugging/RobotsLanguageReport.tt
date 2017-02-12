@@ -1,7 +1,7 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ template debug="true" #>
 <#@ output extension=".js" #>
-<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage3.rob'" #>
+<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage2.rob'" #>
 
 <#
   foreach (SubprogramNode element in RobotModel.SubprogramNode)
@@ -70,7 +70,7 @@
 	while(isCycle || (f != null && flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end)))
 	{
 
-		if(!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndParallelNode) && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
+		if(!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
 		{
 			WriteLine("while(true) {");
 			PushIndent("    ");	
@@ -79,12 +79,17 @@
 			WriteLine("}");
 			//f = null;
 		}
+		else if(f is FinishNode) 
+		{
+			WriteLine("return;");
+			break;
+		}
 		//Warning(f.GetType().ToString());
 		else if(f is IfNode)
 		{
 			WriteLine("if (" + (f as IfNode).condition + ") {");
 			PushIndent("    ");	
-			generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName, thread);
+			AbstractNode g = generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName, thread);
 			PopIndent();
 			WriteLine("}");
 
@@ -93,7 +98,10 @@
 			f = generate(f.TargetAbstractNode[1], "EndIfNode", true, false, subName, thread);
 			PopIndent();
 			WriteLine("}");
-			
+			if (f == null)
+			{
+				f = g;
+			}
 		
 		}
 		else if (f is SubprogramCallNode)
@@ -144,6 +152,10 @@
 			f = g;
 
 		}
+	}
+	if (f is FinishNode && end.StartsWith("FinishNode"))
+	{
+		WriteLine("return;");
 	}
 	if(f == null) return null;
 	return f.TargetAbstractNode.Count > 0 ? f.TargetAbstractNode[f.TargetAbstractNode.Count - 1] : null;
