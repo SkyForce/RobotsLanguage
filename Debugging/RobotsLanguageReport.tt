@@ -152,6 +152,11 @@
 			f = g;
 
 		}
+		else if (f is BreakNode)
+		{
+			WriteLine("break;");
+			break;
+		}
 	}
 	if (f is FinishNode && end.StartsWith("FinishNode"))
 	{

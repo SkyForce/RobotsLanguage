@@ -65,10 +65,6 @@
     <None Include="Sample.rob.diagram">
       <DependentUpon>Sample.rob</DependentUpon>
     </None>
-    <None Include="Test.rob" />
-    <None Include="Test.rob.diagram">
-      <DependentUpon>Test.rob</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />

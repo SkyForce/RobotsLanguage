@@ -433,6 +433,33 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- BreakNode -->
+  <xsd:element name="breakNode" type="BreakNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="BreakNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- BreakNode Moniker -->
+  <xsd:element name="breakNodeMoniker" type="BreakNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="BreakNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for BreakNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- AbstractNodeReferencesTargetAbstractNode -->
   <xsd:element name="abstractNodeReferencesTargetAbstractNode" type="AbstractNodeReferencesTargetAbstractNode" substitutionGroup="core:modelElement" />
   <xsd:complexType name="AbstractNodeReferencesTargetAbstractNode">

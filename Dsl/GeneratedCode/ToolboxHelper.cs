@@ -98,7 +98,7 @@ namespace SPbSU.RobotsLanguage
 		{
 			get
 			{
-				return 11;
+				return 12;
 			}
 		}
 		
@@ -321,6 +321,22 @@ namespace SPbSU.RobotsLanguage
 						"EndParallel", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("EndParallelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.EndParallelNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.BreakToolboxItem":
+					// Add Break shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.BreakToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						12, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("BreakToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("BreakToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Break", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("BreakToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.BreakNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

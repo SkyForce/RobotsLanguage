@@ -1190,3 +1190,44 @@ namespace SPbSU.RobotsLanguage
 		#endregion
 	}
 }
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass BreakNode
+	/// Description for SPbSU.RobotsLanguage.BreakNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.BreakNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.BreakNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("1003be0e-277a-41a3-b4c0-8db1f065aa2a")]
+	public partial class BreakNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// BreakNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1003be0e, 0x277a, 0x41a3, 0xb4, 0xc0, 0x8d, 0xb1, 0xf0, 0x65, 0xaa, 0x2a);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public BreakNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public BreakNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}

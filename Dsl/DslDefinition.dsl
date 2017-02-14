@@ -113,6 +113,11 @@
         <DomainClassMoniker Name="AbstractNode" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="1003be0e-277a-41a3-b4c0-8db1f065aa2a" Description="Description for SPbSU.RobotsLanguage.BreakNode" Name="BreakNode" DisplayName="Break Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="1d688510-5d91-4320-afb3-7875c62fd843" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode" Name="AbstractNodeReferencesTargetAbstractNode" DisplayName="Abstract Node References Target Abstract Node" Namespace="SPbSU.RobotsLanguage">
@@ -252,6 +257,11 @@
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
     </GeometryShape>
+    <GeometryShape Id="1f299ca3-8042-425f-b9ef-7568df10e9e6" Description="Description for SPbSU.RobotsLanguage.Break" Name="Break" DisplayName="Break" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Break" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
+      </ShapeHasDecorators>
+    </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -386,6 +396,12 @@
       </XmlClassData>
       <XmlClassData TypeName="EndParallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelMoniker" ElementName="endParallel" MonikerTypeName="EndParallelMoniker">
         <GeometryShapeMoniker Name="EndParallel" />
+      </XmlClassData>
+      <XmlClassData TypeName="BreakNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakNodeMoniker" ElementName="breakNode" MonikerTypeName="BreakNodeMoniker">
+        <DomainClassMoniker Name="BreakNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="Break" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakMoniker" ElementName="break" MonikerTypeName="BreakMoniker">
+        <GeometryShapeMoniker Name="Break" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -638,6 +654,21 @@
         </DecoratorMap>
         <GeometryShapeMoniker Name="EndParallel" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="BreakNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Break/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="Break" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -694,6 +725,9 @@
       </ElementTool>
       <ElementTool Name="EndParallel" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndParallel" Tooltip="End Parallel" HelpKeyword="EndParallel">
         <DomainClassMoniker Name="EndParallelNode" />
+      </ElementTool>
+      <ElementTool Name="Break" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Break" Tooltip="Break" HelpKeyword="Break">
+        <DomainClassMoniker Name="BreakNode" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

@@ -4,9 +4,17 @@ function SubprogramNode1() {
 }
 if (condition) {
     if (condition) {
-        return;
     }
     else {
+        while(true) {
+            SubprogramNode1();
+            if (condition) {
+                SubprogramNode1();
+            }
+            else {
+                break;
+            }
+        }
     }
 }
 else {

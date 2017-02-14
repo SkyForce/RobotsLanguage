@@ -269,6 +269,14 @@
     <value>End Parallel Node</value>
     <comment>DisplayName for DomainClass &apos;EndParallelNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.BreakNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.BreakNode</value>
+    <comment>Description for DomainClass &apos;BreakNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.BreakNode.DisplayName" xml:space="preserve">
+    <value>Break Node</value>
+    <comment>DisplayName for DomainClass &apos;BreakNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
     <comment>Description for DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
@@ -509,6 +517,18 @@
     <value>TextDecorator1</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.Break.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Break</value>
+    <comment>Description for DomainClass &apos;Break&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Break.DisplayName" xml:space="preserve">
+    <value>Break</value>
+    <comment>DisplayName for DomainClass &apos;Break&apos;</comment>
+  </data>
+  <data name="BreakTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
@@ -627,6 +647,14 @@
   </data>
   <data name="EndParallelToolboxTooltip" xml:space="preserve">
     <value>End Parallel</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="BreakToolboxItem" xml:space="preserve">
+    <value>Break</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="BreakToolboxTooltip" xml:space="preserve">
+    <value>Break</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -795,6 +823,10 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="EndParallelToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="BreakToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

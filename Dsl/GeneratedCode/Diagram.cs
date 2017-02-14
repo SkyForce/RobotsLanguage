@@ -251,6 +251,12 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::SPbSU.RobotsLanguage.BreakNode)
+			{
+				global::SPbSU.RobotsLanguage.Break newShape = new global::SPbSU.RobotsLanguage.Break(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode)
 			{
 				global::SPbSU.RobotsLanguage.ExampleConnector newShape = new global::SPbSU.RobotsLanguage.ExampleConnector(this.Partition);
@@ -277,6 +283,7 @@ namespace SPbSU.RobotsLanguage
 			global::SPbSU.RobotsLanguage.Subprogram.DecoratorsInitialized += SubprogramDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Parallel.DecoratorsInitialized += ParallelDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.EndParallel.DecoratorsInitialized += EndParallelDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.Break.DecoratorsInitialized += BreakDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.ExampleConnector.DecoratorsInitialized += ExampleConnectorDecoratorMap.OnDecoratorsInitialized;
 		}
 		
@@ -488,6 +495,24 @@ namespace SPbSU.RobotsLanguage
 		}
 		
 		/// <summary>
+		/// Class containing decorator path traversal methods for Break.
+		/// </summary>
+		internal static partial class BreakDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for Break.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
 		/// Class containing decorator path traversal methods for ExampleConnector.
 		/// </summary>
 		internal static partial class ExampleConnectorDecoratorMap
@@ -666,6 +691,7 @@ namespace SPbSU.RobotsLanguage
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.ParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.BreakNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
@@ -728,6 +754,10 @@ namespace SPbSU.RobotsLanguage
 				if(childElement is global::SPbSU.RobotsLanguage.EndParallelNode)
 				{
 					parentElement = GetParentForEndParallelNode((global::SPbSU.RobotsLanguage.EndParallelNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.BreakNode)
+				{
+					parentElement = GetParentForBreakNode((global::SPbSU.RobotsLanguage.BreakNode)childElement);
 				} else
 				{
 					parentElement = null;
@@ -795,6 +825,13 @@ namespace SPbSU.RobotsLanguage
 				return result;
 			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForEndParallelNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForBreakNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
