@@ -277,6 +277,30 @@
     <value>Break Node</value>
     <comment>DisplayName for DomainClass &apos;BreakNode&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.SwitchNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SwitchNode</value>
+    <comment>Description for DomainClass &apos;SwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SwitchNode.DisplayName" xml:space="preserve">
+    <value>Switch Node</value>
+    <comment>DisplayName for DomainClass &apos;SwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SwitchNode/Condition.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SwitchNode.Condition</value>
+    <comment>Description for DomainProperty &apos;Condition&apos; on DomainClass &apos;SwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SwitchNode/Condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainProperty &apos;Condition&apos; on DomainClass &apos;SwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndSwitchNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndSwitchNode</value>
+    <comment>Description for DomainClass &apos;EndSwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndSwitchNode.DisplayName" xml:space="preserve">
+    <value>End Switch Node</value>
+    <comment>DisplayName for DomainClass &apos;EndSwitchNode&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
     <comment>Description for DomainClass &apos;AbstractNodeReferencesTargetAbstractNode&apos;</comment>
@@ -526,6 +550,34 @@
     <comment>DisplayName for DomainClass &apos;Break&apos;</comment>
   </data>
   <data name="BreakTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Switch.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Switch</value>
+    <comment>Description for DomainClass &apos;Switch&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Switch.DisplayName" xml:space="preserve">
+    <value>Switch</value>
+    <comment>DisplayName for DomainClass &apos;Switch&apos;</comment>
+  </data>
+  <data name="SwitchTextDecorator1DefaultText" xml:space="preserve">
+    <value>TextDecorator1</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SwitchConditionDefaultText" xml:space="preserve">
+    <value>Condition</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndSwitch.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.EndSwitch</value>
+    <comment>Description for DomainClass &apos;EndSwitch&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.EndSwitch.DisplayName" xml:space="preserve">
+    <value>End Switch</value>
+    <comment>DisplayName for DomainClass &apos;EndSwitch&apos;</comment>
+  </data>
+  <data name="EndSwitchTextDecorator1DefaultText" xml:space="preserve">
     <value>TextDecorator1</value>
     <comment>Text decorator default text</comment>
   </data>

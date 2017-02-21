@@ -1231,3 +1231,173 @@ namespace SPbSU.RobotsLanguage
 		#endregion
 	}
 }
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass SwitchNode
+	/// Description for SPbSU.RobotsLanguage.SwitchNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SwitchNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SwitchNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("4a312676-0f5c-4021-9ac5-e94e81834baa")]
+	public partial class SwitchNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// SwitchNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4a312676, 0x0f5c, 0x4021, 0x9a, 0xc5, 0xe9, 0x4e, 0x81, 0x83, 0x4b, 0xaa);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SwitchNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public SwitchNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Condition domain property code
+		
+		/// <summary>
+		/// Condition domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ConditionDomainPropertyId = new global::System.Guid(0x142607b8, 0x3b41, 0x4f7b, 0xbf, 0x67, 0x62, 0xfe, 0x2b, 0x48, 0xa7, 0x97);
+		
+		/// <summary>
+		/// Storage for Condition
+		/// </summary>
+		private global::System.String conditionPropertyStorage = "condition";
+		
+		/// <summary>
+		/// Gets or sets the value of Condition domain property.
+		/// Description for SPbSU.RobotsLanguage.SwitchNode.Condition
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.SwitchNode/Condition.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.SwitchNode/Condition.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("condition")]
+		[DslModeling::DomainObjectId("142607b8-3b41-4f7b-bf67-62fe2b48a797")]
+		public global::System.String Condition
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ConditionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SwitchNode.Condition domain property.
+		/// </summary>
+		internal sealed partial class ConditionPropertyHandler : DslModeling::DomainPropertyValueHandler<SwitchNode, global::System.String>
+		{
+			private ConditionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SwitchNode.Condition domain property value handler.
+			/// </summary>
+			public static readonly ConditionPropertyHandler Instance = new ConditionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SwitchNode.Condition domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ConditionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(SwitchNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SwitchNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass EndSwitchNode
+	/// Description for SPbSU.RobotsLanguage.EndSwitchNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.EndSwitchNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.EndSwitchNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("37f16d00-0ec3-4b67-889f-d83d9fc1f99d")]
+	public partial class EndSwitchNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// EndSwitchNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x37f16d00, 0x0ec3, 0x4b67, 0x88, 0x9f, 0xd8, 0x3d, 0x9f, 0xc1, 0xf9, 0x9d);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndSwitchNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndSwitchNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}

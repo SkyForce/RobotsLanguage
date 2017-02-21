@@ -118,6 +118,23 @@
         <DomainClassMoniker Name="AbstractNode" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="4a312676-0f5c-4021-9ac5-e94e81834baa" Description="Description for SPbSU.RobotsLanguage.SwitchNode" Name="SwitchNode" DisplayName="Switch Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="142607b8-3b41-4f7b-bf67-62fe2b48a797" Description="Description for SPbSU.RobotsLanguage.SwitchNode.Condition" Name="Condition" DisplayName="Condition" DefaultValue="condition">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="37f16d00-0ec3-4b67-889f-d83d9fc1f99d" Description="Description for SPbSU.RobotsLanguage.EndSwitchNode" Name="EndSwitchNode" DisplayName="End Switch Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="1d688510-5d91-4320-afb3-7875c62fd843" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode" Name="AbstractNodeReferencesTargetAbstractNode" DisplayName="Abstract Node References Target Abstract Node" Namespace="SPbSU.RobotsLanguage">
@@ -262,6 +279,19 @@
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
     </GeometryShape>
+    <GeometryShape Id="16038f40-d30a-45e7-9c05-93f0bb37f493" Description="Description for SPbSU.RobotsLanguage.Switch" Name="Switch" DisplayName="Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Switch" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="683c13f9-f212-4a1a-a3f3-a4e9a500ea76" Description="Description for SPbSU.RobotsLanguage.EndSwitch" Name="EndSwitch" DisplayName="End Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Switch" InitialHeight="1" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
+      </ShapeHasDecorators>
+    </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -402,6 +432,23 @@
       </XmlClassData>
       <XmlClassData TypeName="Break" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakMoniker" ElementName="break" MonikerTypeName="BreakMoniker">
         <GeometryShapeMoniker Name="Break" />
+      </XmlClassData>
+      <XmlClassData TypeName="SwitchNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="switchNodeMoniker" ElementName="switchNode" MonikerTypeName="SwitchNodeMoniker">
+        <DomainClassMoniker Name="SwitchNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="condition">
+            <DomainPropertyMoniker Name="SwitchNode/Condition" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="Switch" MonikerAttributeName="" SerializeId="true" MonikerElementName="switchMoniker" ElementName="switch" MonikerTypeName="SwitchMoniker">
+        <GeometryShapeMoniker Name="Switch" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndSwitchNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endSwitchNodeMoniker" ElementName="endSwitchNode" MonikerTypeName="EndSwitchNodeMoniker">
+        <DomainClassMoniker Name="EndSwitchNode" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndSwitch" MonikerAttributeName="" SerializeId="true" MonikerElementName="endSwitchMoniker" ElementName="endSwitch" MonikerTypeName="EndSwitchMoniker">
+        <GeometryShapeMoniker Name="EndSwitch" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -668,6 +715,52 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <GeometryShapeMoniker Name="Break" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="SwitchNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="EndSwitch/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Switch/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Switch/Condition" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="SwitchNode/Condition" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="Switch" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="EndSwitchNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="EndSwitch/TextDecorator1" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="EndSwitch" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
