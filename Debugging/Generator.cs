@@ -36,21 +36,22 @@ namespace Debugging
                         if (!list[i].Condition.Equals(AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(n)[0].Condition))
                         {
 
-                            writer.WriteLine("function " + n.ElemName + "-" + cur + "() {");
-
+                            writer.WriteLine("function " + n.ElemName + "_" + cur + "() {");
                             writer.PushIndent("    ");
 
                             generate(n.TargetAbstractNode[i], "FinishNode", true, false, "", list[i].Condition);
 
                             writer.PopIndent();
-
                             writer.WriteLine("}");
+
                             cur++;
                         }
                     }
                 }
             }
             AbstractNode f = null;
+            writer.WriteLine("function main() {");
+            writer.PushIndent("    ");
             foreach (AbstractNode ab in RobotModel.AbstractNode)
             {
                 if (ab is StartNode)
@@ -61,6 +62,8 @@ namespace Debugging
             }
 
             generate(f.TargetAbstractNode[0], "FinishNode", true, false, "", "");
+            writer.PopIndent();
+            writer.WriteLine("}");
         }
 
         void go(SubprogramNode elem, String par)
@@ -129,7 +132,6 @@ namespace Debugging
                 }
                 else if (f is SubprogramCallNode)
                 {
-                    isCycle = false;
                     writer.WriteLine(((SubprogramCallNode)f).Subprogram + "();");
 
                     f = f.TargetAbstractNode[0];
@@ -153,7 +155,7 @@ namespace Debugging
                         var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(f);
                         for (int i = 0; i < list.Count; i++)
                             if (!thread.Equals(list[i].Condition))
-                                writer.WriteLine("Threading.joinThread(\"{0}\");", list[i].Condition);
+                                writer.WriteLine("Threading.joinThread(\"{0}\");", list[i].Condition.Equals("") ? "main" : list[i].Condition);
 
                         f = f.TargetAbstractNode[0];
                     }
@@ -181,6 +183,35 @@ namespace Debugging
                     writer.WriteLine("break;");
                     break;
                 }
+                else if (f is SwitchNode)
+                {
+                    writer.WriteLine(String.Format("switch ({0}) {{", ((SwitchNode) f).Condition));
+                    AbstractNode g, g0 = null;
+                    writer.PushIndent("    ");
+               
+                    for (int i = 0; i < f.TargetAbstractNode.Count; i++)
+                    {
+                        String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
+                        if (cond.Equals(""))
+                            writer.WriteLine("default:");
+                        else
+                            writer.WriteLine(String.Format("case {0}:", AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition));
+                        writer.PushIndent("    ");
+                        g = generate(f.TargetAbstractNode[i], "EndSwitch", true, false, subName, thread);
+                        writer.WriteLine("break;");
+                        writer.PopIndent();
+                        if (g != null)
+                        {
+                            g0 = g;
+                        }
+                    }
+                    writer.PopIndent();
+                    writer.WriteLine("}");
+
+                    f = g0;
+
+                }
+                isCycle = false;
             }
             if (f is FinishNode && end.StartsWith("FinishNode"))
             {

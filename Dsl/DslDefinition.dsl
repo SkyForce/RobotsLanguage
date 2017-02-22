@@ -822,6 +822,12 @@
       <ElementTool Name="Break" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Break" Tooltip="Break" HelpKeyword="Break">
         <DomainClassMoniker Name="BreakNode" />
       </ElementTool>
+      <ElementTool Name="Switch" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Switch" Tooltip="Switch" HelpKeyword="Switch">
+        <DomainClassMoniker Name="SwitchNode" />
+      </ElementTool>
+      <ElementTool Name="EndSwitch" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndSwitch" Tooltip="End Switch" HelpKeyword="EndSwitch">
+        <DomainClassMoniker Name="EndSwitchNode" />
+      </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="RobotsLanguageDiagram" />

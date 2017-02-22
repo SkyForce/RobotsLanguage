@@ -709,6 +709,22 @@
     <value>Break</value>
     <comment>Toolbox tooltip text</comment>
   </data>
+  <data name="SwitchToolboxItem" xml:space="preserve">
+    <value>Switch</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SwitchToolboxTooltip" xml:space="preserve">
+    <value>Switch</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EndSwitchToolboxItem" xml:space="preserve">
+    <value>EndSwitch</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EndSwitchToolboxTooltip" xml:space="preserve">
+    <value>End Switch</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
     <value>ToolboxItem {0} was not found</value>
     <comment>Invalid toolId</comment>
@@ -879,6 +895,14 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="BreakToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SwitchToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EndSwitchToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

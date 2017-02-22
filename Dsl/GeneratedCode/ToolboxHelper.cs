@@ -98,7 +98,7 @@ namespace SPbSU.RobotsLanguage
 		{
 			get
 			{
-				return 12;
+				return 14;
 			}
 		}
 		
@@ -337,6 +337,38 @@ namespace SPbSU.RobotsLanguage
 						"Break", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("BreakToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.BreakNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.SwitchToolboxItem":
+					// Add Switch shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.SwitchToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						13, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("SwitchToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SwitchToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Switch", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("SwitchToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.SwitchNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.EndSwitchToolboxItem":
+					// Add EndSwitch shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.EndSwitchToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						14, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("EndSwitchToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndSwitchToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"EndSwitch", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("EndSwitchToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.EndSwitchNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
