@@ -76,8 +76,16 @@ namespace SPbSU.RobotsLanguage
         private void Validate(ValidationContext context)
         {
             this.context = context;
+            ValidateSubprogram(this);
+            foreach(SubprogramNode sub in SubprogramNode)
+            {
+                ValidateSubprogram(sub);
+            }
+        }
+        void ValidateSubprogram(Compound elem)
+        {
             AbstractNode st = null;
-            foreach (AbstractNode an in AbstractNode)
+            foreach (AbstractNode an in elem.AbstractNode)
             {
                 if (an is StartNode)
                 {
@@ -161,7 +169,7 @@ namespace SPbSU.RobotsLanguage
                         context.LogError("Incorrect target elements", "target", an);
                 }
                 else context.LogError("unknown", "unknown", an);
-                
+
             }
             nodes.Clear();
             nodes.Add(st.ElemName);
@@ -169,7 +177,6 @@ namespace SPbSU.RobotsLanguage
 
             context.LogMessage(nodes.Count.ToString() + " elements", "count");
         }
-
         AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName, String thread)
         {
             while (f != null && (isCycle || (flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end))))
