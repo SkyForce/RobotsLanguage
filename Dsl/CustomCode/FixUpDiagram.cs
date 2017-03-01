@@ -190,7 +190,7 @@ namespace SPbSU.RobotsLanguage
                     }
                     nodes.Add(f.ElemName);
                 }
-                if (!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
+                if (!isCycle && !(f is FinishNode) && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
                 {
                     
                     f = generate(f, f.ElemName, false, true, subName, thread);
@@ -203,11 +203,18 @@ namespace SPbSU.RobotsLanguage
                 //Warning(f.GetType().ToString());
                 else if (f is IfNode)
                 {
+                    AbstractNode g = null, g1 = null;
+                    for (int i = 0; i < f.TargetAbstractNode.Count; i++)
+                    {
+                        String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
+                        if (cond.Equals("out"))
+                            continue;
+                        else if (cond.Equals("true"))
+                            g = generate(f.TargetAbstractNode[i], "EndIfNode", true, false, subName, thread);
+                        else
+                            g1 = generate(f.TargetAbstractNode[i], "EndIfNode", true, false, subName, thread);
+                    }
                     
-                    AbstractNode g = generate(f.TargetAbstractNode[0], "EndIfNode", true, false, subName, thread);
-
-                    AbstractNode g1 = generate(f.TargetAbstractNode[1], "EndIfNode", true, false, subName, thread);
-
                     if (g1 == null)
                     {
                         f = g;
@@ -225,14 +232,23 @@ namespace SPbSU.RobotsLanguage
                 }
                 else if (f is SubprogramCallNode)
                 {
-                    
-                    f = f.TargetAbstractNode[0];
+                    for (int i = 0; i < f.TargetAbstractNode.Count; i++)
+                    {
+                        String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
+                        if (cond.Equals("out"))
+                            continue;
+                        f = f.TargetAbstractNode[i];
+                    }
                 }
                 else if (f is IterationsNode)
                 {
-
-                    f = generate(f.TargetAbstractNode[0], f.ElemName, false, false, subName, thread);
-
+                    for (int i = 0; i < f.TargetAbstractNode.Count; i++)
+                    {
+                        String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
+                        if (cond.Equals("out"))
+                            continue;
+                        f = generate(f.TargetAbstractNode[i], f.ElemName, false, false, subName, thread);
+                    }
                 }
                 else if (f is EndParallelNode)
                 {
@@ -286,7 +302,8 @@ namespace SPbSU.RobotsLanguage
                     for (int i = 0; i < f.TargetAbstractNode.Count; i++)
                     {
                         String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
-                        
+                        if (cond.Equals("out"))
+                            continue;
                         g = generate(f.TargetAbstractNode[i], "EndSwitch", true, false, subName, thread);
 
                         if (g != null)
@@ -308,6 +325,12 @@ namespace SPbSU.RobotsLanguage
             }
             if (f != null) nodes.Add(f.ElemName);
             if (f == null) return null;
+            for (int i = 0; i < f.TargetAbstractNode.Count; i++)
+            {
+                String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;
+                if (cond.Equals("out"))
+                    return f.TargetAbstractNode[i];
+            }
             return f.TargetAbstractNode.Count > 0 ? f.TargetAbstractNode[f.TargetAbstractNode.Count - 1] : null;
 
         }

@@ -62,9 +62,9 @@
     <None Include="RobotsLanguage4.rob.diagram">
       <DependentUpon>RobotsLanguage4.rob</DependentUpon>
     </None>
-    <None Include="RobotsLanguage6.rob" />
-    <None Include="RobotsLanguage6.rob.diagram">
-      <DependentUpon>RobotsLanguage6.rob</DependentUpon>
+    <None Include="RobotsLanguage7.rob" />
+    <None Include="RobotsLanguage7.rob.diagram">
+      <DependentUpon>RobotsLanguage7.rob</DependentUpon>
     </None>
     <None Include="RobotsLanguageReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
