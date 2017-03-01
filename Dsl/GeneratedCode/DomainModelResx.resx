@@ -229,14 +229,6 @@
     <value>Number</value>
     <comment>DisplayName for DomainProperty &apos;number&apos; on DomainClass &apos;IterationsNode&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.EndIterationsNode.Description" xml:space="preserve">
-    <value>Description for SPbSU.RobotsLanguage.EndIterationsNode</value>
-    <comment>Description for DomainClass &apos;EndIterationsNode&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.EndIterationsNode.DisplayName" xml:space="preserve">
-    <value>End Iterations Node</value>
-    <comment>DisplayName for DomainClass &apos;EndIterationsNode&apos;</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.SubprogramCallNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.SubprogramCallNode</value>
     <comment>Description for DomainClass &apos;SubprogramCallNode&apos;</comment>
@@ -489,18 +481,6 @@
     <value>TextDecorator1</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.EndIterations.Description" xml:space="preserve">
-    <value>Description for SPbSU.RobotsLanguage.EndIterations</value>
-    <comment>Description for DomainClass &apos;EndIterations&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.EndIterations.DisplayName" xml:space="preserve">
-    <value>End Iterations</value>
-    <comment>DisplayName for DomainClass &apos;EndIterations&apos;</comment>
-  </data>
-  <data name="EndIterationsTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.SubprogramCall.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.SubprogramCall</value>
     <comment>Description for DomainClass &apos;SubprogramCall&apos;</comment>
@@ -667,14 +647,6 @@
   </data>
   <data name="IterationsToolboxTooltip" xml:space="preserve">
     <value>Iterations</value>
-    <comment>Toolbox tooltip text</comment>
-  </data>
-  <data name="EndIterationsToolboxItem" xml:space="preserve">
-    <value>EndIterations</value>
-    <comment>Toolbox item name</comment>
-  </data>
-  <data name="EndIterationsToolboxTooltip" xml:space="preserve">
-    <value>End Iterations</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="SubprogramCallToolboxItem" xml:space="preserve">
@@ -875,10 +847,6 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="IterationsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>Toolbox item image</comment>
-  </data>
-  <data name="EndIterationsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

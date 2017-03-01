@@ -4,23 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Modeling;
-using SPbSU.RobotsLanguage;
 using Microsoft.VisualStudio.TextTemplating;
+using Microsoft.VisualStudio.Modeling.Validation;
 
-
-namespace Debugging
+namespace SPbSU.RobotsLanguage
 {
     public class Generator
     {
         RobotModel RobotModel;
         TextTransformation writer;
+        ValidationController controller;
         public Generator(RobotModel r, TextTransformation w)
         {
             RobotModel = r;
             writer = w;
+            //controller = (RobotsLanguageDocData) this.CurrentDocData.ValidationController;
         }
         public void Start()
         {
+            //controller.ValidateCustom(RobotModel, "ValidateAll");
             foreach (SubprogramNode element in RobotModel.SubprogramNode)
             {
                 go(element, "");
@@ -93,7 +95,7 @@ namespace Debugging
 
         AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName, String thread)
         {
-            while (isCycle || (f != null && flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end)))
+            while (isCycle || (f != null && (flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end))))
             {
 
                 if (!isCycle && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
@@ -148,6 +150,7 @@ namespace Debugging
                 {
                     if (!AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[0].Condition.Equals(thread))
                     {
+                        writer.WriteLine("return;");
                         break;
                     }
                     else
@@ -169,7 +172,7 @@ namespace Debugging
                     for (int i = 0; i < list.Count; i++)
                         if (!thread.Equals(list[i].Condition))
                         {
-                            writer.WriteLine("Threading.startThread(\"{0}\", \"{1}\");", list[i].Condition, subName + f.ElemName + "-" + cur);
+                            writer.WriteLine("Threading.startThread(\"{0}\", \"{1}\");", list[i].Condition, subName + f.ElemName + "_" + cur);
                             cur++;
                         }
                         else
@@ -185,10 +188,10 @@ namespace Debugging
                 }
                 else if (f is SwitchNode)
                 {
-                    writer.WriteLine(String.Format("switch ({0}) {{", ((SwitchNode) f).Condition));
+                    writer.WriteLine(String.Format("switch ({0}) {{", ((SwitchNode)f).Condition));
                     AbstractNode g, g0 = null;
                     writer.PushIndent("    ");
-               
+
                     for (int i = 0; i < f.TargetAbstractNode.Count; i++)
                     {
                         String cond = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f)[i].Condition;

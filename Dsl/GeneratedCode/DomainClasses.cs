@@ -941,47 +941,6 @@ namespace SPbSU.RobotsLanguage
 namespace SPbSU.RobotsLanguage
 {
 	/// <summary>
-	/// DomainClass EndIterationsNode
-	/// Description for SPbSU.RobotsLanguage.EndIterationsNode
-	/// </summary>
-	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.EndIterationsNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.EndIterationsNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("2edb7ad0-aaeb-47e7-a08f-c0db17f6a5fd")]
-	public partial class EndIterationsNode : AbstractNode
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// EndIterationsNode domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2edb7ad0, 0xaaeb, 0x47e7, 0xa0, 0x8f, 0xc0, 0xdb, 0x17, 0xf6, 0xa5, 0xfd);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EndIterationsNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EndIterationsNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace SPbSU.RobotsLanguage
-{
-	/// <summary>
 	/// DomainClass SubprogramCallNode
 	/// Description for SPbSU.RobotsLanguage.SubprogramCallNode
 	/// </summary>

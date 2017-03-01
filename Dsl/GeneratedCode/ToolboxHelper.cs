@@ -98,7 +98,7 @@ namespace SPbSU.RobotsLanguage
 		{
 			get
 			{
-				return 14;
+				return 13;
 			}
 		}
 		
@@ -261,27 +261,11 @@ namespace SPbSU.RobotsLanguage
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "SPbSU.RobotsLanguage.EndIterationsToolboxItem":
-					// Add EndIterations shape tool.
-					result = new DslDesign::ModelingToolboxItem(
-						"SPbSU.RobotsLanguage.EndIterationsToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						8, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("EndIterationsToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndIterationsToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"EndIterations", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("EndIterationsToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.EndIterationsNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
-						});
-					break;
 				case "SPbSU.RobotsLanguage.SubprogramCallToolboxItem":
 					// Add SubprogramCall shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.SubprogramCallToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						9, // Position relative to other items in the same toolbox tab.
+						8, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("SubprogramCallToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SubprogramCallToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -297,7 +281,7 @@ namespace SPbSU.RobotsLanguage
 					// Add Parallel shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.ParallelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						10, // Position relative to other items in the same toolbox tab.
+						9, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("ParallelToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ParallelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -313,7 +297,7 @@ namespace SPbSU.RobotsLanguage
 					// Add EndParallel shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.EndParallelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						11, // Position relative to other items in the same toolbox tab.
+						10, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("EndParallelToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndParallelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -329,7 +313,7 @@ namespace SPbSU.RobotsLanguage
 					// Add Break shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.BreakToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						12, // Position relative to other items in the same toolbox tab.
+						11, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("BreakToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("BreakToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -345,7 +329,7 @@ namespace SPbSU.RobotsLanguage
 					// Add Switch shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.SwitchToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						13, // Position relative to other items in the same toolbox tab.
+						12, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("SwitchToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SwitchToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -361,7 +345,7 @@ namespace SPbSU.RobotsLanguage
 					// Add EndSwitch shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SPbSU.RobotsLanguage.EndSwitchToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						14, // Position relative to other items in the same toolbox tab.
+						13, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("EndSwitchToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndSwitchToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.

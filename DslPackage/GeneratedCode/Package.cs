@@ -85,21 +85,13 @@ namespace SPbSU.RobotsLanguage
 					0xff00ff,
 					Index = 6)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
-					"@EndIterationsToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
-					"SPbSU.RobotsLanguage.EndIterationsToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"EndIterations", 
-					"@EndIterationsToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
-					0xff00ff,
-					Index = 7)]
-	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@SubprogramCallToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.SubprogramCallToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"SubprogramCall", 
 					"@SubprogramCallToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 8)]
+					Index = 7)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@ParallelToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.ParallelToolboxItem", 
@@ -107,7 +99,7 @@ namespace SPbSU.RobotsLanguage
 					"Parallel", 
 					"@ParallelToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
+					Index = 8)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@EndParallelToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.EndParallelToolboxItem", 
@@ -115,7 +107,7 @@ namespace SPbSU.RobotsLanguage
 					"EndParallel", 
 					"@EndParallelToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 10)]
+					Index = 9)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@BreakToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.BreakToolboxItem", 
@@ -123,7 +115,7 @@ namespace SPbSU.RobotsLanguage
 					"Break", 
 					"@BreakToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 11)]
+					Index = 10)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@SwitchToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.SwitchToolboxItem", 
@@ -131,7 +123,7 @@ namespace SPbSU.RobotsLanguage
 					"Switch", 
 					"@SwitchToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 12)]
+					Index = 11)]
 	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
 					"@EndSwitchToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
 					"SPbSU.RobotsLanguage.EndSwitchToolboxItem", 
@@ -139,7 +131,7 @@ namespace SPbSU.RobotsLanguage
 					"EndSwitch", 
 					"@EndSwitchToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
-					Index = 13)]
+					Index = 12)]
 	[VSShell::ProvideEditorFactory(typeof(RobotsLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RobotsLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RobotsLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

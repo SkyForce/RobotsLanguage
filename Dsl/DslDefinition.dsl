@@ -86,11 +86,6 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="2edb7ad0-aaeb-47e7-a08f-c0db17f6a5fd" Description="Description for SPbSU.RobotsLanguage.EndIterationsNode" Name="EndIterationsNode" DisplayName="End Iterations Node" Namespace="SPbSU.RobotsLanguage">
-      <BaseClass>
-        <DomainClassMoniker Name="AbstractNode" />
-      </BaseClass>
-    </DomainClass>
     <DomainClass Id="15eb50e9-dd1f-4e16-b11b-a0d01aef3718" Description="Description for SPbSU.RobotsLanguage.SubprogramCallNode" Name="SubprogramCallNode" DisplayName="Subprogram Call Node" Namespace="SPbSU.RobotsLanguage">
       <BaseClass>
         <DomainClassMoniker Name="AbstractNode" />
@@ -251,11 +246,6 @@
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="a1892ec9-378d-465a-be3e-37fd665a6bea" Description="Description for SPbSU.RobotsLanguage.EndIterations" Name="EndIterations" DisplayName="End Iterations" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Iterations" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
     <GeometryShape Id="9a0e3490-c9a7-489c-9af4-5f45e88a9310" Description="Description for SPbSU.RobotsLanguage.SubprogramCall" Name="SubprogramCall" DisplayName="Subprogram Call" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram Call" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
@@ -397,12 +387,6 @@
       </XmlClassData>
       <XmlClassData TypeName="Iterations" MonikerAttributeName="" SerializeId="true" MonikerElementName="iterationsMoniker" ElementName="iterations" MonikerTypeName="IterationsMoniker">
         <GeometryShapeMoniker Name="Iterations" />
-      </XmlClassData>
-      <XmlClassData TypeName="EndIterationsNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIterationsNodeMoniker" ElementName="endIterationsNode" MonikerTypeName="EndIterationsNodeMoniker">
-        <DomainClassMoniker Name="EndIterationsNode" />
-      </XmlClassData>
-      <XmlClassData TypeName="EndIterations" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIterationsMoniker" ElementName="endIterations" MonikerTypeName="EndIterationsMoniker">
-        <GeometryShapeMoniker Name="EndIterations" />
       </XmlClassData>
       <XmlClassData TypeName="SubprogramCallNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="subprogramCallNodeMoniker" ElementName="subprogramCallNode" MonikerTypeName="SubprogramCallNodeMoniker">
         <DomainClassMoniker Name="SubprogramCallNode" />
@@ -603,21 +587,6 @@
         <GeometryShapeMoniker Name="Iterations" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="EndIterationsNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="EndIterations/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="EndIterations" />
-      </ShapeMap>
-      <ShapeMap>
         <DomainClassMoniker Name="SubprogramCallNode" />
         <ParentElementPath>
           <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
@@ -807,9 +776,6 @@
       <ElementTool Name="Iterations" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Iterations" Tooltip="Iterations" HelpKeyword="Iterations">
         <DomainClassMoniker Name="IterationsNode" />
       </ElementTool>
-      <ElementTool Name="EndIterations" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndIterations" Tooltip="End Iterations" HelpKeyword="EndIterations">
-        <DomainClassMoniker Name="EndIterationsNode" />
-      </ElementTool>
       <ElementTool Name="SubprogramCall" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="SubprogramCall" Tooltip="Subprogram Call" HelpKeyword="SubprogramCall">
         <DomainClassMoniker Name="SubprogramCallNode" />
       </ElementTool>
@@ -829,7 +795,7 @@
         <DomainClassMoniker Name="EndSwitchNode" />
       </ElementTool>
     </ToolboxTab>
-    <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
+    <Validation UsesMenu="true" UsesOpen="true" UsesSave="true" UsesCustom="true" UsesLoad="true" />
     <DiagramMoniker Name="RobotsLanguageDiagram" />
   </Designer>
   <Explorer ExplorerGuid="b86010e1-862e-4092-a2da-9ff6486ba203" Title="RobotsLanguage Explorer">

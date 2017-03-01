@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9718399c-4352-40f7-bd73-03e97c13239b" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <abstractNode>
+    <compoundHasAbstractNode Id="2c63653a-59e5-42f6-9457-edecad89d48c">
+      <startNode Id="323f44c5-7030-46f4-8969-f58660059182" elemName="StartNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="da19ac88-9321-4850-ae47-566170d6d1a0">
+            <ifNodeMoniker elemName="/9718399c-4352-40f7-bd73-03e97c13239b/IfNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </startNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="f65d8712-6c2c-4fa4-be79-e29a72c3eff2">
+      <finishNode Id="39c9c8e6-beb9-41b1-9161-557ed17982d3" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="205e3733-785a-4aee-a612-d2893f059ffe">
+      <ifNode Id="57beffb1-176d-4e88-bb27-477d59453ce1" elemName="IfNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="6dc0458a-b48f-4616-b2e4-dfc8a91fa6ec">
+            <finishNodeMoniker elemName="/9718399c-4352-40f7-bd73-03e97c13239b/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="9805d7ce-53ef-4b4a-976e-9a6569d0e6e2">
+            <endIfNodeMoniker elemName="/9718399c-4352-40f7-bd73-03e97c13239b/EndIfNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </ifNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="fabd3416-7e1a-4325-b475-14cb34ec05b9">
+      <endIfNode Id="9d9988e0-e72f-4f9c-8c90-20701ce18939" elemName="EndIfNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="f1ac1d55-c349-411b-807e-78dd32da1deb">
+            <finishNodeMoniker elemName="/9718399c-4352-40f7-bd73-03e97c13239b/FinishNode2" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </endIfNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="aa8ea9b2-44e2-4454-bd22-be55c43ae7a8">
+      <finishNode Id="97e91d43-1267-4ac3-a81a-c67ec70a9039" elemName="FinishNode2" />
+    </compoundHasAbstractNode>
+  </abstractNode>
+</robotModel>

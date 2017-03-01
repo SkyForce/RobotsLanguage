@@ -76,7 +76,6 @@ namespace SPbSU.RobotsLanguage
 				typeof(IfNode),
 				typeof(EndIfNode),
 				typeof(IterationsNode),
-				typeof(EndIterationsNode),
 				typeof(SubprogramCallNode),
 				typeof(ParallelNode),
 				typeof(EndParallelNode),
@@ -94,7 +93,6 @@ namespace SPbSU.RobotsLanguage
 				typeof(If),
 				typeof(EndIf),
 				typeof(Iterations),
-				typeof(EndIterations),
 				typeof(SubprogramCall),
 				typeof(Parallel),
 				typeof(EndParallel),
@@ -159,7 +157,7 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(31);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(29);
 				createElementMap.Add(typeof(RobotModel), 0);
 				createElementMap.Add(typeof(StartNode), 1);
 				createElementMap.Add(typeof(FinishNode), 2);
@@ -167,28 +165,26 @@ namespace SPbSU.RobotsLanguage
 				createElementMap.Add(typeof(IfNode), 4);
 				createElementMap.Add(typeof(EndIfNode), 5);
 				createElementMap.Add(typeof(IterationsNode), 6);
-				createElementMap.Add(typeof(EndIterationsNode), 7);
-				createElementMap.Add(typeof(SubprogramCallNode), 8);
-				createElementMap.Add(typeof(ParallelNode), 9);
-				createElementMap.Add(typeof(EndParallelNode), 10);
-				createElementMap.Add(typeof(BreakNode), 11);
-				createElementMap.Add(typeof(SwitchNode), 12);
-				createElementMap.Add(typeof(EndSwitchNode), 13);
-				createElementMap.Add(typeof(RobotsLanguageDiagram), 14);
-				createElementMap.Add(typeof(ExampleConnector), 15);
-				createElementMap.Add(typeof(Start), 16);
-				createElementMap.Add(typeof(Finish), 17);
-				createElementMap.Add(typeof(Subprogram), 18);
-				createElementMap.Add(typeof(If), 19);
-				createElementMap.Add(typeof(EndIf), 20);
-				createElementMap.Add(typeof(Iterations), 21);
-				createElementMap.Add(typeof(EndIterations), 22);
-				createElementMap.Add(typeof(SubprogramCall), 23);
-				createElementMap.Add(typeof(Parallel), 24);
-				createElementMap.Add(typeof(EndParallel), 25);
-				createElementMap.Add(typeof(Break), 26);
-				createElementMap.Add(typeof(Switch), 27);
-				createElementMap.Add(typeof(EndSwitch), 28);
+				createElementMap.Add(typeof(SubprogramCallNode), 7);
+				createElementMap.Add(typeof(ParallelNode), 8);
+				createElementMap.Add(typeof(EndParallelNode), 9);
+				createElementMap.Add(typeof(BreakNode), 10);
+				createElementMap.Add(typeof(SwitchNode), 11);
+				createElementMap.Add(typeof(EndSwitchNode), 12);
+				createElementMap.Add(typeof(RobotsLanguageDiagram), 13);
+				createElementMap.Add(typeof(ExampleConnector), 14);
+				createElementMap.Add(typeof(Start), 15);
+				createElementMap.Add(typeof(Finish), 16);
+				createElementMap.Add(typeof(Subprogram), 17);
+				createElementMap.Add(typeof(If), 18);
+				createElementMap.Add(typeof(EndIf), 19);
+				createElementMap.Add(typeof(Iterations), 20);
+				createElementMap.Add(typeof(SubprogramCall), 21);
+				createElementMap.Add(typeof(Parallel), 22);
+				createElementMap.Add(typeof(EndParallel), 23);
+				createElementMap.Add(typeof(Break), 24);
+				createElementMap.Add(typeof(Switch), 25);
+				createElementMap.Add(typeof(EndSwitch), 26);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -209,28 +205,26 @@ namespace SPbSU.RobotsLanguage
 				case 4: return new IfNode(partition, propertyAssignments);
 				case 5: return new EndIfNode(partition, propertyAssignments);
 				case 6: return new IterationsNode(partition, propertyAssignments);
-				case 7: return new EndIterationsNode(partition, propertyAssignments);
-				case 8: return new SubprogramCallNode(partition, propertyAssignments);
-				case 9: return new ParallelNode(partition, propertyAssignments);
-				case 10: return new EndParallelNode(partition, propertyAssignments);
-				case 11: return new BreakNode(partition, propertyAssignments);
-				case 12: return new SwitchNode(partition, propertyAssignments);
-				case 13: return new EndSwitchNode(partition, propertyAssignments);
-				case 14: return new RobotsLanguageDiagram(partition, propertyAssignments);
-				case 15: return new ExampleConnector(partition, propertyAssignments);
-				case 16: return new Start(partition, propertyAssignments);
-				case 17: return new Finish(partition, propertyAssignments);
-				case 18: return new Subprogram(partition, propertyAssignments);
-				case 19: return new If(partition, propertyAssignments);
-				case 20: return new EndIf(partition, propertyAssignments);
-				case 21: return new Iterations(partition, propertyAssignments);
-				case 22: return new EndIterations(partition, propertyAssignments);
-				case 23: return new SubprogramCall(partition, propertyAssignments);
-				case 24: return new Parallel(partition, propertyAssignments);
-				case 25: return new EndParallel(partition, propertyAssignments);
-				case 26: return new Break(partition, propertyAssignments);
-				case 27: return new Switch(partition, propertyAssignments);
-				case 28: return new EndSwitch(partition, propertyAssignments);
+				case 7: return new SubprogramCallNode(partition, propertyAssignments);
+				case 8: return new ParallelNode(partition, propertyAssignments);
+				case 9: return new EndParallelNode(partition, propertyAssignments);
+				case 10: return new BreakNode(partition, propertyAssignments);
+				case 11: return new SwitchNode(partition, propertyAssignments);
+				case 12: return new EndSwitchNode(partition, propertyAssignments);
+				case 13: return new RobotsLanguageDiagram(partition, propertyAssignments);
+				case 14: return new ExampleConnector(partition, propertyAssignments);
+				case 15: return new Start(partition, propertyAssignments);
+				case 16: return new Finish(partition, propertyAssignments);
+				case 17: return new Subprogram(partition, propertyAssignments);
+				case 18: return new If(partition, propertyAssignments);
+				case 19: return new EndIf(partition, propertyAssignments);
+				case 20: return new Iterations(partition, propertyAssignments);
+				case 21: return new SubprogramCall(partition, propertyAssignments);
+				case 22: return new Parallel(partition, propertyAssignments);
+				case 23: return new EndParallel(partition, propertyAssignments);
+				case 24: return new Break(partition, propertyAssignments);
+				case 25: return new Switch(partition, propertyAssignments);
+				case 26: return new EndSwitch(partition, propertyAssignments);
 				default: return null;
 			}
 		}

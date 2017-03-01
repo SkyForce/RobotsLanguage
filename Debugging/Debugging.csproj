@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +57,14 @@
     <None Include="RobotsLanguage3.rob" />
     <None Include="RobotsLanguage3.rob.diagram">
       <DependentUpon>RobotsLanguage3.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage4.rob" />
+    <None Include="RobotsLanguage4.rob.diagram">
+      <DependentUpon>RobotsLanguage4.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage6.rob" />
+    <None Include="RobotsLanguage6.rob.diagram">
+      <DependentUpon>RobotsLanguage6.rob</DependentUpon>
     </None>
     <None Include="RobotsLanguageReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

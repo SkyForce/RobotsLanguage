@@ -1,11 +1,11 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ template debug="true" #>
 <#@ output extension=".js" #>
-<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='Sample.rob'" #>
-<#@ assembly name="$(SolutionDir)bin\Debug\Debugging.dll" #>
-<#@ import namespace="Debugging" #> 
+<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage6.rob'" #>
+
 
 <#
+  
   Generator gen = new Generator(RobotModel, this);
   gen.Start();
 

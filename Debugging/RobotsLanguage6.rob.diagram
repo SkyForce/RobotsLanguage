@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotsLanguageDiagram dslVersion="1.0.0.0" Id="6561568e-e1fa-4c96-ad8a-d833e18bf59b" absoluteBounds="0, 0, 12.5, 8.5" name="RobotsLanguage6">
+  <robotModelMoniker Id="5727153b-2c4a-4fc3-a472-ac10e7c6ac3f" />
+  <nestedChildShapes>
+    <start Id="7b523cee-fea1-410e-aef1-30e07be5ffa4" absoluteBounds="1, 1.375, 2, 0.75">
+      <startNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/StartNode1" />
+    </start>
+    <if Id="4b03306b-ada2-48b0-9067-14eaf2b32170" absoluteBounds="3.5, 1.75, 1.5, 1">
+      <ifNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/IfNode1" />
+    </if>
+    <finish Id="99325823-8966-45f4-b0d1-bce4fa3e9b62" absoluteBounds="10.75, 2, 1.5, 1">
+      <finishNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/FinishNode1" />
+    </finish>
+    <exampleConnector Id="20585f70-3c3b-48ee-aa8a-5afc7ac7aba5" edgePoints="[(3 : 1.9375); (3.5 : 1.9375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="3facef05-214a-45f6-a65e-bbacd255b558" />
+      <relativeChildShapes />
+      <nodes>
+        <startMoniker Id="7b523cee-fea1-410e-aef1-30e07be5ffa4" />
+        <ifMoniker Id="4b03306b-ada2-48b0-9067-14eaf2b32170" />
+      </nodes>
+    </exampleConnector>
+    <if Id="8d3864df-7007-4fe5-b3f8-17cd9f24ff6c" absoluteBounds="5.5, 3.25, 1.5, 1">
+      <ifNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/IfNode2" />
+    </if>
+    <subprogramCall Id="ffb6e53d-69ca-4ae1-98d3-06b7594c1be0" absoluteBounds="7.125, 0.875, 1.5, 1">
+      <subprogramCallNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/SubprogramCallNode1" />
+    </subprogramCall>
+    <exampleConnector Id="f2323f85-243a-44e2-93d6-fa899bc309e9" edgePoints="[(5 : 2.3125005); (6.16666666666667 : 2.3125005 : JumpStart); (6.33333333333333 : 2.3125005 : JumpEnd); (7.875 : 2.3125005); (7.875 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="b38d20d3-5953-4fd6-86e2-850d9f6331d2" />
+      <relativeChildShapes />
+      <nodes>
+        <ifMoniker Id="4b03306b-ada2-48b0-9067-14eaf2b32170" />
+        <subprogramCallMoniker Id="ffb6e53d-69ca-4ae1-98d3-06b7594c1be0" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="e244ac5b-8b8f-4b58-b1f4-d17fcf291ee5" edgePoints="[(4.25 : 2.75); (4.25 : 3.75); (5.5 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="13145293-bbc9-4ff6-8be1-6078ad3665c6" />
+      <relativeChildShapes />
+      <nodes>
+        <ifMoniker Id="4b03306b-ada2-48b0-9067-14eaf2b32170" />
+        <ifMoniker Id="8d3864df-7007-4fe5-b3f8-17cd9f24ff6c" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="ed814258-2651-413d-95f1-99865b978aaa" edgePoints="[(6.25 : 3.25); (6.25 : 1.375); (7.125 : 1.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="b946c67a-9916-43e7-8e79-6a71bea2314b" />
+      <relativeChildShapes />
+      <nodes>
+        <ifMoniker Id="8d3864df-7007-4fe5-b3f8-17cd9f24ff6c" />
+        <subprogramCallMoniker Id="ffb6e53d-69ca-4ae1-98d3-06b7594c1be0" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="d7191fa8-ccb1-4630-89f3-e084d1f8e176" edgePoints="[(7 : 3.75); (11.5 : 3.75); (11.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="2d6f791b-b894-4899-af7b-e02d1f6a65de" />
+      <relativeChildShapes />
+      <nodes>
+        <ifMoniker Id="8d3864df-7007-4fe5-b3f8-17cd9f24ff6c" />
+        <finishMoniker Id="99325823-8966-45f4-b0d1-bce4fa3e9b62" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="352dea0e-fdec-41fc-9900-aedf6020998b" edgePoints="[(8.625 : 1.71875); (11.65625 : 1.71875); (11.65625 : 2)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="a4a0e6d2-e8a6-43e5-ab92-a1ecb518ddc7" />
+      <relativeChildShapes />
+      <nodes>
+        <subprogramCallMoniker Id="ffb6e53d-69ca-4ae1-98d3-06b7594c1be0" />
+        <finishMoniker Id="99325823-8966-45f4-b0d1-bce4fa3e9b62" />
+      </nodes>
+    </exampleConnector>
+    <finish Id="7e159049-ca38-45e3-b9d5-72cda586ba73" absoluteBounds="9.5, 0.5, 1.5, 1">
+      <finishNodeMoniker elemName="/5727153b-2c4a-4fc3-a472-ac10e7c6ac3f/FinishNode2" />
+    </finish>
+    <exampleConnector Id="cdfc8a50-9de8-4e8e-967c-619c14dd2bec" edgePoints="[(8.625 : 1.1875); (9.5 : 1.1875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="124bfa48-dc44-483b-8fd9-1df3e4cb6984" />
+      <relativeChildShapes />
+      <nodes>
+        <subprogramCallMoniker Id="ffb6e53d-69ca-4ae1-98d3-06b7594c1be0" />
+        <finishMoniker Id="7e159049-ca38-45e3-b9d5-72cda586ba73" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</robotsLanguageDiagram>

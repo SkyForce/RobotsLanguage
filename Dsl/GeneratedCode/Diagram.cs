@@ -221,12 +221,6 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::SPbSU.RobotsLanguage.EndIterationsNode)
-			{
-				global::SPbSU.RobotsLanguage.EndIterations newShape = new global::SPbSU.RobotsLanguage.EndIterations(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::SPbSU.RobotsLanguage.SubprogramCallNode)
 			{
 				global::SPbSU.RobotsLanguage.SubprogramCall newShape = new global::SPbSU.RobotsLanguage.SubprogramCall(this.Partition);
@@ -290,7 +284,6 @@ namespace SPbSU.RobotsLanguage
 			global::SPbSU.RobotsLanguage.If.DecoratorsInitialized += IfDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.EndIf.DecoratorsInitialized += EndIfDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Iterations.DecoratorsInitialized += IterationsDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.EndIterations.DecoratorsInitialized += EndIterationsDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.SubprogramCall.DecoratorsInitialized += SubprogramCallDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Subprogram.DecoratorsInitialized += SubprogramDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Parallel.DecoratorsInitialized += ParallelDecoratorMap.OnDecoratorsInitialized;
@@ -403,24 +396,6 @@ namespace SPbSU.RobotsLanguage
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.IterationsNode.numberDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "IterationsDecorator").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for EndIterations.
-		/// </summary>
-		internal static partial class EndIterationsDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for EndIterations.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
@@ -742,7 +717,6 @@ namespace SPbSU.RobotsLanguage
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndIfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndIterationsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.ParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
@@ -785,10 +759,6 @@ namespace SPbSU.RobotsLanguage
 				if(childElement is global::SPbSU.RobotsLanguage.IterationsNode)
 				{
 					parentElement = GetParentForIterationsNode((global::SPbSU.RobotsLanguage.IterationsNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.EndIterationsNode)
-				{
-					parentElement = GetParentForEndIterationsNode((global::SPbSU.RobotsLanguage.EndIterationsNode)childElement);
 				} else
 				if(childElement is global::SPbSU.RobotsLanguage.SubprogramCallNode)
 				{
@@ -863,13 +833,6 @@ namespace SPbSU.RobotsLanguage
 				return result;
 			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForIterationsNode( global::SPbSU.RobotsLanguage.AbstractNode root )
-			{
-				// Segments 0 and 1
-				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::SPbSU.RobotsLanguage.Compound GetParentForEndIterationsNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
