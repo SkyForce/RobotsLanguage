@@ -87,18 +87,18 @@ namespace SPbSU.RobotsLanguage
 				typeof(CompoundHasSubprogramNode),
 				typeof(RobotsLanguageDiagram),
 				typeof(ExampleConnector),
-				typeof(Start),
-				typeof(Finish),
 				typeof(Subprogram),
+				typeof(Start),
 				typeof(If),
+				typeof(Finish),
 				typeof(EndIf),
 				typeof(Iterations),
-				typeof(SubprogramCall),
 				typeof(Parallel),
 				typeof(EndParallel),
-				typeof(Break),
 				typeof(Switch),
 				typeof(EndSwitch),
+				typeof(SubprogramCall),
+				typeof(Break),
 				typeof(global::SPbSU.RobotsLanguage.FixUpDiagram),
 				typeof(global::SPbSU.RobotsLanguage.DecoratorPropertyChanged),
 				typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged),
@@ -173,18 +173,18 @@ namespace SPbSU.RobotsLanguage
 				createElementMap.Add(typeof(EndSwitchNode), 12);
 				createElementMap.Add(typeof(RobotsLanguageDiagram), 13);
 				createElementMap.Add(typeof(ExampleConnector), 14);
-				createElementMap.Add(typeof(Start), 15);
-				createElementMap.Add(typeof(Finish), 16);
-				createElementMap.Add(typeof(Subprogram), 17);
-				createElementMap.Add(typeof(If), 18);
+				createElementMap.Add(typeof(Subprogram), 15);
+				createElementMap.Add(typeof(Start), 16);
+				createElementMap.Add(typeof(If), 17);
+				createElementMap.Add(typeof(Finish), 18);
 				createElementMap.Add(typeof(EndIf), 19);
 				createElementMap.Add(typeof(Iterations), 20);
-				createElementMap.Add(typeof(SubprogramCall), 21);
-				createElementMap.Add(typeof(Parallel), 22);
-				createElementMap.Add(typeof(EndParallel), 23);
-				createElementMap.Add(typeof(Break), 24);
-				createElementMap.Add(typeof(Switch), 25);
-				createElementMap.Add(typeof(EndSwitch), 26);
+				createElementMap.Add(typeof(Parallel), 21);
+				createElementMap.Add(typeof(EndParallel), 22);
+				createElementMap.Add(typeof(Switch), 23);
+				createElementMap.Add(typeof(EndSwitch), 24);
+				createElementMap.Add(typeof(SubprogramCall), 25);
+				createElementMap.Add(typeof(Break), 26);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -213,18 +213,18 @@ namespace SPbSU.RobotsLanguage
 				case 12: return new EndSwitchNode(partition, propertyAssignments);
 				case 13: return new RobotsLanguageDiagram(partition, propertyAssignments);
 				case 14: return new ExampleConnector(partition, propertyAssignments);
-				case 15: return new Start(partition, propertyAssignments);
-				case 16: return new Finish(partition, propertyAssignments);
-				case 17: return new Subprogram(partition, propertyAssignments);
-				case 18: return new If(partition, propertyAssignments);
+				case 15: return new Subprogram(partition, propertyAssignments);
+				case 16: return new Start(partition, propertyAssignments);
+				case 17: return new If(partition, propertyAssignments);
+				case 18: return new Finish(partition, propertyAssignments);
 				case 19: return new EndIf(partition, propertyAssignments);
 				case 20: return new Iterations(partition, propertyAssignments);
-				case 21: return new SubprogramCall(partition, propertyAssignments);
-				case 22: return new Parallel(partition, propertyAssignments);
-				case 23: return new EndParallel(partition, propertyAssignments);
-				case 24: return new Break(partition, propertyAssignments);
-				case 25: return new Switch(partition, propertyAssignments);
-				case 26: return new EndSwitch(partition, propertyAssignments);
+				case 21: return new Parallel(partition, propertyAssignments);
+				case 22: return new EndParallel(partition, propertyAssignments);
+				case 23: return new Switch(partition, propertyAssignments);
+				case 24: return new EndSwitch(partition, propertyAssignments);
+				case 25: return new SubprogramCall(partition, propertyAssignments);
+				case 26: return new Break(partition, propertyAssignments);
 				default: return null;
 			}
 		}

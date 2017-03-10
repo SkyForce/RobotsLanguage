@@ -17,6 +17,21 @@ namespace SPbSU.RobotsLanguage
         }
     }
     
+    partial class Start
+    {
+        protected override void InitializeShapeFields(IList<ShapeField> shapeFields)
+        {
+            // Fields set up according to DSL Definition:  
+            base.InitializeShapeFields(shapeFields);
+            // Find and update comment field:  
+            //ImageField imageField = ShapeElement.FindShapeField(shapeFields, "ImageField") as ImageField;
+            // Use the standard font for comments:  
+            //imageField.DefaultImage = SPbSU.RobotsLanguage.Properties.Resources.initialBlock;//ImageHelper.GetImage(RobotsLanguageDomainModel.SingletonResourceManager.GetObject("initialBlock"));
+
+
+        }
+    }
+
         partial class Subprogram
     {
         /// <summary>

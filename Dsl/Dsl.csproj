@@ -77,6 +77,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="..\Key.snk">
       <Link>Key.snk</Link>
     </None>
@@ -165,6 +170,46 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\balanceBlock.png" />
+    <Content Include="Resources\balanceInitBlock.png" />
+    <Content Include="Resources\beepBlock.png" />
+    <Content Include="Resources\break.png" />
+    <Content Include="Resources\clearScreenBlock.png" />
+    <Content Include="Resources\drawCircleBlock.png" />
+    <Content Include="Resources\drawLineBlock.png" />
+    <Content Include="Resources\drawPixelBlock.png" />
+    <Content Include="Resources\drawRectBlock.png" />
+    <Content Include="Resources\endIfBlock.png" />
+    <Content Include="Resources\endLoopBlock.png" />
+    <Content Include="Resources\enginesBackwardBlock.png" />
+    <Content Include="Resources\enginesForwardBlock.png" />
+    <Content Include="Resources\enginesStopBlock.png" />
+    <Content Include="Resources\finalBlock.png" />
+    <Content Include="Resources\forkBlock.png" />
+    <Content Include="Resources\functionBlock.png" />
+    <Content Include="Resources\ifBlock.png" />
+    <Content Include="Resources\initialBlock.png" />
+    <Content Include="Resources\joinBlock.png" />
+    <Content Include="Resources\loopBlock.png" />
+    <Content Include="Resources\nullificationEncoderBlock.png" />
+    <Content Include="Resources\playToneBlock.png" />
+    <Content Include="Resources\printTextBlock.png" />
+    <Content Include="Resources\startLoopBlock.png" />
+    <Content Include="Resources\subprogramRobotsBlock.png" />
+    <Content Include="Resources\switchBlock.png" />
+    <Content Include="Resources\timerBlock.png" />
+    <Content Include="Resources\unknownSomething.png" />
+    <Content Include="Resources\variableInitBlock.png" />
+    <Content Include="Resources\waitForAccelerometerBlock.png" />
+    <Content Include="Resources\waitForButtonsBlock.png" />
+    <Content Include="Resources\waitForColorBlock.png" />
+    <Content Include="Resources\waitForColorIntensityBlock.png" />
+    <Content Include="Resources\waitForEncoderBlock.png" />
+    <Content Include="Resources\waitForGyroscopeBlock.png" />
+    <Content Include="Resources\waitForLightBlock.png" />
+    <Content Include="Resources\waitForSonarDistanceBlock.png" />
+    <Content Include="Resources\waitForSoundSensorBlock.png" />
+    <Content Include="Resources\waitForTouchSensorBlock.png" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>
@@ -257,6 +302,10 @@
     </CodeAnalysisDictionary>
     <Content Include="Resources\ExampleConnectorToolBitmap.bmp" />
     <Content Include="Resources\ExampleShapeToolBitmap.bmp" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ConnectorSourceSearch.cur" />
     <EmbeddedResource Include="Resources\ConnectorTargetSearch.cur" />
   </ItemGroup>

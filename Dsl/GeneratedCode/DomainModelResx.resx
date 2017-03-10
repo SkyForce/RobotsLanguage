@@ -397,34 +397,6 @@
     <value>Compound</value>
     <comment>PropertyDisplayName for DomainRole &apos;SubprogramNode&apos; on DomainRelationship &apos;CompoundHasSubprogramNode&apos;</comment>
   </data>
-  <data name="SPbSU.RobotsLanguage.Start.Description" xml:space="preserve">
-    <value>Shape used to represent ExampleElements on a Diagram.</value>
-    <comment>Description for DomainClass &apos;Start&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.Start.DisplayName" xml:space="preserve">
-    <value>Start</value>
-    <comment>DisplayName for DomainClass &apos;Start&apos;</comment>
-  </data>
-  <data name="StartNameDecoratorDefaultText" xml:space="preserve">
-    <value>NameDecorator</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="StartTooltip" xml:space="preserve">
-    <value>Start</value>
-    <comment>Tooltip text</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.Finish.Description" xml:space="preserve">
-    <value>Description for SPbSU.RobotsLanguage.Finish</value>
-    <comment>Description for DomainClass &apos;Finish&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.Finish.DisplayName" xml:space="preserve">
-    <value>Finish</value>
-    <comment>DisplayName for DomainClass &apos;Finish&apos;</comment>
-  </data>
-  <data name="FinishNameDecoratorDefaultText" xml:space="preserve">
-    <value>NameDecorator</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.Subprogram.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.Subprogram</value>
     <comment>Description for DomainClass &apos;Subprogram&apos;</comment>
@@ -437,6 +409,14 @@
     <value>TextDecorator1</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.Start.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Start</value>
+    <comment>Description for DomainClass &apos;Start&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Start.DisplayName" xml:space="preserve">
+    <value>Start</value>
+    <comment>DisplayName for DomainClass &apos;Start&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.If.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.If</value>
     <comment>Description for DomainClass &apos;If&apos;</comment>
@@ -445,13 +425,17 @@
     <value>If</value>
     <comment>DisplayName for DomainClass &apos;If&apos;</comment>
   </data>
-  <data name="IfTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="IfCondDecoratorDefaultText" xml:space="preserve">
+  <data name="IfConditionDefaultText" xml:space="preserve">
     <value>Condition</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Finish.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Finish</value>
+    <comment>Description for DomainClass &apos;Finish&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Finish.DisplayName" xml:space="preserve">
+    <value>Finish</value>
+    <comment>DisplayName for DomainClass &apos;Finish&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.EndIf.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.EndIf</value>
@@ -461,10 +445,6 @@
     <value>End If</value>
     <comment>DisplayName for DomainClass &apos;EndIf&apos;</comment>
   </data>
-  <data name="EndIfTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.Iterations.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.Iterations</value>
     <comment>Description for DomainClass &apos;Iterations&apos;</comment>
@@ -473,28 +453,8 @@
     <value>Iterations</value>
     <comment>DisplayName for DomainClass &apos;Iterations&apos;</comment>
   </data>
-  <data name="IterationsIterationsDecoratorDefaultText" xml:space="preserve">
-    <value>IterationsDecorator</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="IterationsTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.SubprogramCall.Description" xml:space="preserve">
-    <value>Description for SPbSU.RobotsLanguage.SubprogramCall</value>
-    <comment>Description for DomainClass &apos;SubprogramCall&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.SubprogramCall.DisplayName" xml:space="preserve">
-    <value>Subprogram Call</value>
-    <comment>DisplayName for DomainClass &apos;SubprogramCall&apos;</comment>
-  </data>
-  <data name="SubprogramCallTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="SubprogramCallSubprogramDefaultText" xml:space="preserve">
-    <value>Subprogram</value>
+  <data name="IterationsnumberDefaultText" xml:space="preserve">
+    <value>number</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.Parallel.Description" xml:space="preserve">
@@ -505,10 +465,6 @@
     <value>Parallel</value>
     <comment>DisplayName for DomainClass &apos;Parallel&apos;</comment>
   </data>
-  <data name="ParallelTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.EndParallel.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.EndParallel</value>
     <comment>Description for DomainClass &apos;EndParallel&apos;</comment>
@@ -517,22 +473,6 @@
     <value>End Parallel</value>
     <comment>DisplayName for DomainClass &apos;EndParallel&apos;</comment>
   </data>
-  <data name="EndParallelTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.Break.Description" xml:space="preserve">
-    <value>Description for SPbSU.RobotsLanguage.Break</value>
-    <comment>Description for DomainClass &apos;Break&apos;</comment>
-  </data>
-  <data name="SPbSU.RobotsLanguage.Break.DisplayName" xml:space="preserve">
-    <value>Break</value>
-    <comment>DisplayName for DomainClass &apos;Break&apos;</comment>
-  </data>
-  <data name="BreakTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="SPbSU.RobotsLanguage.Switch.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.Switch</value>
     <comment>Description for DomainClass &apos;Switch&apos;</comment>
@@ -540,10 +480,6 @@
   <data name="SPbSU.RobotsLanguage.Switch.DisplayName" xml:space="preserve">
     <value>Switch</value>
     <comment>DisplayName for DomainClass &apos;Switch&apos;</comment>
-  </data>
-  <data name="SwitchTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
-    <comment>Text decorator default text</comment>
   </data>
   <data name="SwitchConditionDefaultText" xml:space="preserve">
     <value>Condition</value>
@@ -557,9 +493,25 @@
     <value>End Switch</value>
     <comment>DisplayName for DomainClass &apos;EndSwitch&apos;</comment>
   </data>
-  <data name="EndSwitchTextDecorator1DefaultText" xml:space="preserve">
-    <value>TextDecorator1</value>
+  <data name="SPbSU.RobotsLanguage.SubprogramCall.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.SubprogramCall</value>
+    <comment>Description for DomainClass &apos;SubprogramCall&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.SubprogramCall.DisplayName" xml:space="preserve">
+    <value>Subprogram Call</value>
+    <comment>DisplayName for DomainClass &apos;SubprogramCall&apos;</comment>
+  </data>
+  <data name="SubprogramCallSubprogramDefaultText" xml:space="preserve">
+    <value>Subprogram</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Break.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Break</value>
+    <comment>Description for DomainClass &apos;Break&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Break.DisplayName" xml:space="preserve">
+    <value>Break</value>
+    <comment>DisplayName for DomainClass &apos;Break&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -822,6 +774,50 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="StartImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\initialBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Start shape image</comment>
+  </data>
+  <data name="IfImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ifBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>If shape image</comment>
+  </data>
+  <data name="FinishImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\finalBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Finish shape image</comment>
+  </data>
+  <data name="EndIfImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\endIfBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>EndIf shape image</comment>
+  </data>
+  <data name="IterationsImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\loopBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Iterations shape image</comment>
+  </data>
+  <data name="ParallelImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\forkBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Parallel shape image</comment>
+  </data>
+  <data name="EndParallelImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\joinBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>EndParallel shape image</comment>
+  </data>
+  <data name="SwitchImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\switchBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Switch shape image</comment>
+  </data>
+  <data name="EndSwitchImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\joinBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>EndSwitch shape image</comment>
+  </data>
+  <data name="SubprogramCallImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\subprogramRobotsBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>SubprogramCall shape image</comment>
+  </data>
+  <data name="BreakImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\break.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Break shape image</comment>
+  </data>
   <data name="StartToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>

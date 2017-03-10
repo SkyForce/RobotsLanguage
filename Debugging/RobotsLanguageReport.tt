@@ -1,7 +1,7 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
 <#@ template debug="true" #>
 <#@ output extension=".js" #>
-<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage7.rob'" #>
+<#@ RobotsLanguage processor="RobotsLanguageDirectiveProcessor" requires="fileName='RobotsLanguage13.rob'" #>
 
 
 <#

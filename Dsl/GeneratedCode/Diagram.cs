@@ -191,21 +191,27 @@ namespace SPbSU.RobotsLanguage
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
+			if(element is global::SPbSU.RobotsLanguage.SubprogramNode)
+			{
+				global::SPbSU.RobotsLanguage.Subprogram newShape = new global::SPbSU.RobotsLanguage.Subprogram(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::SPbSU.RobotsLanguage.StartNode)
 			{
 				global::SPbSU.RobotsLanguage.Start newShape = new global::SPbSU.RobotsLanguage.Start(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::SPbSU.RobotsLanguage.FinishNode)
-			{
-				global::SPbSU.RobotsLanguage.Finish newShape = new global::SPbSU.RobotsLanguage.Finish(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::SPbSU.RobotsLanguage.IfNode)
 			{
 				global::SPbSU.RobotsLanguage.If newShape = new global::SPbSU.RobotsLanguage.If(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.FinishNode)
+			{
+				global::SPbSU.RobotsLanguage.Finish newShape = new global::SPbSU.RobotsLanguage.Finish(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -221,18 +227,6 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::SPbSU.RobotsLanguage.SubprogramCallNode)
-			{
-				global::SPbSU.RobotsLanguage.SubprogramCall newShape = new global::SPbSU.RobotsLanguage.SubprogramCall(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::SPbSU.RobotsLanguage.SubprogramNode)
-			{
-				global::SPbSU.RobotsLanguage.Subprogram newShape = new global::SPbSU.RobotsLanguage.Subprogram(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::SPbSU.RobotsLanguage.ParallelNode)
 			{
 				global::SPbSU.RobotsLanguage.Parallel newShape = new global::SPbSU.RobotsLanguage.Parallel(this.Partition);
@@ -245,12 +239,6 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::SPbSU.RobotsLanguage.BreakNode)
-			{
-				global::SPbSU.RobotsLanguage.Break newShape = new global::SPbSU.RobotsLanguage.Break(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::SPbSU.RobotsLanguage.SwitchNode)
 			{
 				global::SPbSU.RobotsLanguage.Switch newShape = new global::SPbSU.RobotsLanguage.Switch(this.Partition);
@@ -260,6 +248,18 @@ namespace SPbSU.RobotsLanguage
 			if(element is global::SPbSU.RobotsLanguage.EndSwitchNode)
 			{
 				global::SPbSU.RobotsLanguage.EndSwitch newShape = new global::SPbSU.RobotsLanguage.EndSwitch(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.SubprogramCallNode)
+			{
+				global::SPbSU.RobotsLanguage.SubprogramCall newShape = new global::SPbSU.RobotsLanguage.SubprogramCall(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.BreakNode)
+			{
+				global::SPbSU.RobotsLanguage.Break newShape = new global::SPbSU.RobotsLanguage.Break(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -279,151 +279,12 @@ namespace SPbSU.RobotsLanguage
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			global::SPbSU.RobotsLanguage.Finish.DecoratorsInitialized += FinishDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.Start.DecoratorsInitialized += StartDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.If.DecoratorsInitialized += IfDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.EndIf.DecoratorsInitialized += EndIfDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.Iterations.DecoratorsInitialized += IterationsDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.SubprogramCall.DecoratorsInitialized += SubprogramCallDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Subprogram.DecoratorsInitialized += SubprogramDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.Parallel.DecoratorsInitialized += ParallelDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.EndParallel.DecoratorsInitialized += EndParallelDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.Break.DecoratorsInitialized += BreakDecoratorMap.OnDecoratorsInitialized;
-			global::SPbSU.RobotsLanguage.EndSwitch.DecoratorsInitialized += EndSwitchDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.If.DecoratorsInitialized += IfDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.Iterations.DecoratorsInitialized += IterationsDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Switch.DecoratorsInitialized += SwitchDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.SubprogramCall.DecoratorsInitialized += SubprogramCallDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.ExampleConnector.DecoratorsInitialized += ExampleConnectorDecoratorMap.OnDecoratorsInitialized;
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for Finish.
-		/// </summary>
-		internal static partial class FinishDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for Finish.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for Start.
-		/// </summary>
-		internal static partial class StartDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for Start.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for If.
-		/// </summary>
-		internal static partial class IfDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for If.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.IfNode.conditionDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "CondDecorator").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for EndIf.
-		/// </summary>
-		internal static partial class EndIfDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for EndIf.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for Iterations.
-		/// </summary>
-		internal static partial class IterationsDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for Iterations.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.IterationsNode.numberDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "IterationsDecorator").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for SubprogramCall.
-		/// </summary>
-		internal static partial class SubprogramCallDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for SubprogramCall.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.SubprogramCallNode.SubprogramDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Subprogram").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
 		}
 		
 		/// <summary>
@@ -445,77 +306,38 @@ namespace SPbSU.RobotsLanguage
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for Parallel.
+		/// Class containing decorator path traversal methods for If.
 		/// </summary>
-		internal static partial class ParallelDecoratorMap
+		internal static partial class IfDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for Parallel.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for If.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.IfNode.conditionDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for EndParallel.
+		/// Class containing decorator path traversal methods for Iterations.
 		/// </summary>
-		internal static partial class EndParallelDecoratorMap
+		internal static partial class IterationsDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for EndParallel.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for Iterations.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for Break.
-		/// </summary>
-		internal static partial class BreakDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for Break.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for EndSwitch.
-		/// </summary>
-		internal static partial class EndSwitchDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for EndSwitch.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.IterationsNode.numberDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "number").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -532,14 +354,26 @@ namespace SPbSU.RobotsLanguage
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.AbstractNode.ElemNameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TextDecorator1").AssociateValueWith(shape.Store, propertyInfo);
-				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.SwitchNode.ConditionDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for SubprogramCall.
+		/// </summary>
+		internal static partial class SubprogramCallDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for SubprogramCall.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.SubprogramCallNode.SubprogramDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Subprogram").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -712,18 +546,18 @@ namespace SPbSU.RobotsLanguage
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.StartNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.FinishNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.FinishNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndIfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.ParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.BreakNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndSwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.BreakNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
@@ -740,30 +574,6 @@ namespace SPbSU.RobotsLanguage
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.StartNode)
-				{
-					parentElement = GetParentForStartNode((global::SPbSU.RobotsLanguage.StartNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.FinishNode)
-				{
-					parentElement = GetParentForFinishNode((global::SPbSU.RobotsLanguage.FinishNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.IfNode)
-				{
-					parentElement = GetParentForIfNode((global::SPbSU.RobotsLanguage.IfNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.EndIfNode)
-				{
-					parentElement = GetParentForEndIfNode((global::SPbSU.RobotsLanguage.EndIfNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.IterationsNode)
-				{
-					parentElement = GetParentForIterationsNode((global::SPbSU.RobotsLanguage.IterationsNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.SubprogramCallNode)
-				{
-					parentElement = GetParentForSubprogramCallNode((global::SPbSU.RobotsLanguage.SubprogramCallNode)childElement);
-				} else
 				if(childElement is global::SPbSU.RobotsLanguage.SubprogramNode)
 				{
 					// Method:
@@ -775,6 +585,26 @@ namespace SPbSU.RobotsLanguage
 					// of the shape created for this child.  If no shape should be created, the method should return null.
 					parentElement = GetParentForSubprogramNode((global::SPbSU.RobotsLanguage.SubprogramNode)childElement);
 				} else
+				if(childElement is global::SPbSU.RobotsLanguage.StartNode)
+				{
+					parentElement = GetParentForStartNode((global::SPbSU.RobotsLanguage.StartNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.IfNode)
+				{
+					parentElement = GetParentForIfNode((global::SPbSU.RobotsLanguage.IfNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.FinishNode)
+				{
+					parentElement = GetParentForFinishNode((global::SPbSU.RobotsLanguage.FinishNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.EndIfNode)
+				{
+					parentElement = GetParentForEndIfNode((global::SPbSU.RobotsLanguage.EndIfNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.IterationsNode)
+				{
+					parentElement = GetParentForIterationsNode((global::SPbSU.RobotsLanguage.IterationsNode)childElement);
+				} else
 				if(childElement is global::SPbSU.RobotsLanguage.ParallelNode)
 				{
 					parentElement = GetParentForParallelNode((global::SPbSU.RobotsLanguage.ParallelNode)childElement);
@@ -783,10 +613,6 @@ namespace SPbSU.RobotsLanguage
 				{
 					parentElement = GetParentForEndParallelNode((global::SPbSU.RobotsLanguage.EndParallelNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.BreakNode)
-				{
-					parentElement = GetParentForBreakNode((global::SPbSU.RobotsLanguage.BreakNode)childElement);
-				} else
 				if(childElement is global::SPbSU.RobotsLanguage.SwitchNode)
 				{
 					parentElement = GetParentForSwitchNode((global::SPbSU.RobotsLanguage.SwitchNode)childElement);
@@ -794,6 +620,14 @@ namespace SPbSU.RobotsLanguage
 				if(childElement is global::SPbSU.RobotsLanguage.EndSwitchNode)
 				{
 					parentElement = GetParentForEndSwitchNode((global::SPbSU.RobotsLanguage.EndSwitchNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.SubprogramCallNode)
+				{
+					parentElement = GetParentForSubprogramCallNode((global::SPbSU.RobotsLanguage.SubprogramCallNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.BreakNode)
+				{
+					parentElement = GetParentForBreakNode((global::SPbSU.RobotsLanguage.BreakNode)childElement);
 				} else
 				{
 					parentElement = null;
@@ -811,14 +645,14 @@ namespace SPbSU.RobotsLanguage
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SPbSU.RobotsLanguage.Compound GetParentForFinishNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForIfNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SPbSU.RobotsLanguage.Compound GetParentForIfNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForFinishNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
@@ -839,13 +673,6 @@ namespace SPbSU.RobotsLanguage
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SPbSU.RobotsLanguage.Compound GetParentForSubprogramCallNode( global::SPbSU.RobotsLanguage.AbstractNode root )
-			{
-				// Segments 0 and 1
-				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
-				if ( result == null ) return null;
-				return result;
-			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForParallelNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
@@ -860,13 +687,6 @@ namespace SPbSU.RobotsLanguage
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SPbSU.RobotsLanguage.Compound GetParentForBreakNode( global::SPbSU.RobotsLanguage.AbstractNode root )
-			{
-				// Segments 0 and 1
-				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
-				if ( result == null ) return null;
-				return result;
-			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForSwitchNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
@@ -875,6 +695,20 @@ namespace SPbSU.RobotsLanguage
 				return result;
 			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForEndSwitchNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForSubprogramCallNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForBreakNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
@@ -971,6 +805,10 @@ namespace SPbSU.RobotsLanguage
 		/// A rule which fires when data mapped to outer text decorators has changed,
 		/// so we can update the decorator host's bounds.
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IfNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SwitchNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
@@ -979,7 +817,39 @@ namespace SPbSU.RobotsLanguage
 			{
 				if(e == null) throw new global::System.ArgumentNullException("e");
 				
-				if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.ConditionDomainPropertyId)
+				if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.IfNode.conditionDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.If.FindIfDecorator("Condition");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.IfNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.IterationsNode.numberDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.Iterations.FindIterationsDecorator("number");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.IterationsNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.SwitchNode.ConditionDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.Switch.FindSwitchDecorator("Condition");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.SwitchNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.SubprogramCallNode.SubprogramDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.SubprogramCall.FindSubprogramCallDecorator("Subprogram");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.SubprogramCallNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.ConditionDomainPropertyId)
 				{
 					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.ExampleConnector.FindExampleConnectorDecorator("Condition");
 					if(decorator != null)

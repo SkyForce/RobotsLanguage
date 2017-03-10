@@ -206,17 +206,6 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <GeometryShape Id="f101e528-6652-4c1f-8e56-37a5d87390eb" Description="Shape used to represent ExampleElements on a Diagram." Name="Start" DisplayName="Start" Namespace="SPbSU.RobotsLanguage" TooltipType="Fixed" FixedTooltipText="Start" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
-      <Notes>The shape has a text decorator used to display the Name property of the mapped ExampleElement.</Notes>
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="a5077011-14e7-453c-9425-8306b4c697a9" Description="Description for SPbSU.RobotsLanguage.Finish" Name="Finish" DisplayName="Finish" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Finish" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
-      </ShapeHasDecorators>
-    </GeometryShape>
     <GeometryShape Id="cec34f27-e84d-40fa-8494-e3c714daef30" Description="Description for SPbSU.RobotsLanguage.Subprogram" Name="Subprogram" DisplayName="Subprogram" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <ExpandCollapseDecorator Name="ExpandCollapseDecorator1" DisplayName="Expand Collapse Decorator1" />
@@ -225,63 +214,33 @@
         <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="1af72e6b-f47f-4c4d-b988-eee19e723cb4" Description="Description for SPbSU.RobotsLanguage.If" Name="If" DisplayName="If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="If" FillColor="LightGray" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="CondDecorator" DisplayName="Cond Decorator" DefaultText="Condition" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="b23f591d-93bc-436b-b049-dd53ddceac96" Description="Description for SPbSU.RobotsLanguage.EndIf" Name="EndIf" DisplayName="End If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End If" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="7c7af382-6c39-4e7f-9485-5278c3e1c7f4" Description="Description for SPbSU.RobotsLanguage.Iterations" Name="Iterations" DisplayName="Iterations" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Iterations" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="IterationsDecorator" DisplayName="Iterations Decorator" DefaultText="IterationsDecorator" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="9a0e3490-c9a7-489c-9af4-5f45e88a9310" Description="Description for SPbSU.RobotsLanguage.SubprogramCall" Name="SubprogramCall" DisplayName="Subprogram Call" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram Call" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Subprogram" DisplayName="Subprogram" DefaultText="Subprogram" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="a3ce68d5-b0d5-45be-b57f-a3a3a7672bee" Description="Description for SPbSU.RobotsLanguage.Parallel" Name="Parallel" DisplayName="Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Parallel" FillColor="DarkGray" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="6700cb94-4b14-43d2-8caf-daecc6cca3e7" Description="Description for SPbSU.RobotsLanguage.EndParallel" Name="EndParallel" DisplayName="End Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Parallel" FillColor="DarkGray" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="1f299ca3-8042-425f-b9ef-7568df10e9e6" Description="Description for SPbSU.RobotsLanguage.Break" Name="Break" DisplayName="Break" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Break" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="16038f40-d30a-45e7-9c05-93f0bb37f493" Description="Description for SPbSU.RobotsLanguage.Switch" Name="Switch" DisplayName="Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Switch" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
+    <ImageShape Id="dfc65c6c-9289-454b-9ea3-7aca63214a1c" Description="Description for SPbSU.RobotsLanguage.Start" Name="Start" DisplayName="Start" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Start" InitialHeight="1" Image="Resources\initialBlock.png" />
+    <ImageShape Id="afbd3bf8-e3c9-4009-b0ed-ad929971e6a5" Description="Description for SPbSU.RobotsLanguage.If" Name="If" DisplayName="If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="If" InitialHeight="1" Image="Resources\ifBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
       </ShapeHasDecorators>
-    </GeometryShape>
-    <GeometryShape Id="683c13f9-f212-4a1a-a3f3-a4e9a500ea76" Description="Description for SPbSU.RobotsLanguage.EndSwitch" Name="EndSwitch" DisplayName="End Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Switch" InitialHeight="1" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="TextDecorator1" DisplayName="Text Decorator1" DefaultText="TextDecorator1" />
+    </ImageShape>
+    <ImageShape Id="52ece8ee-a694-44a6-a9ca-0710d57a909d" Description="Description for SPbSU.RobotsLanguage.Finish" Name="Finish" DisplayName="Finish" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Finish" InitialHeight="1" Image="Resources\finalBlock.png" />
+    <ImageShape Id="63dcbc22-7dc0-48cb-aa4b-c917dda5bdf8" Description="Description for SPbSU.RobotsLanguage.EndIf" Name="EndIf" DisplayName="End If" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End If" InitialHeight="1" Image="Resources\endIfBlock.png" />
+    <ImageShape Id="3ef594b0-ae58-450b-b83b-29da17522497" Description="Description for SPbSU.RobotsLanguage.Iterations" Name="Iterations" DisplayName="Iterations" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Iterations" InitialHeight="1" Image="Resources\loopBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="number" DisplayName="Number" DefaultText="number" />
       </ShapeHasDecorators>
-    </GeometryShape>
+    </ImageShape>
+    <ImageShape Id="98cf7454-b1ed-44cb-b43f-14fd35c0474b" Description="Description for SPbSU.RobotsLanguage.Parallel" Name="Parallel" DisplayName="Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Parallel" InitialHeight="1" Image="Resources\forkBlock.png" />
+    <ImageShape Id="52798ce1-2adf-49da-bdcf-f5f72cad708f" Description="Description for SPbSU.RobotsLanguage.EndParallel" Name="EndParallel" DisplayName="End Parallel" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Parallel" InitialHeight="1" Image="Resources\joinBlock.png" />
+    <ImageShape Id="9b3c850a-4df9-4e00-ac8e-f0afa6afa933" Description="Description for SPbSU.RobotsLanguage.Switch" Name="Switch" DisplayName="Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Switch" InitialHeight="1" Image="Resources\switchBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Condition" DisplayName="Condition" DefaultText="Condition" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="10b17550-9e1b-47b9-9c6b-86c03f655d83" Description="Description for SPbSU.RobotsLanguage.EndSwitch" Name="EndSwitch" DisplayName="End Switch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="End Switch" InitialHeight="1" Image="Resources\joinBlock.png" />
+    <ImageShape Id="68297388-26a3-4c72-8a60-788e095d9355" Description="Description for SPbSU.RobotsLanguage.SubprogramCall" Name="SubprogramCall" DisplayName="Subprogram Call" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Subprogram Call" InitialHeight="1" Image="Resources\subprogramRobotsBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Subprogram" DisplayName="Subprogram" DefaultText="Subprogram" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="e3adc532-b963-469f-8fea-db63d3049201" Description="Description for SPbSU.RobotsLanguage.Break" Name="Break" DisplayName="Break" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Break" InitialHeight="1" Image="Resources\break.png" />
   </Shapes>
   <Connectors>
     <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -306,17 +265,11 @@
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="Start" MonikerAttributeName="" SerializeId="true" MonikerElementName="startMoniker" ElementName="start" MonikerTypeName="StartMoniker">
-        <GeometryShapeMoniker Name="Start" />
-      </XmlClassData>
       <XmlClassData TypeName="ExampleConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleConnectorMoniker" ElementName="exampleConnector" MonikerTypeName="ExampleConnectorMoniker">
         <ConnectorMoniker Name="ExampleConnector" />
       </XmlClassData>
       <XmlClassData TypeName="RobotsLanguageDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="robotsLanguageDiagramMoniker" ElementName="robotsLanguageDiagram" MonikerTypeName="RobotsLanguageDiagramMoniker">
         <DiagramMoniker Name="RobotsLanguageDiagram" />
-      </XmlClassData>
-      <XmlClassData TypeName="Finish" MonikerAttributeName="" SerializeId="true" MonikerElementName="finishMoniker" ElementName="finish" MonikerTypeName="FinishMoniker">
-        <GeometryShapeMoniker Name="Finish" />
       </XmlClassData>
       <XmlClassData TypeName="StartNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="startNodeMoniker" ElementName="startNode" MonikerTypeName="StartNodeMoniker">
         <DomainClassMoniker Name="StartNode" />
@@ -368,14 +321,8 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="If" MonikerAttributeName="" SerializeId="true" MonikerElementName="ifMoniker" ElementName="if" MonikerTypeName="IfMoniker">
-        <GeometryShapeMoniker Name="If" />
-      </XmlClassData>
       <XmlClassData TypeName="EndIfNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIfNodeMoniker" ElementName="endIfNode" MonikerTypeName="EndIfNodeMoniker">
         <DomainClassMoniker Name="EndIfNode" />
-      </XmlClassData>
-      <XmlClassData TypeName="EndIf" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIfMoniker" ElementName="endIf" MonikerTypeName="EndIfMoniker">
-        <GeometryShapeMoniker Name="EndIf" />
       </XmlClassData>
       <XmlClassData TypeName="IterationsNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="iterationsNodeMoniker" ElementName="iterationsNode" MonikerTypeName="IterationsNodeMoniker">
         <DomainClassMoniker Name="IterationsNode" />
@@ -385,9 +332,6 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="Iterations" MonikerAttributeName="" SerializeId="true" MonikerElementName="iterationsMoniker" ElementName="iterations" MonikerTypeName="IterationsMoniker">
-        <GeometryShapeMoniker Name="Iterations" />
-      </XmlClassData>
       <XmlClassData TypeName="SubprogramCallNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="subprogramCallNodeMoniker" ElementName="subprogramCallNode" MonikerTypeName="SubprogramCallNodeMoniker">
         <DomainClassMoniker Name="SubprogramCallNode" />
         <ElementData>
@@ -396,26 +340,14 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="SubprogramCall" MonikerAttributeName="" SerializeId="true" MonikerElementName="subprogramCallMoniker" ElementName="subprogramCall" MonikerTypeName="SubprogramCallMoniker">
-        <GeometryShapeMoniker Name="SubprogramCall" />
-      </XmlClassData>
       <XmlClassData TypeName="ParallelNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="parallelNodeMoniker" ElementName="parallelNode" MonikerTypeName="ParallelNodeMoniker">
         <DomainClassMoniker Name="ParallelNode" />
       </XmlClassData>
       <XmlClassData TypeName="EndParallelNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelNodeMoniker" ElementName="endParallelNode" MonikerTypeName="EndParallelNodeMoniker">
         <DomainClassMoniker Name="EndParallelNode" />
       </XmlClassData>
-      <XmlClassData TypeName="Parallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="parallelMoniker" ElementName="parallel" MonikerTypeName="ParallelMoniker">
-        <GeometryShapeMoniker Name="Parallel" />
-      </XmlClassData>
-      <XmlClassData TypeName="EndParallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelMoniker" ElementName="endParallel" MonikerTypeName="EndParallelMoniker">
-        <GeometryShapeMoniker Name="EndParallel" />
-      </XmlClassData>
       <XmlClassData TypeName="BreakNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakNodeMoniker" ElementName="breakNode" MonikerTypeName="BreakNodeMoniker">
         <DomainClassMoniker Name="BreakNode" />
-      </XmlClassData>
-      <XmlClassData TypeName="Break" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakMoniker" ElementName="break" MonikerTypeName="BreakMoniker">
-        <GeometryShapeMoniker Name="Break" />
       </XmlClassData>
       <XmlClassData TypeName="SwitchNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="switchNodeMoniker" ElementName="switchNode" MonikerTypeName="SwitchNodeMoniker">
         <DomainClassMoniker Name="SwitchNode" />
@@ -425,14 +357,41 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="Switch" MonikerAttributeName="" SerializeId="true" MonikerElementName="switchMoniker" ElementName="switch" MonikerTypeName="SwitchMoniker">
-        <GeometryShapeMoniker Name="Switch" />
-      </XmlClassData>
       <XmlClassData TypeName="EndSwitchNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="endSwitchNodeMoniker" ElementName="endSwitchNode" MonikerTypeName="EndSwitchNodeMoniker">
         <DomainClassMoniker Name="EndSwitchNode" />
       </XmlClassData>
+      <XmlClassData TypeName="Start" MonikerAttributeName="" SerializeId="true" MonikerElementName="startMoniker" ElementName="start" MonikerTypeName="StartMoniker">
+        <ImageShapeMoniker Name="Start" />
+      </XmlClassData>
+      <XmlClassData TypeName="If" MonikerAttributeName="" SerializeId="true" MonikerElementName="ifMoniker" ElementName="if" MonikerTypeName="IfMoniker">
+        <ImageShapeMoniker Name="If" />
+      </XmlClassData>
+      <XmlClassData TypeName="Finish" MonikerAttributeName="" SerializeId="true" MonikerElementName="finishMoniker" ElementName="finish" MonikerTypeName="FinishMoniker">
+        <ImageShapeMoniker Name="Finish" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndIf" MonikerAttributeName="" SerializeId="true" MonikerElementName="endIfMoniker" ElementName="endIf" MonikerTypeName="EndIfMoniker">
+        <ImageShapeMoniker Name="EndIf" />
+      </XmlClassData>
+      <XmlClassData TypeName="Iterations" MonikerAttributeName="" SerializeId="true" MonikerElementName="iterationsMoniker" ElementName="iterations" MonikerTypeName="IterationsMoniker">
+        <ImageShapeMoniker Name="Iterations" />
+      </XmlClassData>
+      <XmlClassData TypeName="Parallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="parallelMoniker" ElementName="parallel" MonikerTypeName="ParallelMoniker">
+        <ImageShapeMoniker Name="Parallel" />
+      </XmlClassData>
+      <XmlClassData TypeName="EndParallel" MonikerAttributeName="" SerializeId="true" MonikerElementName="endParallelMoniker" ElementName="endParallel" MonikerTypeName="EndParallelMoniker">
+        <ImageShapeMoniker Name="EndParallel" />
+      </XmlClassData>
+      <XmlClassData TypeName="Switch" MonikerAttributeName="" SerializeId="true" MonikerElementName="switchMoniker" ElementName="switch" MonikerTypeName="SwitchMoniker">
+        <ImageShapeMoniker Name="Switch" />
+      </XmlClassData>
       <XmlClassData TypeName="EndSwitch" MonikerAttributeName="" SerializeId="true" MonikerElementName="endSwitchMoniker" ElementName="endSwitch" MonikerTypeName="EndSwitchMoniker">
-        <GeometryShapeMoniker Name="EndSwitch" />
+        <ImageShapeMoniker Name="EndSwitch" />
+      </XmlClassData>
+      <XmlClassData TypeName="SubprogramCall" MonikerAttributeName="" SerializeId="true" MonikerElementName="subprogramCallMoniker" ElementName="subprogramCall" MonikerTypeName="SubprogramCallMoniker">
+        <ImageShapeMoniker Name="SubprogramCall" />
+      </XmlClassData>
+      <XmlClassData TypeName="Break" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakMoniker" ElementName="break" MonikerTypeName="BreakMoniker">
+        <ImageShapeMoniker Name="Break" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -463,160 +422,6 @@
       <DomainClassMoniker Name="RobotModel" />
     </Class>
     <ShapeMaps>
-      <ShapeMap>
-        <DomainClassMoniker Name="StartNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Finish/NameDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Start/NameDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="Start" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="FinishNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Finish/NameDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Start/NameDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="Finish" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="IfNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="If/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="EndIf/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="If/CondDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="IfNode/condition" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="If" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="EndIfNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="If/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="EndIf/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="EndIf" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="IterationsNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Iterations/IterationsDecorator" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="IterationsNode/number" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Iterations/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="Iterations" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="SubprogramCallNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="SubprogramCall/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="SubprogramCall/Subprogram" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="SubprogramCallNode/Subprogram" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Subprogram/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="SubprogramCall" />
-      </ShapeMap>
       <ShapeMap HasCustomParentElement="true">
         <DomainClassMoniker Name="SubprogramNode" />
         <ParentElementPath>
@@ -633,79 +438,75 @@
         <GeometryShapeMoniker Name="Subprogram" />
       </ShapeMap>
       <ShapeMap>
-        <DomainClassMoniker Name="ParallelNode" />
+        <DomainClassMoniker Name="StartNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="Start" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="IfNode" />
         <ParentElementPath>
           <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="Parallel/TextDecorator1" />
+          <TextDecoratorMoniker Name="If/Condition" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+              <DomainPropertyMoniker Name="IfNode/condition" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="Parallel" />
+        <ImageShapeMoniker Name="If" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="FinishNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="Finish" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="EndIfNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="EndIf" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="IterationsNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Iterations/number" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="IterationsNode/number" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="Iterations" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ParallelNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="Parallel" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="EndParallelNode" />
         <ParentElementPath>
           <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
         </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Parallel/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="EndParallel/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="EndParallel" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="BreakNode" />
-        <ParentElementPath>
-          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Break/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <GeometryShapeMoniker Name="Break" />
+        <ImageShapeMoniker Name="EndParallel" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="SwitchNode" />
         <ParentElementPath>
           <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
         </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="EndSwitch/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="Switch/TextDecorator1" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
         <DecoratorMap>
           <TextDecoratorMoniker Name="Switch/Condition" />
           <PropertyDisplayed>
@@ -714,22 +515,36 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="Switch" />
+        <ImageShapeMoniker Name="Switch" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="EndSwitchNode" />
         <ParentElementPath>
           <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
         </ParentElementPath>
+        <ImageShapeMoniker Name="EndSwitch" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="SubprogramCallNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="EndSwitch/TextDecorator1" />
+          <TextDecoratorMoniker Name="SubprogramCall/Subprogram" />
           <PropertyDisplayed>
             <PropertyPath>
-              <DomainPropertyMoniker Name="AbstractNode/ElemName" />
+              <DomainPropertyMoniker Name="SubprogramCallNode/Subprogram" />
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="EndSwitch" />
+        <ImageShapeMoniker Name="SubprogramCall" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="BreakNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <ImageShapeMoniker Name="Break" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
