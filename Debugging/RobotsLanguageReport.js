@@ -1,21 +1,31 @@
 ﻿
 
+function SubprogramNode1() {
+    return;
+}
 function ParallelNode1_0() {
-    Subprogram();
+    while(true) {
+        SubprogramNode1();
+    }
     return;
 }
 function ParallelNode1_1() {
-    Subprogram();
+    SubprogramNode1();
+    return;
+}
+function ParallelNode2_0() {
+    SubprogramNode1();
     return;
 }
 function main() {
     if (condition) {
-        Threading.startThread("on", "ParallelNode1_0");
-        Subprogram();
+        Threading.startThread("as", "ParallelNode1_0");
+        SubprogramNode1();
         return;
     }
     else {
-        Subprogram();
+        Threading.startThread("on", "ParallelNode2_0");
+        SubprogramNode1();
         return;
     }
 }

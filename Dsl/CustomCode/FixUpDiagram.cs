@@ -87,6 +87,7 @@ namespace SPbSU.RobotsLanguage
     {
         ValidationContext context;
         HashSet<string> nodes = new HashSet<string>();
+        HashSet<String> hs = new HashSet<string>();
         [ValidationMethod(ValidationCategories.Menu)]
         private void Validate(ValidationContext context)
         {
@@ -125,6 +126,14 @@ namespace SPbSU.RobotsLanguage
                         context.LogError("Incorrect source elements", "source", an);
                     if (an.TargetAbstractNode.Count != 2 && an.SourceAbstractNode.Count == 1 || an.TargetAbstractNode.Count != 3 && an.SourceAbstractNode.Count == 2)
                         context.LogError("Incorrect target elements", "target", an);
+                    if(!AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Any(obj => obj.Condition == "true"))
+                    {
+                        context.LogError("No true link", "true", an);
+                    }
+                    if (an.TargetAbstractNode.Count == 3 && !AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Any(obj => obj.Condition == "out"))
+                    {
+                        context.LogError("No out for cycle", "out", an);
+                    }
 
                 }
                 else if (an is EndIfNode)
@@ -136,7 +145,7 @@ namespace SPbSU.RobotsLanguage
                 }
                 else if (an is IterationsNode)
                 {
-                    if (an.SourceAbstractNode.Count < 2 || an.SourceAbstractNode.Count > 3)
+                    if (an.SourceAbstractNode.Count != 2)
                         context.LogError("Incorrect source elements", "source", an);
                     if (an.TargetAbstractNode.Count != 2)
                         context.LogError("Incorrect target elements", "target", an);
@@ -147,6 +156,14 @@ namespace SPbSU.RobotsLanguage
                         context.LogError("Incorrect source elements", "source", an);
                     if (an.TargetAbstractNode.Count != 1 && an.SourceAbstractNode.Count == 1 || an.TargetAbstractNode.Count != 2 && an.SourceAbstractNode.Count == 2)
                         context.LogError("Incorrect target elements", "target", an);
+                    if (!SubprogramNode.Any(obj => obj.ElemName == (an as SubprogramCallNode).Subprogram))
+                    {
+                        context.LogError("No subprogram with such name", "subprogram", an);
+                    }
+                    if (an.SourceAbstractNode.Count == 2 && !AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Any(obj => obj.Condition == "out"))
+                    {
+                        context.LogError("No out for cycle", "out", an);
+                    }
                 }
                 else if (an is ParallelNode)
                 {
@@ -154,6 +171,7 @@ namespace SPbSU.RobotsLanguage
                         context.LogError("Incorrect source elements", "source", an);
                     if (an.TargetAbstractNode.Count < 2)
                         context.LogError("Incorrect target elements", "target", an);
+                   
                 }
                 else if (an is EndParallelNode)
                 {
@@ -175,6 +193,12 @@ namespace SPbSU.RobotsLanguage
                         context.LogError("Incorrect source elements", "source", an);
                     if (an.TargetAbstractNode.Count < 1 && an.SourceAbstractNode.Count == 1 || an.TargetAbstractNode.Count < 2 && an.SourceAbstractNode.Count == 2)
                         context.LogError("Incorrect target elements", "target", an);
+                    if (AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Count(obj => obj.Condition == "") > 1)
+                        context.LogError("Only one link must be default", "default", an);
+                    if (an.SourceAbstractNode.Count == 2 && !AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Any(obj => obj.Condition == "out"))
+                    {
+                        context.LogError("No out for cycle", "out", an);
+                    }
                 }
                 else if (an is EndSwitchNode)
                 {
@@ -186,11 +210,14 @@ namespace SPbSU.RobotsLanguage
                 else context.LogError("unknown", "unknown", an);
 
             }
-            nodes.Clear();
-            nodes.Add(st.ElemName);
-            generate(st.TargetAbstractNode[0], "FinishNode", true, false, "", "");
-
-            context.LogMessage(nodes.Count.ToString() + " elements", "count");
+            if (context.CurrentViolations.Count == 0)
+            {
+                nodes.Clear();
+                nodes.Add(st.ElemName);
+                hs.Clear();
+                hs.Add("");
+                generate(st.TargetAbstractNode[0], "FinishNode", true, false, "", "");
+            }
         }
         AbstractNode generate(AbstractNode f, String end, bool flag, bool isCycle, String subName, String thread)
         {
@@ -284,9 +311,21 @@ namespace SPbSU.RobotsLanguage
                     var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f);
                     AbstractNode g = null, g0 = null;
                     int cur = 0;
+                    if (list.Count(obj => obj.Condition == thread) != 1)
+                    {
+                        context.LogError("Only one link must be the same thread", "thread", f);
+                        return null;
+                    }
                     for (int i = 0; i < list.Count; i++)
                         if (!thread.Equals(list[i].Condition))
                         {
+                            if (hs.Contains(list[i].Condition))
+                            {
+                                context.LogError("Repeatable thread name", "thread", f);
+                                return null;
+                            }
+                            hs.Add(list[i].Condition);
+
                             AbstractNode g1 = generate(list[i].TargetAbstractNode, "FinishNode", true, false, "", list[i].Condition);
                             if (g0 != null && g1 != g0)
                             {

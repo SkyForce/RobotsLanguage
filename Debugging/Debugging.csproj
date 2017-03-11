@@ -54,10 +54,6 @@
     <None Include="RobotsLanguage13.rob.diagram">
       <DependentUpon>RobotsLanguage13.rob</DependentUpon>
     </None>
-    <None Include="RobotsLanguage15.rob" />
-    <None Include="RobotsLanguage15.rob.diagram">
-      <DependentUpon>RobotsLanguage15.rob</DependentUpon>
-    </None>
     <None Include="RobotsLanguage2.rob" />
     <None Include="RobotsLanguage2.rob.diagram">
       <DependentUpon>RobotsLanguage2.rob</DependentUpon>
