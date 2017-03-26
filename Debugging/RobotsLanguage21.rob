@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4299a6b2-dff4-41b3-a20b-e6759dd9e4b6" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <abstractNode>
+    <compoundHasAbstractNode Id="c6158e7a-70c1-428a-b476-104f2fa47504">
+      <startNode Id="f41d9b21-fa58-4c58-b90e-d552fd25d210" elemName="StartNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="15d3d024-0dd2-4409-8b16-eb73be3ca041">
+            <motorsNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/MotorsNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </startNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="d38c7991-45b8-4cc2-af89-399a5381941d">
+      <parallelNode Id="2b653554-02d6-413b-8a68-1c915e97822a" elemName="ParallelNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="a03e95ac-deec-4e08-a351-e25829a53899" condition="a">
+            <waitTouchNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/WaitTouchNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="36ca1bb8-379d-4618-b9a1-f72c7e7bd74d">
+            <waitSensorNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/WaitSensorNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="eabb8d73-5a64-4809-b6ce-e89b2fad4a76" condition="b">
+            <delayNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/DelayNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </parallelNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="f8e0ede7-1592-4d9b-9e2b-8ab42ed97e3c">
+      <motorsNode Id="ecd461b2-f803-471f-9e6f-fb1a2feb12d7" elemName="MotorsNode1" power="0">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="e8908753-7770-4e60-af40-518bf0b4079e">
+            <parallelNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/ParallelNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </motorsNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="42410554-3ada-46bb-b89b-6c77895d91bf">
+      <delayNode Id="a6c4ef3e-ccfe-4a91-99e2-89662dfb875d" elemName="DelayNode1" time="0">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="623c2aab-b693-46a1-9fa6-88b6aef7992b">
+            <endParallelNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/EndParallelNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </delayNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="befffcd3-70a9-4313-a7bc-b6ff3a7d2f7d">
+      <waitSensorNode Id="90174c2e-17cb-4d90-a560-78985fe3882e" elemName="WaitSensorNode1" distance="0">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="3993a06a-782d-4fa9-b6f1-45db1284a7f6">
+            <endParallelNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/EndParallelNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </waitSensorNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="2ded712b-c67d-44b1-8044-b4772f93b314">
+      <waitTouchNode Id="caeb6039-0dd1-47ca-9d44-2e3a2073f305" elemName="WaitTouchNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="54b6c47f-1a8e-4cc3-a810-316919944ccb">
+            <endParallelNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/EndParallelNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </waitTouchNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="56002c90-8b79-445f-9a0d-10a4b96b6d97">
+      <endParallelNode Id="d8e1182e-774f-43af-a5d9-434e0767da69" elemName="EndParallelNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="608f5df8-545b-4935-8df5-f6f60b5dbf58">
+            <motorsOffNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/MotorsOffNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </endParallelNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="0a4683f3-217a-4d55-8ffb-c5f3e6af2d20">
+      <motorsOffNode Id="4bc2aa94-9e32-44e2-a260-45a17f1bea6b" elemName="MotorsOffNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="994c3f65-c09b-4220-9b26-7838be690079">
+            <finishNodeMoniker elemName="/4299a6b2-dff4-41b3-a20b-e6759dd9e4b6/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </motorsOffNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="560fe6b0-e9c5-4d27-9f86-844ce0ba2fe1">
+      <finishNode Id="da989099-91dd-4354-a884-465bf59a030c" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+  </abstractNode>
+</robotModel>

@@ -12,9 +12,9 @@ namespace SPbSU.RobotsLanguage
     public class Generator
     {
         RobotModel RobotModel;
-        TextTransformation writer;
-        ValidationController controller;
-        public Generator(RobotModel r, TextTransformation w)
+        RuntimeTextTemplate1 writer;
+
+        public Generator(RobotModel r, RuntimeTextTemplate1 w)
         {
             RobotModel = r;
             writer = w;
@@ -247,7 +247,60 @@ namespace SPbSU.RobotsLanguage
                     f = g0;
 
                 }
+                else if (f is MotorsNode)
+                {
+                    String[] ports = ((MotorsNode)f).Ports.Split(',');
+                    int power = ((MotorsNode)f).Power;
+                    foreach (String s in ports)
+                    {
+                        writer.WriteLine("brick.motor({0}).setPower({1});", s, power);
+                    }
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+
+                }
+                else if (f is DelayNode)
+                {
+                    int ms = ((DelayNode)f).Time;
+                    writer.WriteLine("script.wait({0});", ms);
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+
+                }
+                else if (f is WaitSensorNode)
+                {
+                    int dist = ((WaitSensorNode)f).Distance;
+                    string rv = ((WaitSensorNode)f).ReceivedValue;
+                    string port = ((WaitSensorNode)f).Port;
+                    writer.WriteLine("while (!(brick.sensor({0}).read() {1} {2})) {{", port, rv, dist);
+                    writer.PushIndent("    ");
+                    writer.WriteLine("script.wait(10)");
+                    writer.PopIndent();
+                    writer.WriteLine("}");
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+                    
+                }
+                else if (f is WaitTouchNode)
+                {
+                    string port = ((WaitTouchNode)f).Port;
+                    writer.WriteLine("while (brick.sensor({0}).read() < 0) {{", port);
+                    writer.PushIndent("    ");
+                    writer.WriteLine("script.wait(10)");
+                    writer.PopIndent();
+                    writer.WriteLine("}");
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+
+                }
+                else if (f is MotorsOffNode)
+                {
+                    String[] ports = ((MotorsOffNode)f).Ports.Split(',');
+                    foreach (String s in ports)
+                    {
+                        writer.WriteLine("brick.motor({0}).powerOff();", s);
+                    }
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+
+                }
                 isCycle = false;
+
             }
             if (f is FinishNode && end.StartsWith("FinishNode"))
             {

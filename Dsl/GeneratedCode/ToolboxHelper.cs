@@ -98,7 +98,7 @@ namespace SPbSU.RobotsLanguage
 		{
 			get
 			{
-				return 13;
+				return 18;
 			}
 		}
 		
@@ -353,6 +353,86 @@ namespace SPbSU.RobotsLanguage
 						"EndSwitch", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("EndSwitchToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.EndSwitchNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.MotorsToolboxItem":
+					// Add Motors shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.MotorsToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						14, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("MotorsToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("MotorsToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Motors", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("MotorsToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.MotorsNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.WaitSensorToolboxItem":
+					// Add WaitSensor shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.WaitSensorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						15, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("WaitSensorToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("WaitSensorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"WaitSensor", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("WaitSensorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.WaitSensorNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.DelayToolboxItem":
+					// Add Delay shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.DelayToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						16, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("DelayToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DelayToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Delay", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("DelayToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.DelayNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.WaitTouchToolboxItem":
+					// Add WaitTouch shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.WaitTouchToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						17, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("WaitTouchToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("WaitTouchToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"WaitTouch", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("WaitTouchToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.WaitTouchNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SPbSU.RobotsLanguage.MotorsOffToolboxItem":
+					// Add MotorsOff shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SPbSU.RobotsLanguage.MotorsOffToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						18, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("MotorsOffToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("MotorsOffToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SPbSU.RobotsLanguage.RobotsLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("RobotsLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"MotorsOff", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("MotorsOffToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SPbSU.RobotsLanguage.MotorsOffNode.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

@@ -82,6 +82,11 @@ namespace SPbSU.RobotsLanguage
 				typeof(BreakNode),
 				typeof(SwitchNode),
 				typeof(EndSwitchNode),
+				typeof(MotorsNode),
+				typeof(WaitSensorNode),
+				typeof(DelayNode),
+				typeof(WaitTouchNode),
+				typeof(MotorsOffNode),
 				typeof(AbstractNodeReferencesTargetAbstractNode),
 				typeof(CompoundHasAbstractNode),
 				typeof(CompoundHasSubprogramNode),
@@ -99,6 +104,11 @@ namespace SPbSU.RobotsLanguage
 				typeof(EndSwitch),
 				typeof(SubprogramCall),
 				typeof(Break),
+				typeof(Motors),
+				typeof(WaitSensor),
+				typeof(Delay),
+				typeof(WaitTouch),
+				typeof(MotorsOff),
 				typeof(global::SPbSU.RobotsLanguage.FixUpDiagram),
 				typeof(global::SPbSU.RobotsLanguage.DecoratorPropertyChanged),
 				typeof(global::SPbSU.RobotsLanguage.ConnectorRolePlayerChanged),
@@ -113,12 +123,21 @@ namespace SPbSU.RobotsLanguage
 		{
 			return new DomainMemberInfo[]
 			{
+				new DomainMemberInfo(typeof(RobotModel), "Hostname", RobotModel.HostnameDomainPropertyId, typeof(RobotModel.HostnamePropertyHandler)),
 				new DomainMemberInfo(typeof(AbstractNode), "ElemName", AbstractNode.ElemNameDomainPropertyId, typeof(AbstractNode.ElemNamePropertyHandler)),
 				new DomainMemberInfo(typeof(SubprogramNode), "ElemName", SubprogramNode.ElemNameDomainPropertyId, typeof(SubprogramNode.ElemNamePropertyHandler)),
 				new DomainMemberInfo(typeof(IfNode), "condition", IfNode.conditionDomainPropertyId, typeof(IfNode.conditionPropertyHandler)),
 				new DomainMemberInfo(typeof(IterationsNode), "number", IterationsNode.numberDomainPropertyId, typeof(IterationsNode.numberPropertyHandler)),
 				new DomainMemberInfo(typeof(SubprogramCallNode), "Subprogram", SubprogramCallNode.SubprogramDomainPropertyId, typeof(SubprogramCallNode.SubprogramPropertyHandler)),
 				new DomainMemberInfo(typeof(SwitchNode), "Condition", SwitchNode.ConditionDomainPropertyId, typeof(SwitchNode.ConditionPropertyHandler)),
+				new DomainMemberInfo(typeof(MotorsNode), "Ports", MotorsNode.PortsDomainPropertyId, typeof(MotorsNode.PortsPropertyHandler)),
+				new DomainMemberInfo(typeof(MotorsNode), "Power", MotorsNode.PowerDomainPropertyId, typeof(MotorsNode.PowerPropertyHandler)),
+				new DomainMemberInfo(typeof(WaitSensorNode), "Distance", WaitSensorNode.DistanceDomainPropertyId, typeof(WaitSensorNode.DistancePropertyHandler)),
+				new DomainMemberInfo(typeof(WaitSensorNode), "ReceivedValue", WaitSensorNode.ReceivedValueDomainPropertyId, typeof(WaitSensorNode.ReceivedValuePropertyHandler)),
+				new DomainMemberInfo(typeof(WaitSensorNode), "Port", WaitSensorNode.PortDomainPropertyId, typeof(WaitSensorNode.PortPropertyHandler)),
+				new DomainMemberInfo(typeof(DelayNode), "Time", DelayNode.TimeDomainPropertyId, typeof(DelayNode.TimePropertyHandler)),
+				new DomainMemberInfo(typeof(WaitTouchNode), "Port", WaitTouchNode.PortDomainPropertyId, typeof(WaitTouchNode.PortPropertyHandler)),
+				new DomainMemberInfo(typeof(MotorsOffNode), "Ports", MotorsOffNode.PortsDomainPropertyId, typeof(MotorsOffNode.PortsPropertyHandler)),
 				new DomainMemberInfo(typeof(AbstractNodeReferencesTargetAbstractNode), "Condition", AbstractNodeReferencesTargetAbstractNode.ConditionDomainPropertyId, typeof(AbstractNodeReferencesTargetAbstractNode.ConditionPropertyHandler)),
 			};
 		}
@@ -157,7 +176,7 @@ namespace SPbSU.RobotsLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(29);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(39);
 				createElementMap.Add(typeof(RobotModel), 0);
 				createElementMap.Add(typeof(StartNode), 1);
 				createElementMap.Add(typeof(FinishNode), 2);
@@ -171,20 +190,30 @@ namespace SPbSU.RobotsLanguage
 				createElementMap.Add(typeof(BreakNode), 10);
 				createElementMap.Add(typeof(SwitchNode), 11);
 				createElementMap.Add(typeof(EndSwitchNode), 12);
-				createElementMap.Add(typeof(RobotsLanguageDiagram), 13);
-				createElementMap.Add(typeof(ExampleConnector), 14);
-				createElementMap.Add(typeof(Subprogram), 15);
-				createElementMap.Add(typeof(Start), 16);
-				createElementMap.Add(typeof(If), 17);
-				createElementMap.Add(typeof(Finish), 18);
-				createElementMap.Add(typeof(EndIf), 19);
-				createElementMap.Add(typeof(Iterations), 20);
-				createElementMap.Add(typeof(Parallel), 21);
-				createElementMap.Add(typeof(EndParallel), 22);
-				createElementMap.Add(typeof(Switch), 23);
-				createElementMap.Add(typeof(EndSwitch), 24);
-				createElementMap.Add(typeof(SubprogramCall), 25);
-				createElementMap.Add(typeof(Break), 26);
+				createElementMap.Add(typeof(MotorsNode), 13);
+				createElementMap.Add(typeof(WaitSensorNode), 14);
+				createElementMap.Add(typeof(DelayNode), 15);
+				createElementMap.Add(typeof(WaitTouchNode), 16);
+				createElementMap.Add(typeof(MotorsOffNode), 17);
+				createElementMap.Add(typeof(RobotsLanguageDiagram), 18);
+				createElementMap.Add(typeof(ExampleConnector), 19);
+				createElementMap.Add(typeof(Subprogram), 20);
+				createElementMap.Add(typeof(Start), 21);
+				createElementMap.Add(typeof(If), 22);
+				createElementMap.Add(typeof(Finish), 23);
+				createElementMap.Add(typeof(EndIf), 24);
+				createElementMap.Add(typeof(Iterations), 25);
+				createElementMap.Add(typeof(Parallel), 26);
+				createElementMap.Add(typeof(EndParallel), 27);
+				createElementMap.Add(typeof(Switch), 28);
+				createElementMap.Add(typeof(EndSwitch), 29);
+				createElementMap.Add(typeof(SubprogramCall), 30);
+				createElementMap.Add(typeof(Break), 31);
+				createElementMap.Add(typeof(Motors), 32);
+				createElementMap.Add(typeof(WaitSensor), 33);
+				createElementMap.Add(typeof(Delay), 34);
+				createElementMap.Add(typeof(WaitTouch), 35);
+				createElementMap.Add(typeof(MotorsOff), 36);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -211,20 +240,30 @@ namespace SPbSU.RobotsLanguage
 				case 10: return new BreakNode(partition, propertyAssignments);
 				case 11: return new SwitchNode(partition, propertyAssignments);
 				case 12: return new EndSwitchNode(partition, propertyAssignments);
-				case 13: return new RobotsLanguageDiagram(partition, propertyAssignments);
-				case 14: return new ExampleConnector(partition, propertyAssignments);
-				case 15: return new Subprogram(partition, propertyAssignments);
-				case 16: return new Start(partition, propertyAssignments);
-				case 17: return new If(partition, propertyAssignments);
-				case 18: return new Finish(partition, propertyAssignments);
-				case 19: return new EndIf(partition, propertyAssignments);
-				case 20: return new Iterations(partition, propertyAssignments);
-				case 21: return new Parallel(partition, propertyAssignments);
-				case 22: return new EndParallel(partition, propertyAssignments);
-				case 23: return new Switch(partition, propertyAssignments);
-				case 24: return new EndSwitch(partition, propertyAssignments);
-				case 25: return new SubprogramCall(partition, propertyAssignments);
-				case 26: return new Break(partition, propertyAssignments);
+				case 13: return new MotorsNode(partition, propertyAssignments);
+				case 14: return new WaitSensorNode(partition, propertyAssignments);
+				case 15: return new DelayNode(partition, propertyAssignments);
+				case 16: return new WaitTouchNode(partition, propertyAssignments);
+				case 17: return new MotorsOffNode(partition, propertyAssignments);
+				case 18: return new RobotsLanguageDiagram(partition, propertyAssignments);
+				case 19: return new ExampleConnector(partition, propertyAssignments);
+				case 20: return new Subprogram(partition, propertyAssignments);
+				case 21: return new Start(partition, propertyAssignments);
+				case 22: return new If(partition, propertyAssignments);
+				case 23: return new Finish(partition, propertyAssignments);
+				case 24: return new EndIf(partition, propertyAssignments);
+				case 25: return new Iterations(partition, propertyAssignments);
+				case 26: return new Parallel(partition, propertyAssignments);
+				case 27: return new EndParallel(partition, propertyAssignments);
+				case 28: return new Switch(partition, propertyAssignments);
+				case 29: return new EndSwitch(partition, propertyAssignments);
+				case 30: return new SubprogramCall(partition, propertyAssignments);
+				case 31: return new Break(partition, propertyAssignments);
+				case 32: return new Motors(partition, propertyAssignments);
+				case 33: return new WaitSensor(partition, propertyAssignments);
+				case 34: return new Delay(partition, propertyAssignments);
+				case 35: return new WaitTouch(partition, propertyAssignments);
+				case 36: return new MotorsOff(partition, propertyAssignments);
 				default: return null;
 			}
 		}

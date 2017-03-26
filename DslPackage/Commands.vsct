@@ -14,5 +14,38 @@
   <Extern href="DSLToolsCmdID.h"/>
   <Include href="GeneratedCode\GeneratedVsct.vsct"/>
   <Commands package="guidPkg">
+<Buttons>  
+  <Button guid="guidCustomMenuCmdSet" id="cmdidMyContextMenuCommand"  
+    priority="0x0100" type="Button">  
+    <Parent guid="guidCmdSet" id="grpidContextMain"/>   
+    <CommandFlag>DynamicVisibility</CommandFlag>  
+    <Strings>  
+      <ButtonText>Generate</ButtonText>  
+    </Strings>  
+  </Button>
+  <Button guid="guidCustomMenuCmdSet" id="cmdidSendMenuCommand"
+    priority="0x0100" type="Button">
+    <Parent guid="guidCmdSet" id="grpidContextMain"/>
+    <CommandFlag>DynamicVisibility</CommandFlag>
+    <Strings>
+      <ButtonText>Send</ButtonText>
+    </Strings>
+  </Button>
+</Buttons> 
   </Commands>
+<VisibilityConstraints>  
+  <!-- Ensures the command is only loaded for this DSL -->  
+  <VisibilityItem guid="guidCustomMenuCmdSet" id="cmdidMyContextMenuCommand"  
+    context="guidEditor"/>
+  <VisibilityItem guid="guidCustomMenuCmdSet" id="cmdidSendMenuCommand"
+    context="guidEditor"/>
+</VisibilityConstraints>  
+<Symbols>  
+  <!-- Substitute a unique GUID for the placeholder: -->  
+  <GuidSymbol name="guidCustomMenuCmdSet"  
+    value="{7F6BE63C-313B-4C60-9AB7-7B6EA2E3C52B}" >  
+    <IDSymbol name="cmdidMyContextMenuCommand" value="0x00001"/>
+    <IDSymbol name="cmdidSendMenuCommand" value="0x00002"/>
+  </GuidSymbol>  
+</Symbols>  
 </CommandTable>

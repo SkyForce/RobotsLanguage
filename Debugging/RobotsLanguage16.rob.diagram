@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotsLanguageDiagram dslVersion="1.0.0.0" Id="b192c89d-5c92-4d17-a1c5-8f2673aaccc7" absoluteBounds="0, 0, 11, 8.5" name="RobotsLanguage16">
+  <robotModelMoniker Id="c4830b47-6d25-4d04-91f5-30f7ed48b982" />
+  <nestedChildShapes>
+    <start Id="c86022f6-3ee2-4028-afa1-74f338010c36" absoluteBounds="3.375, 1.125, 0.52076822519302368, 0.52076822519302368">
+      <startNodeMoniker elemName="/c4830b47-6d25-4d04-91f5-30f7ed48b982/StartNode1" />
+    </start>
+    <finish Id="649b1d85-ad9b-4bc7-b0d9-6f3d4e151b0e" absoluteBounds="5.5, 2.75, 0.52076822519302368, 0.52076822519302368">
+      <finishNodeMoniker elemName="/c4830b47-6d25-4d04-91f5-30f7ed48b982/FinishNode1" />
+    </finish>
+  </nestedChildShapes>
+</robotsLanguageDiagram>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ceaf2cda-1d7b-43a2-82fe-24b186ad58d5" hostname="127.0.0.1" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <abstractNode>
+    <compoundHasAbstractNode Id="9723f8af-db4e-4602-a738-bf734a5a4d3c">
+      <startNode Id="06792a4b-ec64-4328-93bb-724aee9b6d4d" elemName="StartNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="373676b2-2d50-40c4-b9f3-4a68d1139729">
+            <finishNodeMoniker elemName="/ceaf2cda-1d7b-43a2-82fe-24b186ad58d5/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </startNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="e817dbf6-14bb-431b-b358-05203a4f0ccd">
+      <finishNode Id="74bf25c9-9820-43e2-8923-b16f8018fe13" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+  </abstractNode>
+</robotModel>

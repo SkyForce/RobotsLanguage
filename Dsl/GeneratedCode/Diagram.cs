@@ -263,6 +263,36 @@ namespace SPbSU.RobotsLanguage
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::SPbSU.RobotsLanguage.MotorsNode)
+			{
+				global::SPbSU.RobotsLanguage.Motors newShape = new global::SPbSU.RobotsLanguage.Motors(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.WaitSensorNode)
+			{
+				global::SPbSU.RobotsLanguage.WaitSensor newShape = new global::SPbSU.RobotsLanguage.WaitSensor(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.DelayNode)
+			{
+				global::SPbSU.RobotsLanguage.Delay newShape = new global::SPbSU.RobotsLanguage.Delay(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.WaitTouchNode)
+			{
+				global::SPbSU.RobotsLanguage.WaitTouch newShape = new global::SPbSU.RobotsLanguage.WaitTouch(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SPbSU.RobotsLanguage.MotorsOffNode)
+			{
+				global::SPbSU.RobotsLanguage.MotorsOff newShape = new global::SPbSU.RobotsLanguage.MotorsOff(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode)
 			{
 				global::SPbSU.RobotsLanguage.ExampleConnector newShape = new global::SPbSU.RobotsLanguage.ExampleConnector(this.Partition);
@@ -284,6 +314,11 @@ namespace SPbSU.RobotsLanguage
 			global::SPbSU.RobotsLanguage.Iterations.DecoratorsInitialized += IterationsDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.Switch.DecoratorsInitialized += SwitchDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.SubprogramCall.DecoratorsInitialized += SubprogramCallDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.Motors.DecoratorsInitialized += MotorsDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.WaitSensor.DecoratorsInitialized += WaitSensorDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.Delay.DecoratorsInitialized += DelayDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.WaitTouch.DecoratorsInitialized += WaitTouchDecoratorMap.OnDecoratorsInitialized;
+			global::SPbSU.RobotsLanguage.MotorsOff.DecoratorsInitialized += MotorsOffDecoratorMap.OnDecoratorsInitialized;
 			global::SPbSU.RobotsLanguage.ExampleConnector.DecoratorsInitialized += ExampleConnectorDecoratorMap.OnDecoratorsInitialized;
 		}
 		
@@ -374,6 +409,105 @@ namespace SPbSU.RobotsLanguage
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.SubprogramCallNode.SubprogramDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Subprogram").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for Motors.
+		/// </summary>
+		internal static partial class MotorsDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for Motors.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.MotorsNode.PortsDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Ports").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.MotorsNode.PowerDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Power").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for WaitSensor.
+		/// </summary>
+		internal static partial class WaitSensorDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for WaitSensor.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.WaitSensorNode.DistanceDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Distance").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.WaitSensorNode.ReceivedValueDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ReceivedValue").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.WaitSensorNode.PortDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Port").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for Delay.
+		/// </summary>
+		internal static partial class DelayDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for Delay.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.DelayNode.TimeDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Time").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for WaitTouch.
+		/// </summary>
+		internal static partial class WaitTouchDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for WaitTouch.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.WaitTouchNode.PortDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Port").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for MotorsOff.
+		/// </summary>
+		internal static partial class MotorsOffDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for MotorsOff.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SPbSU.RobotsLanguage.MotorsOffNode.PortsDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Ports").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -547,17 +681,22 @@ namespace SPbSU.RobotsLanguage
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.StartNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.FinishNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndIfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.ParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndSwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.WaitTouchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.DelayNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.WaitSensorNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.MotorsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.BreakNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndSwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SwitchNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.ParallelNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.EndIfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.FinishNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IfNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.StartNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.MotorsOffNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
@@ -585,49 +724,69 @@ namespace SPbSU.RobotsLanguage
 					// of the shape created for this child.  If no shape should be created, the method should return null.
 					parentElement = GetParentForSubprogramNode((global::SPbSU.RobotsLanguage.SubprogramNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.StartNode)
+				if(childElement is global::SPbSU.RobotsLanguage.WaitTouchNode)
 				{
-					parentElement = GetParentForStartNode((global::SPbSU.RobotsLanguage.StartNode)childElement);
+					parentElement = GetParentForWaitTouchNode((global::SPbSU.RobotsLanguage.WaitTouchNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.IfNode)
+				if(childElement is global::SPbSU.RobotsLanguage.DelayNode)
 				{
-					parentElement = GetParentForIfNode((global::SPbSU.RobotsLanguage.IfNode)childElement);
+					parentElement = GetParentForDelayNode((global::SPbSU.RobotsLanguage.DelayNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.FinishNode)
+				if(childElement is global::SPbSU.RobotsLanguage.WaitSensorNode)
 				{
-					parentElement = GetParentForFinishNode((global::SPbSU.RobotsLanguage.FinishNode)childElement);
+					parentElement = GetParentForWaitSensorNode((global::SPbSU.RobotsLanguage.WaitSensorNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.EndIfNode)
+				if(childElement is global::SPbSU.RobotsLanguage.MotorsNode)
 				{
-					parentElement = GetParentForEndIfNode((global::SPbSU.RobotsLanguage.EndIfNode)childElement);
+					parentElement = GetParentForMotorsNode((global::SPbSU.RobotsLanguage.MotorsNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.IterationsNode)
+				if(childElement is global::SPbSU.RobotsLanguage.BreakNode)
 				{
-					parentElement = GetParentForIterationsNode((global::SPbSU.RobotsLanguage.IterationsNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.ParallelNode)
-				{
-					parentElement = GetParentForParallelNode((global::SPbSU.RobotsLanguage.ParallelNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.EndParallelNode)
-				{
-					parentElement = GetParentForEndParallelNode((global::SPbSU.RobotsLanguage.EndParallelNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.SwitchNode)
-				{
-					parentElement = GetParentForSwitchNode((global::SPbSU.RobotsLanguage.SwitchNode)childElement);
-				} else
-				if(childElement is global::SPbSU.RobotsLanguage.EndSwitchNode)
-				{
-					parentElement = GetParentForEndSwitchNode((global::SPbSU.RobotsLanguage.EndSwitchNode)childElement);
+					parentElement = GetParentForBreakNode((global::SPbSU.RobotsLanguage.BreakNode)childElement);
 				} else
 				if(childElement is global::SPbSU.RobotsLanguage.SubprogramCallNode)
 				{
 					parentElement = GetParentForSubprogramCallNode((global::SPbSU.RobotsLanguage.SubprogramCallNode)childElement);
 				} else
-				if(childElement is global::SPbSU.RobotsLanguage.BreakNode)
+				if(childElement is global::SPbSU.RobotsLanguage.EndSwitchNode)
 				{
-					parentElement = GetParentForBreakNode((global::SPbSU.RobotsLanguage.BreakNode)childElement);
+					parentElement = GetParentForEndSwitchNode((global::SPbSU.RobotsLanguage.EndSwitchNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.SwitchNode)
+				{
+					parentElement = GetParentForSwitchNode((global::SPbSU.RobotsLanguage.SwitchNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.EndParallelNode)
+				{
+					parentElement = GetParentForEndParallelNode((global::SPbSU.RobotsLanguage.EndParallelNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.ParallelNode)
+				{
+					parentElement = GetParentForParallelNode((global::SPbSU.RobotsLanguage.ParallelNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.IterationsNode)
+				{
+					parentElement = GetParentForIterationsNode((global::SPbSU.RobotsLanguage.IterationsNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.EndIfNode)
+				{
+					parentElement = GetParentForEndIfNode((global::SPbSU.RobotsLanguage.EndIfNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.FinishNode)
+				{
+					parentElement = GetParentForFinishNode((global::SPbSU.RobotsLanguage.FinishNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.IfNode)
+				{
+					parentElement = GetParentForIfNode((global::SPbSU.RobotsLanguage.IfNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.StartNode)
+				{
+					parentElement = GetParentForStartNode((global::SPbSU.RobotsLanguage.StartNode)childElement);
+				} else
+				if(childElement is global::SPbSU.RobotsLanguage.MotorsOffNode)
+				{
+					parentElement = GetParentForMotorsOffNode((global::SPbSU.RobotsLanguage.MotorsOffNode)childElement);
 				} else
 				{
 					parentElement = null;
@@ -709,6 +868,41 @@ namespace SPbSU.RobotsLanguage
 				return result;
 			}
 			public static global::SPbSU.RobotsLanguage.Compound GetParentForBreakNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForMotorsNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForWaitSensorNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForDelayNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForWaitTouchNode( global::SPbSU.RobotsLanguage.AbstractNode root )
+			{
+				// Segments 0 and 1
+				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SPbSU.RobotsLanguage.Compound GetParentForMotorsOffNode( global::SPbSU.RobotsLanguage.AbstractNode root )
 			{
 				// Segments 0 and 1
 				global::SPbSU.RobotsLanguage.Compound result = root.Compound;
@@ -809,6 +1003,11 @@ namespace SPbSU.RobotsLanguage
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.IterationsNode), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SwitchNode), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.SubprogramCallNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.MotorsNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.WaitSensorNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.DelayNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.WaitTouchNode), InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.MotorsOffNode), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
@@ -847,6 +1046,70 @@ namespace SPbSU.RobotsLanguage
 					if(decorator != null)
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.SubprogramCallNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.MotorsNode.PortsDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.Motors.FindMotorsDecorator("Ports");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.MotorsNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.MotorsNode.PowerDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.Motors.FindMotorsDecorator("Power");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.MotorsNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.WaitSensorNode.DistanceDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.WaitSensor.FindWaitSensorDecorator("Distance");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.WaitSensorNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.WaitSensorNode.ReceivedValueDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.WaitSensor.FindWaitSensorDecorator("ReceivedValue");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.WaitSensorNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.WaitSensorNode.PortDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.WaitSensor.FindWaitSensorDecorator("Port");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.WaitSensorNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.DelayNode.TimeDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.Delay.FindDelayDecorator("Time");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.DelayNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.WaitTouchNode.PortDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.WaitTouch.FindWaitTouchDecorator("Port");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.WaitTouchNode.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.MotorsOffNode.PortsDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SPbSU.RobotsLanguage.MotorsOff.FindMotorsOffDecorator("Ports");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SPbSU.RobotsLanguage.MotorsOffNode.DomainClassId);
 					}
 				}
 				else if (e.DomainProperty.Id == global::SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.ConditionDomainPropertyId)

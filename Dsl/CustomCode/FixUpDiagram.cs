@@ -207,6 +207,18 @@ namespace SPbSU.RobotsLanguage
                     if (an.TargetAbstractNode.Count != 1)
                         context.LogError("Incorrect target elements", "target", an);
                 }
+                else if (an is WaitSensorNode || an is DelayNode || an is MotorsNode || an is MotorsOffNode || an is WaitTouchNode)
+                {
+                    if (an.SourceAbstractNode.Count < 1 || an.SourceAbstractNode.Count > 2)
+                        context.LogError("Incorrect source elements", "source", an);
+                    if (an.TargetAbstractNode.Count != 1 && an.SourceAbstractNode.Count == 1 || an.TargetAbstractNode.Count != 2 && an.SourceAbstractNode.Count == 2)
+                        context.LogError("Incorrect target elements", "target", an);
+                    
+                    if (an.SourceAbstractNode.Count == 2 && !AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(an).Any(obj => obj.Condition == "out"))
+                    {
+                        context.LogError("No out for cycle", "out", an);
+                    }
+                }
                 else context.LogError("unknown", "unknown", an);
 
             }
@@ -223,7 +235,7 @@ namespace SPbSU.RobotsLanguage
         {
             while (f != null && (isCycle || (flag ? !f.ElemName.StartsWith(end) : !f.ElemName.Equals(end))))
             {
-                if (!isCycle && !(f is FinishNode))
+                if (!isCycle && !(f is FinishNode) && !(f is EndParallelNode))
                 {
                     if(nodes.Contains(f.ElemName))
                     {
@@ -234,9 +246,9 @@ namespace SPbSU.RobotsLanguage
                 }
                 if (!isCycle && !(f is FinishNode) && (f is IterationsNode && f.SourceAbstractNode.Count == 3 || (f is EndIfNode) && f.SourceAbstractNode.Count == 3 || !(f is IterationsNode) && !(f is EndIfNode) && !(f is EndParallelNode) && f.SourceAbstractNode.Count == 2))
                 {
-                    
+
                     f = generate(f, f.ElemName, false, true, subName, thread);
-                    
+
                 }
                 else if (f is FinishNode)
                 {
@@ -256,7 +268,7 @@ namespace SPbSU.RobotsLanguage
                         else
                             g1 = generate(f.TargetAbstractNode[i], "EndIfNode", true, false, subName, thread);
                     }
-                    
+
                     if (g1 == null)
                     {
                         f = g;
@@ -265,7 +277,7 @@ namespace SPbSU.RobotsLanguage
                     {
                         f = g1;
                     }
-                    else if(f != g)
+                    else if (f != g)
                     {
                         context.LogError("EndIF must be the same", "if", f);
                         return null;
@@ -301,7 +313,7 @@ namespace SPbSU.RobotsLanguage
                     else
                     {
                         var list = AbstractNodeReferencesTargetAbstractNode.GetLinksToSourceAbstractNode(f);
-                        
+
                         f = f.TargetAbstractNode[0];
                     }
 
@@ -337,7 +349,7 @@ namespace SPbSU.RobotsLanguage
                                 g0 = g1;
                             }
                             cur++;
-                                  
+
                         }
                         else
                             g = f.TargetAbstractNode[i];
@@ -374,7 +386,12 @@ namespace SPbSU.RobotsLanguage
                     f = g0;
 
                 }
-                
+                else if (f is WaitSensorNode || f is DelayNode || f is MotorsNode || f is MotorsOffNode || f is WaitTouchNode)
+                {
+                    f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
+
+                }
+
                 isCycle = false;
             }
             if (f != null) nodes.Add(f.ElemName);

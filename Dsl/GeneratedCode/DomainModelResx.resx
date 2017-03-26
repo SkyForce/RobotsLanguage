@@ -133,6 +133,14 @@
     <value>Robot Model</value>
     <comment>DisplayName for DomainClass &apos;RobotModel&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.RobotModel/Hostname.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.RobotModel.Hostname</value>
+    <comment>Description for DomainProperty &apos;Hostname&apos; on DomainClass &apos;RobotModel&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.RobotModel/Hostname.DisplayName" xml:space="preserve">
+    <value>Hostname</value>
+    <comment>DisplayName for DomainProperty &apos;Hostname&apos; on DomainClass &apos;RobotModel&apos;</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.AbstractNode.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
     <comment>Description for DomainClass &apos;AbstractNode&apos;</comment>
@@ -292,6 +300,110 @@
   <data name="SPbSU.RobotsLanguage.EndSwitchNode.DisplayName" xml:space="preserve">
     <value>End Switch Node</value>
     <comment>DisplayName for DomainClass &apos;EndSwitchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsNode</value>
+    <comment>Description for DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode.DisplayName" xml:space="preserve">
+    <value>Motors Node</value>
+    <comment>DisplayName for DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode/Ports.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsNode.Ports</value>
+    <comment>Description for DomainProperty &apos;Ports&apos; on DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode/Ports.DisplayName" xml:space="preserve">
+    <value>Ports</value>
+    <comment>DisplayName for DomainProperty &apos;Ports&apos; on DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode/Power.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsNode.Power</value>
+    <comment>Description for DomainProperty &apos;Power&apos; on DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsNode/Power.DisplayName" xml:space="preserve">
+    <value>Power</value>
+    <comment>DisplayName for DomainProperty &apos;Power&apos; on DomainClass &apos;MotorsNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitSensorNode</value>
+    <comment>Description for DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode.DisplayName" xml:space="preserve">
+    <value>Wait Sensor Node</value>
+    <comment>DisplayName for DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/Distance.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitSensorNode.Distance</value>
+    <comment>Description for DomainProperty &apos;Distance&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/Distance.DisplayName" xml:space="preserve">
+    <value>Distance</value>
+    <comment>DisplayName for DomainProperty &apos;Distance&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/ReceivedValue.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitSensorNode.Received Value</value>
+    <comment>Description for DomainProperty &apos;ReceivedValue&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/ReceivedValue.DisplayName" xml:space="preserve">
+    <value>Received Value</value>
+    <comment>DisplayName for DomainProperty &apos;ReceivedValue&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/Port.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitSensorNode.Port</value>
+    <comment>Description for DomainProperty &apos;Port&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensorNode/Port.DisplayName" xml:space="preserve">
+    <value>Port</value>
+    <comment>DisplayName for DomainProperty &apos;Port&apos; on DomainClass &apos;WaitSensorNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.DelayNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.DelayNode</value>
+    <comment>Description for DomainClass &apos;DelayNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.DelayNode.DisplayName" xml:space="preserve">
+    <value>Delay Node</value>
+    <comment>DisplayName for DomainClass &apos;DelayNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.DelayNode/Time.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.DelayNode.Time</value>
+    <comment>Description for DomainProperty &apos;Time&apos; on DomainClass &apos;DelayNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.DelayNode/Time.DisplayName" xml:space="preserve">
+    <value>Time</value>
+    <comment>DisplayName for DomainProperty &apos;Time&apos; on DomainClass &apos;DelayNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouchNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitTouchNode</value>
+    <comment>Description for DomainClass &apos;WaitTouchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouchNode.DisplayName" xml:space="preserve">
+    <value>Wait Touch Node</value>
+    <comment>DisplayName for DomainClass &apos;WaitTouchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouchNode/Port.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitTouchNode.Port</value>
+    <comment>Description for DomainProperty &apos;Port&apos; on DomainClass &apos;WaitTouchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouchNode/Port.DisplayName" xml:space="preserve">
+    <value>Port</value>
+    <comment>DisplayName for DomainProperty &apos;Port&apos; on DomainClass &apos;WaitTouchNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOffNode.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsOffNode</value>
+    <comment>Description for DomainClass &apos;MotorsOffNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOffNode.DisplayName" xml:space="preserve">
+    <value>Motors Off Node</value>
+    <comment>DisplayName for DomainClass &apos;MotorsOffNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOffNode/Ports.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsOffNode.Ports</value>
+    <comment>Description for DomainProperty &apos;Ports&apos; on DomainClass &apos;MotorsOffNode&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOffNode/Ports.DisplayName" xml:space="preserve">
+    <value>Ports</value>
+    <comment>DisplayName for DomainProperty &apos;Ports&apos; on DomainClass &apos;MotorsOffNode&apos;</comment>
   </data>
   <data name="SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode.Description" xml:space="preserve">
     <value>Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode</value>
@@ -513,6 +625,78 @@
     <value>Break</value>
     <comment>DisplayName for DomainClass &apos;Break&apos;</comment>
   </data>
+  <data name="SPbSU.RobotsLanguage.Motors.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Motors</value>
+    <comment>Description for DomainClass &apos;Motors&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Motors.DisplayName" xml:space="preserve">
+    <value>Motors</value>
+    <comment>DisplayName for DomainClass &apos;Motors&apos;</comment>
+  </data>
+  <data name="MotorsPortsDefaultText" xml:space="preserve">
+    <value>Ports</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="MotorsPowerDefaultText" xml:space="preserve">
+    <value>Power</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensor.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitSensor</value>
+    <comment>Description for DomainClass &apos;WaitSensor&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitSensor.DisplayName" xml:space="preserve">
+    <value>Wait Sensor</value>
+    <comment>DisplayName for DomainClass &apos;WaitSensor&apos;</comment>
+  </data>
+  <data name="WaitSensorDistanceDefaultText" xml:space="preserve">
+    <value>Distance</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="WaitSensorReceivedValueDefaultText" xml:space="preserve">
+    <value>ReceivedValue</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="WaitSensorPortDefaultText" xml:space="preserve">
+    <value>Port</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Delay.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.Delay</value>
+    <comment>Description for DomainClass &apos;Delay&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.Delay.DisplayName" xml:space="preserve">
+    <value>Delay</value>
+    <comment>DisplayName for DomainClass &apos;Delay&apos;</comment>
+  </data>
+  <data name="DelayTimeDefaultText" xml:space="preserve">
+    <value>Time</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouch.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.WaitTouch</value>
+    <comment>Description for DomainClass &apos;WaitTouch&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.WaitTouch.DisplayName" xml:space="preserve">
+    <value>Wait Touch</value>
+    <comment>DisplayName for DomainClass &apos;WaitTouch&apos;</comment>
+  </data>
+  <data name="WaitTouchPortDefaultText" xml:space="preserve">
+    <value>Port</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOff.Description" xml:space="preserve">
+    <value>Description for SPbSU.RobotsLanguage.MotorsOff</value>
+    <comment>Description for DomainClass &apos;MotorsOff&apos;</comment>
+  </data>
+  <data name="SPbSU.RobotsLanguage.MotorsOff.DisplayName" xml:space="preserve">
+    <value>Motors Off</value>
+    <comment>DisplayName for DomainClass &apos;MotorsOff&apos;</comment>
+  </data>
+  <data name="MotorsOffPortsDefaultText" xml:space="preserve">
+    <value>Ports</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="SPbSU.RobotsLanguage.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
@@ -647,6 +831,46 @@
   </data>
   <data name="EndSwitchToolboxTooltip" xml:space="preserve">
     <value>End Switch</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MotorsToolboxItem" xml:space="preserve">
+    <value>Motors</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MotorsToolboxTooltip" xml:space="preserve">
+    <value>Motors</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="WaitSensorToolboxItem" xml:space="preserve">
+    <value>WaitSensor</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="WaitSensorToolboxTooltip" xml:space="preserve">
+    <value>Wait Sensor</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="DelayToolboxItem" xml:space="preserve">
+    <value>Delay</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="DelayToolboxTooltip" xml:space="preserve">
+    <value>Delay</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="WaitTouchToolboxItem" xml:space="preserve">
+    <value>WaitTouch</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="WaitTouchToolboxTooltip" xml:space="preserve">
+    <value>Wait Touch</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MotorsOffToolboxItem" xml:space="preserve">
+    <value>MotorsOff</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MotorsOffToolboxTooltip" xml:space="preserve">
+    <value>Motors Off</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -818,6 +1042,26 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\break.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Break shape image</comment>
   </data>
+  <data name="MotorsImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\enginesForwardBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Motors shape image</comment>
+  </data>
+  <data name="WaitSensorImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\waitForSonarDistanceBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>WaitSensor shape image</comment>
+  </data>
+  <data name="DelayImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\timerBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Delay shape image</comment>
+  </data>
+  <data name="WaitTouchImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\waitForTouchSensorBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>WaitTouch shape image</comment>
+  </data>
+  <data name="MotorsOffImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\enginesStopBlock.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>MotorsOff shape image</comment>
+  </data>
   <data name="StartToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -867,6 +1111,26 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="EndSwitchToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MotorsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="WaitSensorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="DelayToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="WaitTouchToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MotorsOffToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

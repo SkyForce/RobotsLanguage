@@ -132,6 +132,46 @@ namespace SPbSU.RobotsLanguage
 					"@EndSwitchToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 12)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@MotorsToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.MotorsToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Motors", 
+					"@MotorsToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 13)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@WaitSensorToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.WaitSensorToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"WaitSensor", 
+					"@WaitSensorToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 14)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@DelayToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.DelayToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Delay", 
+					"@DelayToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 15)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@WaitTouchToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.WaitTouchToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"WaitTouch", 
+					"@WaitTouchToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 16)]
+	[VSShell::ProvideStaticToolboxItem("SPbSU.RobotsLanguage.RobotsLanguageToolboxTab",
+					"@MotorsOffToolboxItem;SPbSU.RobotsLanguage.Dsl.dll", 
+					"SPbSU.RobotsLanguage.MotorsOffToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"MotorsOff", 
+					"@MotorsOffToolboxBitmap;SPbSU.RobotsLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 17)]
 	[VSShell::ProvideEditorFactory(typeof(RobotsLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(RobotsLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(RobotsLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
@@ -231,7 +271,7 @@ namespace SPbSU.RobotsLanguage
 	/// <summary>
 	/// Double-derived class to allow easier code customization.
 	/// </summary>
-	[VSShell::ProvideMenuResource("1000.ctmenu", 1)]
+	[VSShell::ProvideMenuResource("1000.ctmenu", 2)]
 	[VSShell::ProvideToolboxItems(1)]
 	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDirectiveProcessor), global::SPbSU.RobotsLanguage.RobotsLanguageDirectiveProcessor.RobotsLanguageDirectiveProcessorName, "A directive processor that provides access to RobotsLanguage files")]
 	[global::System.Runtime.InteropServices.Guid(Constants.RobotsLanguagePackageId)]

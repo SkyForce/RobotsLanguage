@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c4830b47-6d25-4d04-91f5-30f7ed48b982" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <abstractNode>
+    <compoundHasAbstractNode Id="787c5093-27d6-4120-8b98-e71012cc35b8">
+      <startNode Id="3fb89495-fa3f-4477-9838-9533b337830b" elemName="StartNode1" />
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="22e9c0fa-6dbf-4620-9e83-fa5307e9680e">
+      <finishNode Id="63f846f2-b504-4b60-8b0d-f7623f69b416" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+  </abstractNode>
+</robotModel>

@@ -11,6 +11,7 @@ namespace SPbSU.RobotsLanguage
     public class Validator
     {
         RobotModel model;
+        
         public Validator(RobotModel rm)
         {
             model = rm;

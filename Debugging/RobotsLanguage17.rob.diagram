@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotsLanguageDiagram dslVersion="1.0.0.0" Id="5df62f71-4f83-4347-b22a-0948c80cf21c" absoluteBounds="0, 0, 11, 8.5" name="RobotsLanguage17">
+  <robotModelMoniker Id="ceaf2cda-1d7b-43a2-82fe-24b186ad58d5" />
+  <nestedChildShapes>
+    <start Id="e8fa9660-7b07-420b-aaaf-db401d2effb0" absoluteBounds="1.125, 1.375, 0.52076822519302368, 0.52076822519302368">
+      <startNodeMoniker elemName="/ceaf2cda-1d7b-43a2-82fe-24b186ad58d5/StartNode1" />
+    </start>
+    <finish Id="f26c4ac7-52f6-4594-aa19-4205c5b72d18" absoluteBounds="3.875, 2.5, 0.52076822519302368, 0.52076822519302368">
+      <finishNodeMoniker elemName="/ceaf2cda-1d7b-43a2-82fe-24b186ad58d5/FinishNode1" />
+    </finish>
+    <exampleConnector Id="482e2b34-2569-4082-973e-ef113b124c55" edgePoints="[(1.64576822519302 : 1.63538411259651); (4.13538411259651 : 1.63538411259651); (4.13538411259651 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="373676b2-2d50-40c4-b9f3-4a68d1139729" />
+      <relativeChildShapes />
+      <nodes>
+        <startMoniker Id="e8fa9660-7b07-420b-aaaf-db401d2effb0" />
+        <finishMoniker Id="f26c4ac7-52f6-4594-aa19-4205c5b72d18" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</robotsLanguageDiagram>

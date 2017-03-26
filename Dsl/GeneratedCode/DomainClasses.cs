@@ -48,6 +48,93 @@ namespace SPbSU.RobotsLanguage
 		{
 		}
 		#endregion
+		#region Hostname domain property code
+		
+		/// <summary>
+		/// Hostname domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid HostnameDomainPropertyId = new global::System.Guid(0xdc04153d, 0xaef6, 0x4fd1, 0x98, 0x23, 0xde, 0x33, 0x25, 0xe5, 0x64, 0x45);
+		
+		/// <summary>
+		/// Storage for Hostname
+		/// </summary>
+		private global::System.String hostnamePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Hostname domain property.
+		/// Description for SPbSU.RobotsLanguage.RobotModel.Hostname
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.RobotModel/Hostname.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.RobotModel/Hostname.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("dc04153d-aef6-4fd1-9823-de3325e56445")]
+		public global::System.String Hostname
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return hostnamePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				HostnamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the RobotModel.Hostname domain property.
+		/// </summary>
+		internal sealed partial class HostnamePropertyHandler : DslModeling::DomainPropertyValueHandler<RobotModel, global::System.String>
+		{
+			private HostnamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the RobotModel.Hostname domain property value handler.
+			/// </summary>
+			public static readonly HostnamePropertyHandler Instance = new HostnamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the RobotModel.Hostname domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return HostnameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(RobotModel element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.hostnamePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(RobotModel element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.hostnamePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace SPbSU.RobotsLanguage
@@ -1357,6 +1444,907 @@ namespace SPbSU.RobotsLanguage
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass MotorsNode
+	/// Description for SPbSU.RobotsLanguage.MotorsNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.MotorsNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.MotorsNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("e393542d-3924-4231-b0e5-b9d616491e0a")]
+	public partial class MotorsNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// MotorsNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe393542d, 0x3924, 0x4231, 0xb0, 0xe5, 0xb9, 0xd6, 0x16, 0x49, 0x1e, 0x0a);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public MotorsNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public MotorsNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ports domain property code
+		
+		/// <summary>
+		/// Ports domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PortsDomainPropertyId = new global::System.Guid(0xec2e023f, 0x6a23, 0x4654, 0xb9, 0xad, 0x9f, 0x49, 0x78, 0xe8, 0x2f, 0x0e);
+		
+		/// <summary>
+		/// Storage for Ports
+		/// </summary>
+		private global::System.String portsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Ports domain property.
+		/// Description for SPbSU.RobotsLanguage.MotorsNode.Ports
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.MotorsNode/Ports.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.MotorsNode/Ports.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("ec2e023f-6a23-4654-b9ad-9f4978e82f0e")]
+		public global::System.String Ports
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return portsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PortsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the MotorsNode.Ports domain property.
+		/// </summary>
+		internal sealed partial class PortsPropertyHandler : DslModeling::DomainPropertyValueHandler<MotorsNode, global::System.String>
+		{
+			private PortsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the MotorsNode.Ports domain property value handler.
+			/// </summary>
+			public static readonly PortsPropertyHandler Instance = new PortsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the MotorsNode.Ports domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PortsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(MotorsNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.portsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(MotorsNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.portsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Power domain property code
+		
+		/// <summary>
+		/// Power domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PowerDomainPropertyId = new global::System.Guid(0x4a139faa, 0x70cc, 0x4432, 0xbf, 0x8e, 0x5d, 0x70, 0xd9, 0x56, 0xa6, 0xaf);
+		
+		/// <summary>
+		/// Storage for Power
+		/// </summary>
+		private global::System.Int32 powerPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Power domain property.
+		/// Description for SPbSU.RobotsLanguage.MotorsNode.Power
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.MotorsNode/Power.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.MotorsNode/Power.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("4a139faa-70cc-4432-bf8e-5d70d956a6af")]
+		public global::System.Int32 Power
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return powerPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PowerPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the MotorsNode.Power domain property.
+		/// </summary>
+		internal sealed partial class PowerPropertyHandler : DslModeling::DomainPropertyValueHandler<MotorsNode, global::System.Int32>
+		{
+			private PowerPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the MotorsNode.Power domain property value handler.
+			/// </summary>
+			public static readonly PowerPropertyHandler Instance = new PowerPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the MotorsNode.Power domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PowerDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(MotorsNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.powerPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(MotorsNode element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.powerPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass WaitSensorNode
+	/// Description for SPbSU.RobotsLanguage.WaitSensorNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitSensorNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitSensorNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("114b4e1a-03a9-442b-84a4-4705e1939889")]
+	public partial class WaitSensorNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// WaitSensorNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x114b4e1a, 0x03a9, 0x442b, 0x84, 0xa4, 0x47, 0x05, 0xe1, 0x93, 0x98, 0x89);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public WaitSensorNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public WaitSensorNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Distance domain property code
+		
+		/// <summary>
+		/// Distance domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DistanceDomainPropertyId = new global::System.Guid(0xc4862dde, 0xe356, 0x4e62, 0x94, 0x49, 0xf6, 0x4e, 0x90, 0x7d, 0x2b, 0x3f);
+		
+		/// <summary>
+		/// Storage for Distance
+		/// </summary>
+		private global::System.Int32 distancePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Distance domain property.
+		/// Description for SPbSU.RobotsLanguage.WaitSensorNode.Distance
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitSensorNode/Distance.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitSensorNode/Distance.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("c4862dde-e356-4e62-9449-f64e907d2b3f")]
+		public global::System.Int32 Distance
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return distancePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DistancePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the WaitSensorNode.Distance domain property.
+		/// </summary>
+		internal sealed partial class DistancePropertyHandler : DslModeling::DomainPropertyValueHandler<WaitSensorNode, global::System.Int32>
+		{
+			private DistancePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the WaitSensorNode.Distance domain property value handler.
+			/// </summary>
+			public static readonly DistancePropertyHandler Instance = new DistancePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the WaitSensorNode.Distance domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DistanceDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(WaitSensorNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.distancePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(WaitSensorNode element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.distancePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ReceivedValue domain property code
+		
+		/// <summary>
+		/// ReceivedValue domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ReceivedValueDomainPropertyId = new global::System.Guid(0x1498ec74, 0x4d20, 0x486a, 0x90, 0xbf, 0xa4, 0x2b, 0xad, 0xc5, 0xdc, 0xdb);
+		
+		/// <summary>
+		/// Storage for ReceivedValue
+		/// </summary>
+		private global::System.String receivedValuePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ReceivedValue domain property.
+		/// Description for SPbSU.RobotsLanguage.WaitSensorNode.Received Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitSensorNode/ReceivedValue.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitSensorNode/ReceivedValue.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("1498ec74-4d20-486a-90bf-a42badc5dcdb")]
+		public global::System.String ReceivedValue
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return receivedValuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ReceivedValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the WaitSensorNode.ReceivedValue domain property.
+		/// </summary>
+		internal sealed partial class ReceivedValuePropertyHandler : DslModeling::DomainPropertyValueHandler<WaitSensorNode, global::System.String>
+		{
+			private ReceivedValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the WaitSensorNode.ReceivedValue domain property value handler.
+			/// </summary>
+			public static readonly ReceivedValuePropertyHandler Instance = new ReceivedValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the WaitSensorNode.ReceivedValue domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ReceivedValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(WaitSensorNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.receivedValuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(WaitSensorNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.receivedValuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Port domain property code
+		
+		/// <summary>
+		/// Port domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PortDomainPropertyId = new global::System.Guid(0x8f38b07f, 0x5e20, 0x4ab3, 0x9e, 0x44, 0xb4, 0x1f, 0xa2, 0x77, 0x6d, 0xe1);
+		
+		/// <summary>
+		/// Storage for Port
+		/// </summary>
+		private global::System.String portPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Port domain property.
+		/// Description for SPbSU.RobotsLanguage.WaitSensorNode.Port
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitSensorNode/Port.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitSensorNode/Port.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("8f38b07f-5e20-4ab3-9e44-b41fa2776de1")]
+		public global::System.String Port
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return portPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PortPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the WaitSensorNode.Port domain property.
+		/// </summary>
+		internal sealed partial class PortPropertyHandler : DslModeling::DomainPropertyValueHandler<WaitSensorNode, global::System.String>
+		{
+			private PortPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the WaitSensorNode.Port domain property value handler.
+			/// </summary>
+			public static readonly PortPropertyHandler Instance = new PortPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the WaitSensorNode.Port domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PortDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(WaitSensorNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.portPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(WaitSensorNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.portPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass DelayNode
+	/// Description for SPbSU.RobotsLanguage.DelayNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.DelayNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.DelayNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("1eb3ed33-120b-4ebb-9ca0-ffb05f0c55ed")]
+	public partial class DelayNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DelayNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1eb3ed33, 0x120b, 0x4ebb, 0x9c, 0xa0, 0xff, 0xb0, 0x5f, 0x0c, 0x55, 0xed);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DelayNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DelayNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Time domain property code
+		
+		/// <summary>
+		/// Time domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TimeDomainPropertyId = new global::System.Guid(0x2b5dc80b, 0x09db, 0x4230, 0xbc, 0xe8, 0xcd, 0x8e, 0x0e, 0xd8, 0x08, 0xba);
+		
+		/// <summary>
+		/// Storage for Time
+		/// </summary>
+		private global::System.Int32 timePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Time domain property.
+		/// Description for SPbSU.RobotsLanguage.DelayNode.Time
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.DelayNode/Time.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.DelayNode/Time.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("2b5dc80b-09db-4230-bce8-cd8e0ed808ba")]
+		public global::System.Int32 Time
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return timePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TimePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DelayNode.Time domain property.
+		/// </summary>
+		internal sealed partial class TimePropertyHandler : DslModeling::DomainPropertyValueHandler<DelayNode, global::System.Int32>
+		{
+			private TimePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DelayNode.Time domain property value handler.
+			/// </summary>
+			public static readonly TimePropertyHandler Instance = new TimePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DelayNode.Time domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TimeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Int32 GetValue(DelayNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.timePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DelayNode element, global::System.Int32 newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Int32 oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.timePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass WaitTouchNode
+	/// Description for SPbSU.RobotsLanguage.WaitTouchNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitTouchNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitTouchNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("d431c58e-bd3c-4e41-bb00-50fccdc9a2e9")]
+	public partial class WaitTouchNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// WaitTouchNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd431c58e, 0xbd3c, 0x4e41, 0xbb, 0x00, 0x50, 0xfc, 0xcd, 0xc9, 0xa2, 0xe9);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public WaitTouchNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public WaitTouchNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Port domain property code
+		
+		/// <summary>
+		/// Port domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PortDomainPropertyId = new global::System.Guid(0x9be727e8, 0x1c51, 0x40b0, 0xb5, 0xad, 0xa6, 0x71, 0xd4, 0xb7, 0x47, 0x42);
+		
+		/// <summary>
+		/// Storage for Port
+		/// </summary>
+		private global::System.String portPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Port domain property.
+		/// Description for SPbSU.RobotsLanguage.WaitTouchNode.Port
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.WaitTouchNode/Port.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.WaitTouchNode/Port.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("9be727e8-1c51-40b0-b5ad-a671d4b74742")]
+		public global::System.String Port
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return portPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PortPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the WaitTouchNode.Port domain property.
+		/// </summary>
+		internal sealed partial class PortPropertyHandler : DslModeling::DomainPropertyValueHandler<WaitTouchNode, global::System.String>
+		{
+			private PortPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the WaitTouchNode.Port domain property value handler.
+			/// </summary>
+			public static readonly PortPropertyHandler Instance = new PortPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the WaitTouchNode.Port domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PortDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(WaitTouchNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.portPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(WaitTouchNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.portPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SPbSU.RobotsLanguage
+{
+	/// <summary>
+	/// DomainClass MotorsOffNode
+	/// Description for SPbSU.RobotsLanguage.MotorsOffNode
+	/// </summary>
+	[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.MotorsOffNode.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.MotorsOffNode.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("e2ffbeae-aa4d-4902-bab7-42abda3786ff")]
+	public partial class MotorsOffNode : AbstractNode
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// MotorsOffNode domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe2ffbeae, 0xaa4d, 0x4902, 0xba, 0xb7, 0x42, 0xab, 0xda, 0x37, 0x86, 0xff);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public MotorsOffNode(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public MotorsOffNode(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Ports domain property code
+		
+		/// <summary>
+		/// Ports domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid PortsDomainPropertyId = new global::System.Guid(0xdc8c2b23, 0xd5fe, 0x4ddd, 0x92, 0x05, 0x3f, 0x2e, 0x8f, 0x53, 0x1d, 0x7a);
+		
+		/// <summary>
+		/// Storage for Ports
+		/// </summary>
+		private global::System.String portsPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Ports domain property.
+		/// Description for SPbSU.RobotsLanguage.MotorsOffNode.Ports
+		/// </summary>
+		[DslDesign::DisplayNameResource("SPbSU.RobotsLanguage.MotorsOffNode/Ports.DisplayName", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SPbSU.RobotsLanguage.MotorsOffNode/Ports.Description", typeof(global::SPbSU.RobotsLanguage.RobotsLanguageDomainModel), "SPbSU.RobotsLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("dc8c2b23-d5fe-4ddd-9205-3f2e8f531d7a")]
+		public global::System.String Ports
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return portsPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				PortsPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the MotorsOffNode.Ports domain property.
+		/// </summary>
+		internal sealed partial class PortsPropertyHandler : DslModeling::DomainPropertyValueHandler<MotorsOffNode, global::System.String>
+		{
+			private PortsPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the MotorsOffNode.Ports domain property value handler.
+			/// </summary>
+			public static readonly PortsPropertyHandler Instance = new PortsPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the MotorsOffNode.Ports domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return PortsDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(MotorsOffNode element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.portsPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(MotorsOffNode element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.portsPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 	}
 }

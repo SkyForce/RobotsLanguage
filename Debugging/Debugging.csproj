@@ -54,9 +54,29 @@
     <None Include="RobotsLanguage13.rob.diagram">
       <DependentUpon>RobotsLanguage13.rob</DependentUpon>
     </None>
+    <None Include="RobotsLanguage17.rob" />
+    <None Include="RobotsLanguage17.rob.diagram">
+      <DependentUpon>RobotsLanguage17.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage19.rob" />
+    <None Include="RobotsLanguage19.rob.diagram">
+      <DependentUpon>RobotsLanguage19.rob</DependentUpon>
+    </None>
     <None Include="RobotsLanguage2.rob" />
     <None Include="RobotsLanguage2.rob.diagram">
       <DependentUpon>RobotsLanguage2.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage20.rob" />
+    <None Include="RobotsLanguage20.rob.diagram">
+      <DependentUpon>RobotsLanguage20.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage21.rob" />
+    <None Include="RobotsLanguage21.rob.diagram">
+      <DependentUpon>RobotsLanguage21.rob</DependentUpon>
+    </None>
+    <None Include="RobotsLanguage22.rob" />
+    <None Include="RobotsLanguage22.rob.diagram">
+      <DependentUpon>RobotsLanguage22.rob</DependentUpon>
     </None>
     <None Include="RobotsLanguage3.rob" />
     <None Include="RobotsLanguage3.rob.diagram">

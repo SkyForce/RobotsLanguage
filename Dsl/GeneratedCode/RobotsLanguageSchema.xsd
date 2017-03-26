@@ -21,6 +21,8 @@
             <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: Hostname -->
+        <xsd:attribute name="hostname" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -482,6 +484,157 @@
   <xsd:complexType name="EndSwitchNodeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for EndSwitchNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MotorsNode -->
+  <xsd:element name="motorsNode" type="MotorsNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="MotorsNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Ports -->
+        <xsd:attribute name="ports" type="xsd:string" />
+        <!-- Property: Power -->
+        <xsd:attribute name="power" type="xsd:integer" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MotorsNode Moniker -->
+  <xsd:element name="motorsNodeMoniker" type="MotorsNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="MotorsNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for MotorsNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaitSensorNode -->
+  <xsd:element name="waitSensorNode" type="WaitSensorNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="WaitSensorNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Distance -->
+        <xsd:attribute name="distance" type="xsd:integer" />
+        <!-- Property: ReceivedValue -->
+        <xsd:attribute name="receivedValue" type="xsd:string" />
+        <!-- Property: Port -->
+        <xsd:attribute name="port" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaitSensorNode Moniker -->
+  <xsd:element name="waitSensorNodeMoniker" type="WaitSensorNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="WaitSensorNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for WaitSensorNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DelayNode -->
+  <xsd:element name="delayNode" type="DelayNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="DelayNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Time -->
+        <xsd:attribute name="time" type="xsd:integer" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DelayNode Moniker -->
+  <xsd:element name="delayNodeMoniker" type="DelayNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="DelayNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DelayNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaitTouchNode -->
+  <xsd:element name="waitTouchNode" type="WaitTouchNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="WaitTouchNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Port -->
+        <xsd:attribute name="port" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- WaitTouchNode Moniker -->
+  <xsd:element name="waitTouchNodeMoniker" type="WaitTouchNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="WaitTouchNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for WaitTouchNode instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNodeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MotorsOffNode -->
+  <xsd:element name="motorsOffNode" type="MotorsOffNode" substitutionGroup="abstractNode" />
+  <xsd:complexType name="MotorsOffNode">
+    <xsd:complexContent>
+      <xsd:extension base="AbstractNode">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Ports -->
+        <xsd:attribute name="ports" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- MotorsOffNode Moniker -->
+  <xsd:element name="motorsOffNodeMoniker" type="MotorsOffNodeMoniker" substitutionGroup="abstractNodeMoniker" />
+  <xsd:complexType name="MotorsOffNodeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for MotorsOffNode instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="AbstractNodeMoniker">

@@ -5,6 +5,13 @@
       <BaseClass>
         <DomainClassMoniker Name="Compound" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="dc04153d-aef6-4fd1-9823-de3325e56445" Description="Description for SPbSU.RobotsLanguage.RobotModel.Hostname" Name="Hostname" DisplayName="Hostname">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
     <DomainClass Id="55b183c1-cce3-4840-b116-fd5ffad02289" Description="Elements embedded in the model. Appear as boxes on the diagram." Name="AbstractNode" DisplayName="Abstract Node" InheritanceModifier="Abstract" Namespace="SPbSU.RobotsLanguage">
       <Properties>
@@ -130,6 +137,81 @@
         <DomainClassMoniker Name="AbstractNode" />
       </BaseClass>
     </DomainClass>
+    <DomainClass Id="e393542d-3924-4231-b0e5-b9d616491e0a" Description="Description for SPbSU.RobotsLanguage.MotorsNode" Name="MotorsNode" DisplayName="Motors Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="ec2e023f-6a23-4654-b9ad-9f4978e82f0e" Description="Description for SPbSU.RobotsLanguage.MotorsNode.Ports" Name="Ports" DisplayName="Ports">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="4a139faa-70cc-4432-bf8e-5d70d956a6af" Description="Description for SPbSU.RobotsLanguage.MotorsNode.Power" Name="Power" DisplayName="Power">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int32" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="114b4e1a-03a9-442b-84a4-4705e1939889" Description="Description for SPbSU.RobotsLanguage.WaitSensorNode" Name="WaitSensorNode" DisplayName="Wait Sensor Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="c4862dde-e356-4e62-9449-f64e907d2b3f" Description="Description for SPbSU.RobotsLanguage.WaitSensorNode.Distance" Name="Distance" DisplayName="Distance">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int32" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="1498ec74-4d20-486a-90bf-a42badc5dcdb" Description="Description for SPbSU.RobotsLanguage.WaitSensorNode.Received Value" Name="ReceivedValue" DisplayName="Received Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="8f38b07f-5e20-4ab3-9e44-b41fa2776de1" Description="Description for SPbSU.RobotsLanguage.WaitSensorNode.Port" Name="Port" DisplayName="Port">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="1eb3ed33-120b-4ebb-9ca0-ffb05f0c55ed" Description="Description for SPbSU.RobotsLanguage.DelayNode" Name="DelayNode" DisplayName="Delay Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="2b5dc80b-09db-4230-bce8-cd8e0ed808ba" Description="Description for SPbSU.RobotsLanguage.DelayNode.Time" Name="Time" DisplayName="Time">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Int32" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="d431c58e-bd3c-4e41-bb00-50fccdc9a2e9" Description="Description for SPbSU.RobotsLanguage.WaitTouchNode" Name="WaitTouchNode" DisplayName="Wait Touch Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="9be727e8-1c51-40b0-b5ad-a671d4b74742" Description="Description for SPbSU.RobotsLanguage.WaitTouchNode.Port" Name="Port" DisplayName="Port">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="e2ffbeae-aa4d-4902-bab7-42abda3786ff" Description="Description for SPbSU.RobotsLanguage.MotorsOffNode" Name="MotorsOffNode" DisplayName="Motors Off Node" Namespace="SPbSU.RobotsLanguage">
+      <BaseClass>
+        <DomainClassMoniker Name="AbstractNode" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="dc8c2b23-d5fe-4ddd-9205-3f2e8f531d7a" Description="Description for SPbSU.RobotsLanguage.MotorsOffNode.Ports" Name="Ports" DisplayName="Ports">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="1d688510-5d91-4320-afb3-7875c62fd843" Description="Description for SPbSU.RobotsLanguage.AbstractNodeReferencesTargetAbstractNode" Name="AbstractNodeReferencesTargetAbstractNode" DisplayName="Abstract Node References Target Abstract Node" Namespace="SPbSU.RobotsLanguage">
@@ -241,6 +323,40 @@
       </ShapeHasDecorators>
     </ImageShape>
     <ImageShape Id="e3adc532-b963-469f-8fea-db63d3049201" Description="Description for SPbSU.RobotsLanguage.Break" Name="Break" DisplayName="Break" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Break" InitialHeight="1" Image="Resources\break.png" />
+    <ImageShape Id="8a8628cf-a8f3-4e88-9f68-547b402494d8" Description="Description for SPbSU.RobotsLanguage.Motors" Name="Motors" DisplayName="Motors" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Motors" InitialHeight="1" Image="Resources\enginesForwardBlock.png">
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Ports" DisplayName="Ports" DefaultText="Ports" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Power" DisplayName="Power" DefaultText="Power" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="7426aaa5-1440-4b09-b556-a447c4d6e6f7" Description="Description for SPbSU.RobotsLanguage.WaitSensor" Name="WaitSensor" DisplayName="Wait Sensor" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Wait Sensor" InitialHeight="1" Image="Resources\waitForSonarDistanceBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Distance" DisplayName="Distance" DefaultText="Distance" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="ReceivedValue" DisplayName="Received Value" DefaultText="ReceivedValue" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Port" DisplayName="Port" DefaultText="Port" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="5799ae5d-b2ca-4137-826a-76fb9bf9e03b" Description="Description for SPbSU.RobotsLanguage.Delay" Name="Delay" DisplayName="Delay" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Delay" InitialHeight="1" Image="Resources\timerBlock.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Time" DisplayName="Time" DefaultText="Time" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="f8357260-3cf9-4815-8ac8-6b5de1ea5a35" Description="Description for SPbSU.RobotsLanguage.WaitTouch" Name="WaitTouch" DisplayName="Wait Touch" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Wait Touch" InitialHeight="1" Image="Resources\waitForTouchSensorBlock.png">
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Port" DisplayName="Port" DefaultText="Port" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="1b7314a3-f8cd-4568-bb5e-aedc0e0a5063" Description="Description for SPbSU.RobotsLanguage.MotorsOff" Name="MotorsOff" DisplayName="Motors Off" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Motors Off" InitialHeight="1" Image="Resources\enginesStopBlock.png">
+      <ShapeHasDecorators Position="OuterTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Ports" DisplayName="Ports" DefaultText="Ports" />
+      </ShapeHasDecorators>
+    </ImageShape>
   </Shapes>
   <Connectors>
     <Connector Id="994625fb-e6ca-4fe5-8c78-af42cd4028a1" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01">
@@ -253,6 +369,11 @@
     <ClassData>
       <XmlClassData TypeName="RobotModel" MonikerAttributeName="" SerializeId="true" MonikerElementName="robotModelMoniker" ElementName="robotModel" MonikerTypeName="RobotModelMoniker">
         <DomainClassMoniker Name="RobotModel" />
+        <ElementData>
+          <XmlPropertyData XmlName="hostname">
+            <DomainPropertyMoniker Name="RobotModel/Hostname" />
+          </XmlPropertyData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="AbstractNode" MonikerAttributeName="elemName" SerializeId="true" MonikerElementName="abstractNodeMoniker" ElementName="abstractNode" MonikerTypeName="AbstractNodeMoniker">
         <DomainClassMoniker Name="AbstractNode" />
@@ -392,6 +513,70 @@
       </XmlClassData>
       <XmlClassData TypeName="Break" MonikerAttributeName="" SerializeId="true" MonikerElementName="breakMoniker" ElementName="break" MonikerTypeName="BreakMoniker">
         <ImageShapeMoniker Name="Break" />
+      </XmlClassData>
+      <XmlClassData TypeName="MotorsNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="motorsNodeMoniker" ElementName="motorsNode" MonikerTypeName="MotorsNodeMoniker">
+        <DomainClassMoniker Name="MotorsNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="ports">
+            <DomainPropertyMoniker Name="MotorsNode/Ports" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="power">
+            <DomainPropertyMoniker Name="MotorsNode/Power" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="WaitSensorNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="waitSensorNodeMoniker" ElementName="waitSensorNode" MonikerTypeName="WaitSensorNodeMoniker">
+        <DomainClassMoniker Name="WaitSensorNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="distance">
+            <DomainPropertyMoniker Name="WaitSensorNode/Distance" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="receivedValue">
+            <DomainPropertyMoniker Name="WaitSensorNode/ReceivedValue" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="port">
+            <DomainPropertyMoniker Name="WaitSensorNode/Port" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="DelayNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="delayNodeMoniker" ElementName="delayNode" MonikerTypeName="DelayNodeMoniker">
+        <DomainClassMoniker Name="DelayNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="time">
+            <DomainPropertyMoniker Name="DelayNode/Time" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="Motors" MonikerAttributeName="" SerializeId="true" MonikerElementName="motorsMoniker" ElementName="motors" MonikerTypeName="MotorsMoniker">
+        <ImageShapeMoniker Name="Motors" />
+      </XmlClassData>
+      <XmlClassData TypeName="WaitSensor" MonikerAttributeName="" SerializeId="true" MonikerElementName="waitSensorMoniker" ElementName="waitSensor" MonikerTypeName="WaitSensorMoniker">
+        <ImageShapeMoniker Name="WaitSensor" />
+      </XmlClassData>
+      <XmlClassData TypeName="Delay" MonikerAttributeName="" SerializeId="true" MonikerElementName="delayMoniker" ElementName="delay" MonikerTypeName="DelayMoniker">
+        <ImageShapeMoniker Name="Delay" />
+      </XmlClassData>
+      <XmlClassData TypeName="WaitTouchNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="waitTouchNodeMoniker" ElementName="waitTouchNode" MonikerTypeName="WaitTouchNodeMoniker">
+        <DomainClassMoniker Name="WaitTouchNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="port">
+            <DomainPropertyMoniker Name="WaitTouchNode/Port" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="MotorsOffNode" MonikerAttributeName="" SerializeId="true" MonikerElementName="motorsOffNodeMoniker" ElementName="motorsOffNode" MonikerTypeName="MotorsOffNodeMoniker">
+        <DomainClassMoniker Name="MotorsOffNode" />
+        <ElementData>
+          <XmlPropertyData XmlName="ports">
+            <DomainPropertyMoniker Name="MotorsOffNode/Ports" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="WaitTouch" MonikerAttributeName="" SerializeId="true" MonikerElementName="waitTouchMoniker" ElementName="waitTouch" MonikerTypeName="WaitTouchMoniker">
+        <ImageShapeMoniker Name="WaitTouch" />
+      </XmlClassData>
+      <XmlClassData TypeName="MotorsOff" MonikerAttributeName="" SerializeId="true" MonikerElementName="motorsOffMoniker" ElementName="motorsOff" MonikerTypeName="MotorsOffMoniker">
+        <ImageShapeMoniker Name="MotorsOff" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -546,6 +731,105 @@
         </ParentElementPath>
         <ImageShapeMoniker Name="Break" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="MotorsNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Motors/Ports" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="MotorsNode/Ports" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Motors/Power" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="MotorsNode/Power" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="Motors" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="WaitSensorNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WaitSensor/Distance" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="WaitSensorNode/Distance" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WaitSensor/ReceivedValue" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="WaitSensorNode/ReceivedValue" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WaitSensor/Port" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="WaitSensorNode/Port" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="WaitSensor" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="DelayNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="Delay/Time" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="DelayNode/Time" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="Delay" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="WaitTouchNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WaitTouch/Port" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="WaitTouchNode/Port" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="WaitTouch" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="MotorsOffNode" />
+        <ParentElementPath>
+          <DomainPath>CompoundHasAbstractNode.Compound/!Compound</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="MotorsOff/Ports" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="MotorsOffNode/Ports" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="MotorsOff" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -608,6 +892,21 @@
       </ElementTool>
       <ElementTool Name="EndSwitch" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="EndSwitch" Tooltip="End Switch" HelpKeyword="EndSwitch">
         <DomainClassMoniker Name="EndSwitchNode" />
+      </ElementTool>
+      <ElementTool Name="Motors" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Motors" Tooltip="Motors" HelpKeyword="Motors">
+        <DomainClassMoniker Name="MotorsNode" />
+      </ElementTool>
+      <ElementTool Name="WaitSensor" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="WaitSensor" Tooltip="Wait Sensor" HelpKeyword="WaitSensor">
+        <DomainClassMoniker Name="WaitSensorNode" />
+      </ElementTool>
+      <ElementTool Name="Delay" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Delay" Tooltip="Delay" HelpKeyword="Delay">
+        <DomainClassMoniker Name="DelayNode" />
+      </ElementTool>
+      <ElementTool Name="WaitTouch" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="WaitTouch" Tooltip="Wait Touch" HelpKeyword="WaitTouch">
+        <DomainClassMoniker Name="WaitTouchNode" />
+      </ElementTool>
+      <ElementTool Name="MotorsOff" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="MotorsOff" Tooltip="Motors Off" HelpKeyword="MotorsOff">
+        <DomainClassMoniker Name="MotorsOffNode" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="true" UsesOpen="true" UsesSave="true" UsesCustom="true" UsesLoad="true" />

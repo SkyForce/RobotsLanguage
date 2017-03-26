@@ -77,10 +77,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomCode\RobotsTemplate.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RuntimeTextTemplate1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
     </Compile>
     <None Include="..\Key.snk">
       <Link>Key.snk</Link>
@@ -210,6 +216,10 @@
     <Content Include="Resources\waitForSonarDistanceBlock.png" />
     <Content Include="Resources\waitForSoundSensorBlock.png" />
     <Content Include="Resources\waitForTouchSensorBlock.png" />
+    <Content Include="RuntimeTextTemplate1.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RuntimeTextTemplate1.cs</LastGenOutput>
+    </Content>
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>
