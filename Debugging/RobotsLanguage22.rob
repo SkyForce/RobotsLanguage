@@ -1,1 +1,20 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="72e85f91-a3cd-4d10-bc72-5134abdbc9c8" xmlns="http://schemas.microsoft.com/dsltools/RobotsLanguage">
+  <abstractNode>
+    <compoundHasAbstractNode Id="5be271b4-22c0-4797-bd04-dcdc890a7cc2">
+      <startNode Id="055f2357-f7ca-42c8-a1fc-d3051f1cd359" elemName="StartNode1">
+        <targetAbstractNode>
+          <abstractNodeReferencesTargetAbstractNode Id="ec55962c-07b2-47b9-b663-001d331f6b67">
+            <finishNodeMoniker elemName="/72e85f91-a3cd-4d10-bc72-5134abdbc9c8/FinishNode1" />
+          </abstractNodeReferencesTargetAbstractNode>
+        </targetAbstractNode>
+      </startNode>
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="10c37fbd-4c7e-44d9-b242-f91db5870244">
+      <finishNode Id="02057b8e-d472-47ff-a294-b48af7b107d4" elemName="FinishNode1" />
+    </compoundHasAbstractNode>
+    <compoundHasAbstractNode Id="2208ff22-5fb4-44ee-bd29-b2487716bfbf">
+      <waitSensorNode Id="2a79dfb2-7524-46c7-b88a-b5dd63873278" elemName="WaitSensorNode1" distance="0" receivedValue="&lt;=" />
+    </compoundHasAbstractNode>
+  </abstractNode>
+</robotModel>

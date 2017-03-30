@@ -218,6 +218,22 @@ namespace SPbSU.RobotsLanguage
                     {
                         context.LogError("No out for cycle", "out", an);
                     }
+                    if(an is WaitSensorNode && (((WaitSensorNode)an).Port.Equals(String.Empty) || ((WaitSensorNode)an).ReceivedValue.Equals(String.Empty)))
+                    {
+                        context.LogError("Fields must be non-empty", "fields", an);
+                    }
+                    else if (an is MotorsNode && (((MotorsNode)an).Ports.Equals(String.Empty)))
+                    {
+                        context.LogError("Fields must be non-empty", "fields", an);
+                    }
+                    else if (an is MotorsOffNode && (((MotorsOffNode)an).Ports.Equals(String.Empty)))
+                    {
+                        context.LogError("Fields must be non-empty", "fields", an);
+                    }
+                    else if (an is WaitTouchNode && (((WaitTouchNode)an).Port.Equals(String.Empty)))
+                    {
+                        context.LogError("Fields must be non-empty", "fields", an);
+                    }
                 }
                 else context.LogError("unknown", "unknown", an);
 

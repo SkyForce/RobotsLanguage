@@ -332,7 +332,7 @@
       </ShapeHasDecorators>
     </ImageShape>
     <ImageShape Id="7426aaa5-1440-4b09-b556-a447c4d6e6f7" Description="Description for SPbSU.RobotsLanguage.WaitSensor" Name="WaitSensor" DisplayName="Wait Sensor" Namespace="SPbSU.RobotsLanguage" FixedTooltipText="Wait Sensor" InitialHeight="1" Image="Resources\waitForSonarDistanceBlock.png">
-      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+      <ShapeHasDecorators Position="OuterBottomRight" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Distance" DisplayName="Distance" DefaultText="Distance" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">

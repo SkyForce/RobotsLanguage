@@ -272,7 +272,7 @@ namespace SPbSU.RobotsLanguage
                     string port = ((WaitSensorNode)f).Port;
                     writer.WriteLine("while (!(brick.sensor({0}).read() {1} {2})) {{", port, rv, dist);
                     writer.PushIndent("    ");
-                    writer.WriteLine("script.wait(10)");
+                    writer.WriteLine("script.wait(10);");
                     writer.PopIndent();
                     writer.WriteLine("}");
                     f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;
@@ -283,7 +283,7 @@ namespace SPbSU.RobotsLanguage
                     string port = ((WaitTouchNode)f).Port;
                     writer.WriteLine("while (brick.sensor({0}).read() < 0) {{", port);
                     writer.PushIndent("    ");
-                    writer.WriteLine("script.wait(10)");
+                    writer.WriteLine("script.wait(10);");
                     writer.PopIndent();
                     writer.WriteLine("}");
                     f = AbstractNodeReferencesTargetAbstractNode.GetLinksToTargetAbstractNode(f).First(obj => obj.Condition != "out").TargetAbstractNode;

@@ -2258,7 +2258,7 @@ namespace SPbSU.RobotsLanguage
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterBottomCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterBottomRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 			DslDiagrams::TextField field2 = new DslDiagrams::TextField("ReceivedValue");

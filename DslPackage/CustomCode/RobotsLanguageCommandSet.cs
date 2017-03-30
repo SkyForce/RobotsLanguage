@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.Modeling;
 using Microsoft.VisualStudio.Modeling.Shell;
 using Microsoft.VisualStudio.Modeling.Validation;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -43,6 +44,9 @@ namespace SPbSU.RobotsLanguage
                     RuntimeTextTemplate1 run = new RuntimeTextTemplate1((RobotModel)this.CurrentDocData.RootElement);
                     String pageContent = run.TransformText();
                     System.IO.File.WriteAllText(this.CurrentRobotsLanguageDocView.CurrentDiagram.Name+".js", pageContent);
+                    //SDTE dte = (SDTE) this.CurrentRobotsLanguageDocView.CurrentDiagram.GetService(typeof(SDTE));
+                    EnvDTE.DTE dte = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SD‌​TE)) as EnvDTE.DTE;
+                    dte.ItemOperations.OpenFile(this.CurrentRobotsLanguageDocView.CurrentDiagram.Name + ".js");
                     //this.CurrentRobotsLanguageDocData.Load(this.CurrentRobotsLanguageDocView.CurrentDiagram.Name + ".js", 3, 1);
                 }
                 transaction.Commit();  

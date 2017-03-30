@@ -1,1 +1,24 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<robotsLanguageDiagram dslVersion="1.0.0.0" Id="54b578de-ec10-4bab-8499-8eb0c7360dee" absoluteBounds="0, 0, 11, 8.5" name="RobotsLanguage22">
+  <robotModelMoniker Id="72e85f91-a3cd-4d10-bc72-5134abdbc9c8" />
+  <nestedChildShapes>
+    <start Id="6ea2f017-4914-49f6-a0ec-799a1897a822" absoluteBounds="1, 1.375, 0.52076822519302368, 0.52076822519302368">
+      <startNodeMoniker elemName="/72e85f91-a3cd-4d10-bc72-5134abdbc9c8/StartNode1" />
+    </start>
+    <finish Id="3d733e0d-1435-4559-83f9-3f6d3d6d6f6d" absoluteBounds="3.875, 1.625, 0.52076822519302368, 0.52076822519302368">
+      <finishNodeMoniker elemName="/72e85f91-a3cd-4d10-bc72-5134abdbc9c8/FinishNode1" />
+    </finish>
+    <exampleConnector Id="5ce61de2-9dbf-4738-b635-cfaa69a242bb" edgePoints="[(1.52076822519302 : 1.76038411259651); (3.875 : 1.76038411259651)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <abstractNodeReferencesTargetAbstractNodeMoniker Id="ec55962c-07b2-47b9-b663-001d331f6b67" />
+      <relativeChildShapes />
+      <nodes>
+        <startMoniker Id="6ea2f017-4914-49f6-a0ec-799a1897a822" />
+        <finishMoniker Id="3d733e0d-1435-4559-83f9-3f6d3d6d6f6d" />
+      </nodes>
+    </exampleConnector>
+    <waitSensor Id="1310fe84-c9f9-43d3-ac02-07cc5d92c37c" absoluteBounds="5.125, 2.625, 0.52076822519302368, 0.52076822519302368">
+      <waitSensorNodeMoniker elemName="/72e85f91-a3cd-4d10-bc72-5134abdbc9c8/WaitSensorNode1" />
+      <relativeChildShapes />
+    </waitSensor>
+  </nestedChildShapes>
+</robotsLanguageDiagram>
